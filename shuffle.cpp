@@ -12,13 +12,13 @@ int seed = 0;
 void shuffle(){
     static mt19937 rng(seed);
 
-	int n = CARD_COUNT;
+    int n = CARD_COUNT;
 
-	while ( n > 1 ) {
-		int k = (int) (rng() % n);
-		--n;
-		Card *c = cards_[n];
-		cards_[n] = cards_[k];
-		cards_[k] = c;
-	}
+    while ( n > 1 ) {
+        int k = (int) (rng() % n);
+        --n;
+        Card *c = cards_[n];
+        cards_[n] = cards_[k];
+        cards_[k] = c;
+    }
 }
