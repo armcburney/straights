@@ -4,7 +4,11 @@
 #include <istream>
 
 class Player {
-
+public:
+    Player();
+    ~Player();
+private:
+    int id;
 };
 
 #endif

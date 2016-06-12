@@ -4,7 +4,8 @@
 #include <istream>
 
 class Deck {
-
+public:
+    Deck();
 };
 
 #endif
