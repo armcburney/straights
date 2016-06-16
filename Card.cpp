@@ -5,7 +5,7 @@ using namespace std;
 
 Card::Card(Suit s, Rank r){
 	suit_ = s;
-rank_ = r;
+	rank_ = r;
 }
 
 Suit Card::getSuit() const{

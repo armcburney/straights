@@ -4,7 +4,11 @@
 #include <istream>
 
 class Score {
-
+public:
+    Score(int);
+    int toInt();
+private:
+    int score;
 };
 
 #endif
