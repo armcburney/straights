@@ -18,7 +18,8 @@ public:
     void next(bool);
 
     static std::vector<HandItr> getLegalPlays(
-        std::list<CardPtr> hand, std::vector<CardPtr> gamePile);
+        const std::list<CardPtr> &hand,
+        const std::vector<CardPtr> &gamePile);
 private:
     Deck deck;
     std::vector<CardPtr> gamePile;
