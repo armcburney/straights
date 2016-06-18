@@ -42,4 +42,3 @@ void deal () {
 void next (bool) {
 
 }
-/*  */
