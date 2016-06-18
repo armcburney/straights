@@ -3,6 +3,7 @@
 
 #include <ostream>
 #include <istream>
+#include <memory>
 
 enum Suit { CLUB, DIAMOND, HEART, SPADE, SUIT_COUNT };
 enum Rank { ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN,
@@ -26,5 +27,8 @@ bool operator==(const Card &, const Card &);
 //output/input Card in the format <rank><suit>
 std::ostream &operator<<(std::ostream &, const Card &);
 std::istream &operator>>(std::istream &, Card &);
+
+// Convenient shorthand for smart pointer
+typedef std::shared_ptr<Card> CardPtr;
 
 #endif
