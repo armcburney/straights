@@ -15,8 +15,6 @@ using namespace std;
 //*******************************************
 
 Straights::Straights() : currentPlayer(1), currentRound(0) {
-    // cout << "init straights" << endl;
-
     for (int i : {1, 2, 3, 4}) {
         addHumanPlayer(i);
     }
@@ -27,13 +25,13 @@ Straights::Straights() : currentPlayer(1), currentRound(0) {
 //*******************************************
 
 /* Adds a human player */
-void  Straights::addHumanPlayer (int id) {
-    HumanPlayer p = HumanPlayer();
+void Straights::addHumanPlayer (int id) {
+    HumanPlayer p = HumanPlayer(id);
     players.push_back(p);
 }
 /* Adds a computer player */
 void Straights::addComputerPlayer (int id) {
-    ComputerPlayer p = ComputerPlayer();
+    ComputerPlayer p = ComputerPlayer(id);
     players.push_back(p);
 }
 /* Deals the cards to players 1 to 4 */
