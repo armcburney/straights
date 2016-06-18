@@ -4,7 +4,7 @@
 using namespace std;
 
 Player::Player (int id) : score() {
-    cout << "Created player " <<  id << endl;
+    // cout << "Created player " <<  id << endl;
 }
 
 void Player::getScore() {

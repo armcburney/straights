@@ -9,7 +9,7 @@
 using namespace std;
 
 Straights::Straights() {
-    cout << "init straights" << endl;
+    // cout << "init straights" << endl;
 
     for (int i : {1, 2, 3, 4}) {
         addHumanPlayer(i);
