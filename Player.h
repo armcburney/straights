@@ -10,15 +10,18 @@
 
 class Player {
 public:
-    Player(int);                           // Constructor
+    Player(int);                        // Constructor
     void getScore();                    // Prints players score
     void playStrategy();                // Plays the current turn
 private:
     int id;                             // Player id -> integer 1-4, (ie. Player 1)
     Score score;                        // Current player score
     PlayerStrategy * strategy;          // Player strategy (human or computer -> inherited in child classes)
-    std::vector<Card *> hand;           // Player hand
-    std::vector<Card *> discardPile;    // Player discard pile
+    std::list<CardPtr> hand;            // Player hand
+    std::vector<CardPtr> discardPile;   // Player discard pile
 };
+
+// Convenient shorthand for card hand iterator
+typedef std::list<CardPtr>::iterator HandItr;
 
 #endif

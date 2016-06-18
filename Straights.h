@@ -2,6 +2,7 @@
 #define _STRAIGHTS_
 
 #include <istream>
+#include <list>
 #include <vector>
 
 #include "Card.h"
@@ -15,9 +16,12 @@ public:
     void addComputerPlayer();
     void deal();
     void next(bool);
+
+    static std::vector<HandItr> getLegalPlays(
+        std::list<CardPtr> hand, std::vector<CardPtr> gamePile);
 private:
     Deck deck;
-    std::vector<Card*> gamePile;
+    std::vector<CardPtr> gamePile;
     std::vector<Player> players;
     int currentPlayer; // id
     int currentRound;
