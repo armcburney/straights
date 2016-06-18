@@ -11,7 +11,6 @@
 class Player {
 public:
     Player();                           // Constructor
-    ~Player();                          // Destructor
     void getScore();                    // Prints players score
     void playStrategy();                // Plays the current turn
 private:

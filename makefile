@@ -1,6 +1,6 @@
 CXX = g++ -std=c++11
 CXXFLAGS = -g -Wall
-OBJECTS = Card.o Command.o Deck.o HumanPlayer.o ManualStrategy.o PlayerStrategy.o Score.o Straights.o
+OBJECTS = main.o Card.o Command.o Deck.o HumanPlayer.o ManualStrategy.o PlayerStrategy.o Score.o Straights.o
 EXEC = a.out
 
 ${EXEC} : ${OBJECTS}

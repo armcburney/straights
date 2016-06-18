@@ -1,7 +1,8 @@
-#include<iostream>
+#include <iostream>
+#include "Score.h"
 
 using namespace std;
 
-int toInt() {
+int Score::toInt() {
     return score;
 }
