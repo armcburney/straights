@@ -10,19 +10,12 @@
 
 using namespace std;
 
-//*******************************************
-// Constructor
-//*******************************************
-
+/* Constructor */
 Straights::Straights() : currentPlayer(1), currentRound(0) {
     for (int i : {1, 2, 3, 4}) {
         addHumanPlayer(i);
     }
 }
-
-//*******************************************
-// Member functions
-//*******************************************
 
 /* Adds a human player */
 void Straights::addHumanPlayer (int id) {

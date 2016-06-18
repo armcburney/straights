@@ -10,7 +10,7 @@ class Deck {
 public:
     Deck();
 private:
-    std::vector<std::string> Cards;
+    std::vector<Card *> cards;
 };
 
 #endif

@@ -1,9 +1,10 @@
 #include "Card.h"
 #include <string>
 #include <cassert>
+#include <iostream>
 using namespace std;
 
-Card::Card(Suit s, Rank r){
+Card::Card (Suit s, Rank r) {
 	suit_ = s;
 	rank_ = r;
 }

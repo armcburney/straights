@@ -4,13 +4,13 @@
 using namespace std;
 
 Player::Player (int id) : score() {
-    // cout << "Created player " <<  id << endl;
+    cout << "Created player " <<  id << endl;
 }
 
-void Player::getScore() {
+void Player::getScore () {
     cout << "Score is" << score.toInt() << endl;
 }
 
-void Player::playStrategy() {
+void Player::playStrategy () {
 
 }

@@ -2,17 +2,19 @@
 #include <vector>
 #include <iostream>
 
-#include "Card.h"
-#include "Command.h"
-#include "Deck.h"
 #include "Straights.h"
+
+// MVC
+#include "model.h"
+#include "controller.h"
+#include "view.h"
 
 using namespace std;
 
 int main () {
     cout << "init" << endl;
     Straights s = Straights();
-    cout << "test" << endl;
+    cout << "end" << endl;
 
     return 0;
 }
