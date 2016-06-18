@@ -4,10 +4,9 @@
 #include <istream>
 #include "PlayerStrategy.h"
 
-
 class ManualStrategy : PlayerStrategy {
-    // By default will have manual strategy
-
+public:
+private:
 };
 
 #endif
