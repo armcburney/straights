@@ -6,6 +6,7 @@
 
 
 class ManualStrategy : PlayerStrategy {
+    // By default will have manual strategy
 
 };
 

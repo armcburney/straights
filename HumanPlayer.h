@@ -4,7 +4,7 @@
 #include <istream>
 
 class HumanPlayer : Player {
-
+    
 };
 
 #endif

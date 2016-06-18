@@ -6,4 +6,4 @@ EXEC = a.out
 ${EXEC} : ${OBJECTS}
 	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
 main.o : main.cpp Card.h Command.h Deck.h HumanPlayer.h ManualStrategy.h PlayerStrategy.h Score.h Straights.h
-	${CXX} ${CXXFLAGS} -c GraphTestHarness.cpp
+	${CXX} ${CXXFLAGS} -c main.cpp
