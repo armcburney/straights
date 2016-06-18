@@ -1,12 +1,11 @@
-#ifndef _MANUALSTRATEGY_
-#define _MANUALSTRATEGY_
+#ifndef _MANUAL_PLAYER_STRATEGY_
+#define _MANUAL_PLAYER_STRATEGY_
 
 #include <istream>
 #include "PlayerStrategy.h"
 
-class ManualStrategy : PlayerStrategy {
-public:
-private:
+class ManualPlayerStrategy : PlayerStrategy {
+
 };
 
 #endif
