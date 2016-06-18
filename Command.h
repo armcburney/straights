@@ -4,13 +4,13 @@
 #include "Card.h"
 #include <istream>
 
-enum Type { PLAY, DISCARD, DECK, QUIT, RAGEQUIT, BAD_COMMAND };
-
 struct Command{
+    enum Type { PLAY, DISCARD, DECK, QUIT, RAGEQUIT, NO_COMMAND };
+
 	Type type;
 	Card card;
 
-	Command() : type(BAD_COMMAND), card(SPADE, ACE) {}
+	Command() : type(NO_COMMAND), card(SPADE, ACE) {}
 };
 
 std::istream &operator>>(std::istream &, Command &);

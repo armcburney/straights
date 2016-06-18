@@ -3,6 +3,7 @@
 
 #include <istream>
 #include <vector>
+#include <list>
 
 #include "Card.h"
 #include "Score.h"

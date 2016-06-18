@@ -1,10 +1,11 @@
 #include "Command.h"
 #include <cassert>
 #include <sstream>
+
 using namespace std;
 
 istream &operator>>(istream &in, Command &c){
-	c.type = BAD_COMMAND;
+	c.type = Command::NO_COMMAND;
 
 	string str;
 	getline(in, str);
@@ -14,17 +15,17 @@ istream &operator>>(istream &in, Command &c){
 	ss >> cmd;
 
 	if (cmd == "play") {
-		c.type = PLAY;
+		c.type = Command::PLAY;
 		ss >> c.card;
 	} else if (cmd == "discard") {
-		c.type = DISCARD;
+		c.type = Command::DISCARD;
 		ss >> c.card;
 	} else if (cmd == "deck") {
-		c.type = DECK;
+		c.type = Command::DECK;
 	} else if (cmd == "quit") {
-		c.type = QUIT;
+		c.type = Command::QUIT;
 	} else if (cmd == "ragequit") {
-		c.type = RAGEQUIT;
+		c.type = Command::RAGEQUIT;
 	}
 
 	assert(!in.fail() && !ss.fail() && c.type != BAD_COMMAND);

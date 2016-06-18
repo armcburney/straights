@@ -1,26 +1,25 @@
 #ifndef _STRATEGYDECISION_
 #define _STRATEGYDECISION_
 
-#include <istream>
-#include <memory>
+#include "Player.h"
 #include "Card.h"
 
-class StrategyDecision {
-public:
-    enum decisionTypes {
+#include <istream>
+
+typedef std::list<CardPtr>::iterator HandItr;
+
+struct StrategyDecision {
+    enum Type {
         PLAY = 'p',
         DISCARD = 'd',
         REQUIRE_HUMAN_INPUT = 'i',
     };
 
-    char getDecisionType() const;
-    std::shared_ptr<Card> getCard() const;
+    Type type;
+    HandItr card;
 
-    StrategyDecision(char, std::shared_ptr<Card>);
-
-private:
-    const char decisionType;
-    const std::shared_ptr<Card> card;
+    StrategyDecision(Type type, HandItr card) : type(type), card(card) {};
+    StrategyDecision(Type type) : type(type) {};
 };
 
 #endif

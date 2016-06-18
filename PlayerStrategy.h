@@ -3,6 +3,7 @@
 
 #include "StrategyDecision.h"
 #include "Card.h"
+#include "Command.h"
 
 #include <istream>
 #include <list>
@@ -10,7 +11,10 @@
 
 class PlayerStrategy {
 public:
-    virtual StrategyDecision play(const std::list<Card*> &hand, const std::vector<Card*> &gamePile) = 0;
+    virtual StrategyDecision play(
+        std::list<CardPtr> &hand,
+        const std::vector<CardPtr> &gamePile,
+        const Command &input) = 0;
 };
 
 #endif

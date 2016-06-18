@@ -4,6 +4,11 @@
 #include <istream>
 #include "PlayerStrategy.h"
 
-class AutomatedPlayerStrategy : PlayerStrategy {};
+class AutomatedPlayerStrategy : PlayerStrategy {
+    StrategyDecision play(
+        std::list<CardPtr> &hand,
+        const std::vector<CardPtr> &gamePile,
+        const Command &input) final;
+};
 
 #endif
