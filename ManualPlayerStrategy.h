@@ -4,8 +4,6 @@
 #include <istream>
 #include "PlayerStrategy.h"
 
-class ManualPlayerStrategy : PlayerStrategy {
-
-};
+class ManualPlayerStrategy : PlayerStrategy {};
 
 #endif

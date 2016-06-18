@@ -10,7 +10,7 @@
 
 class PlayerStrategy {
 public:
-    StrategyDecision play(const std::list<Card*> &hand, const std::vector<Card*> &gamePile);
+    virtual StrategyDecision play(const std::list<Card*> &hand, const std::vector<Card*> &gamePile) = 0;
 };
 
 #endif
