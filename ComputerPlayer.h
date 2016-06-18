@@ -6,7 +6,7 @@
 
 class ComputerPlayer : public Player {
 public:
-    ComputerPlayer();
+    ComputerPlayer(int);
 private:
 // will always have automated strategy
 };

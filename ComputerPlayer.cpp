@@ -6,6 +6,6 @@
 
 using namespace std;
 
-ComputerPlayer::ComputerPlayer() : Player(0) { // review this lol
+ComputerPlayer::ComputerPlayer(int id) : Player(id) {
     cout << "computer player" << endl;
 }

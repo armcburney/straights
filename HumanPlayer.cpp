@@ -6,6 +6,6 @@
 
 using namespace std;
 
-HumanPlayer::HumanPlayer() : Player(0) { // review this lol
+HumanPlayer::HumanPlayer(int id) : Player(id) {
     // cout << "human player" << endl;
 }

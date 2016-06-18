@@ -6,7 +6,7 @@
 
 class HumanPlayer : public Player {
 public:
-    HumanPlayer();
+    HumanPlayer(int);
 private:
 // By default will have manual strategy
 };
