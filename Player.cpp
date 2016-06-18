@@ -3,8 +3,8 @@
 
 using namespace std;
 
-Player::Player () {
-    cout << "Created player." << endl;
+Player::Player (int id) : score() {
+    cout << "Created player " <<  id << endl;
 }
 
 void Player::getScore() {
@@ -12,5 +12,5 @@ void Player::getScore() {
 }
 
 void Player::playStrategy() {
-    
+
 }

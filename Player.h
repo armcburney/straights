@@ -10,7 +10,7 @@
 
 class Player {
 public:
-    Player();                           // Constructor
+    Player(int);                           // Constructor
     void getScore();                    // Prints players score
     void playStrategy();                // Plays the current turn
 private:

@@ -11,7 +11,7 @@
 class Straights {
 public:
     Straights();
-    void addHumanPlayer();
+    void addHumanPlayer(int);
     void addComputerPlayer();
     void deal();
     void next(bool);
