@@ -5,7 +5,7 @@
 using namespace std;
 
 Score::Score() {
-
+    score = 0;
 }
 
 int Score::toInt() {

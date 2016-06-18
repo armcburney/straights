@@ -13,7 +13,7 @@ class Straights {
 public:
     Straights();
     void addHumanPlayer(int);
-    void addComputerPlayer();
+    void addComputerPlayer(int);
     void deal();
     void next(bool);
 

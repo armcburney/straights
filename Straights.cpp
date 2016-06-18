@@ -4,27 +4,44 @@
 
 #include "Deck.h"
 #include "Player.h"
+#include "ComputerPlayer.h"
+#include "HumanPlayer.h"
 #include "Straights.h"
 
 using namespace std;
 
-Straights::Straights() {
+//*******************************************
+// Constructor
+//*******************************************
+
+Straights::Straights() : currentPlayer(1), currentRound(0) {
     // cout << "init straights" << endl;
 
     for (int i : {1, 2, 3, 4}) {
         addHumanPlayer(i);
     }
 }
-void  Straights::addHumanPlayer(int id) {
-    Player p = Player(id);
+
+//*******************************************
+// Member functions
+//*******************************************
+
+/* Adds a human player */
+void  Straights::addHumanPlayer (int id) {
+    HumanPlayer p = HumanPlayer();
     players.push_back(p);
 }
-void addComputerPlayer() {
+/* Adds a computer player */
+void Straights::addComputerPlayer (int id) {
+    ComputerPlayer p = ComputerPlayer();
+    players.push_back(p);
+}
+/* Deals the cards to players 1 to 4 */
+void deal () {
 
 }
-void deal() {
-
-}
+/* Initiates next round */
 void next (bool) {
 
 }
+/*  */

@@ -4,8 +4,9 @@
 #include <istream>
 #include "Player.h"
 
-class HumanPlayer : Player {
+class HumanPlayer : public Player {
 public:
+    HumanPlayer();
 private:
 // By default will have manual strategy
 };
