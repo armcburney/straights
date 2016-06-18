@@ -15,14 +15,7 @@ Straights::Straights() : currentPlayer(1), currentRound(0) {
     for (int i : {1, 2, 3, 4}) {
         addHumanPlayer(i);
     }
-
-    // /* Deck */
-    // for (auto i : deck.cards()) {
-    //     cout << *i << " ";
-    // } cout << endl;
-
-    // do the shuffle here lol
-    // deal();
+    deal();
 }
 
 /* Adds a human player */
@@ -40,13 +33,21 @@ void Straights::deal () {
     for (auto i : deck.cards()) {
         cout << *i << " ";
     } cout << endl;
+
     deck.shuffle();
+
     for (auto i : deck.cards()) {
         cout << *i << " ";
     } cout << endl;
+
+    // partition the vector
+    for (auto i : players) {
+        cout << i.getID() << endl;
+    }
+    next(false);
 }
 
 /* Initiates next round */
-void next (bool) {
+void Straights::next (bool isOver) {
 
 }

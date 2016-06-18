@@ -3,12 +3,14 @@
 
 using namespace std;
 
-Player::Player (int id) : score() {}
+Player::Player (int id) : id(id), score() {}
 
 void Player::getScore () {
     cout << "Score is" << score.toInt() << endl;
 }
 
-void Player::playStrategy () {
+void Player::playStrategy () {}
 
+int Player::getID () {
+    return id;
 }

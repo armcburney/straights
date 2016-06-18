@@ -11,8 +11,8 @@ enum {CARD_COUNT = 52};
 class Deck {
 public:
     Deck();
-    std::vector<Card* > cards();    // cards accessor
-    void shuffle();  // cards accessor
+    std::vector<Card*> cards();     // cards accessor
+    void shuffle();                 // cards accessor
 private:
     std::vector<Card *> cards_;
 };
