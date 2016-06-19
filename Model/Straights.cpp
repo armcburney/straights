@@ -128,6 +128,21 @@ RoundContext Straights::getRoundContext() const {
 
 vector<HandItr> Straights::getLegalPlays(list<CardPtr> hand, const vector<CardPtr> &gamePile) {
     vector<HandItr> legalPlays;
+
+    // If this is the first move, then only 7S is a legal move
+    if (gamePile.empty()) {
+        Card sevenOfSpades = Card(Card::SPADE, Card::SEVEN);
+        HandItr firstMove = find_if(
+            hand.begin(),
+            hand.end(),
+            [sevenOfSpades] (CardPtr c) {
+                return *c == sevenOfSpades;
+            }
+        );
+        legalPlays.push_back(firstMove);
+        return legalPlays;
+    }
+    
     const Card &topCard = *gamePile.back();
     for (auto it = hand.begin(); it != hand.end(); it++) {
         const Card &cardInHand = **it;
@@ -155,6 +170,7 @@ ostream &operator<<(ostream &out, const Straights &s) {
         // No winner, we're starting a new round
         out << "A new round begins. It's player " << s.currentPlayer->getID() << "'s turn to play.";
     }
+    out << endl;
 
     return out;
 }

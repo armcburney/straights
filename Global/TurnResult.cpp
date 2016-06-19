@@ -56,6 +56,6 @@ ostream &operator<<(ostream &out, const TurnResult &tr) {
     else
         action = "discards";
 
-    out << "Player " << player->getID() << " " << action << " " << *tr.getCard() << ".";
+    out << "Player " << player->getID() << " " << action << " " << *tr.getCard() << "." << endl;
     return out;
 }

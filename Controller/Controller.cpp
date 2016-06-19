@@ -29,7 +29,9 @@ void Controller::startGame() {
 
             bool validInputProvided = false;
             while (!validInputProvided) {
+                cout << "Ready for input" << endl;
                 Command input = view.getCommand();
+                cout << "After input" << endl;
                 switch (input.type) {
                     case Command::DECK: {
                         view.printObject<Deck>(model.getDeck());

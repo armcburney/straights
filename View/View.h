@@ -16,7 +16,7 @@ public:
     std::vector<char> getPlayers();
 
     template<typename T>
-    void printObject(T object) { outputStream << object << std::endl; };
+    void printObject(T object) { outputStream << object; };
 
     Command getCommand() const;
 
