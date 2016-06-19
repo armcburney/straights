@@ -1,11 +1,11 @@
 A - Score overloaded functions
 M - Output for Deck
-M - Output for Straights
-M - Output for TurnResult
-M - Create TurnContext object & ostream
-M - Create RoundContext object & ostream
 A - Lots of commenting & precondition stuff
 A - Deal the cards
 A - Add ragequit function
-A - Update UML
 A - get it to compile
+  - Comment all the code
+  - Precondition and code
+  - Take in shuffle seeding param
+A - Human / Computer player creation
+  - Update Makefile
