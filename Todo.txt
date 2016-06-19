@@ -1,0 +1,8 @@
+- Score overloaded functions
+- Output for Deck
+- Output for Straights
+- Output for TurnResult
+- Create TurnContext object & ostream
+- Lots of commenting & precondition stuff
+- Deal the cards
+- Add ragequit function
