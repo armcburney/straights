@@ -23,7 +23,7 @@ void Controller::startGame() {
         TurnResult turnResult = model.next();
 
         if (turnResult.getType() == TurnResult::REQUIRE_HUMAN_INPUT) {
-            view.printObject(model.getTurnContext);
+            view.printObject(model.getTurnContext());
 
             bool validInputProvided = false;
             while (!validInputProvided) {

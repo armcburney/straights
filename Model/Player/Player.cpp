@@ -7,14 +7,11 @@ Player::Player (int id, shared_ptr<PlayerStrategy> strategy)
     : id(id),
       score(0),
       roundScore(0),
+      lastRoundScore(0),
       strategy(strategy) {}
 
 Score Player::getScore () const {
     return score;
-}
-
-Score Player::getRoundScore () const {
-    return roundScore;
 }
 
 TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input) {
@@ -52,7 +49,7 @@ void Player::setHand(list<CardPtr> l) {
     hand = l;
 }
 
-void Player::getHand() const {
+list<CardPtr> Player::getHand() const {
     return hand;
 }
 
@@ -70,6 +67,6 @@ ostream &operator<<(ostream &out, const Player &p) {
         out << " " << *c;
 
     out << "Player " << p.getID() << "'s score: ";
-    out << p.getScore() << " + " p.lastRoundScore << " = ";
+    out << p.getScore() << " + " << p.lastRoundScore << " = ";
     out << p.getScore() + p.lastRoundScore;
 }

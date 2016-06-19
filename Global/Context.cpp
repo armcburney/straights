@@ -41,9 +41,13 @@ std::ostream &operator<<(std::ostream &out, const TurnContext& c) {
     for (HandItr c : legalPlays)
         out << " " << **c;
     out << endl;
+
+    return out;
 }
 
 std::ostream &operator<<(std::ostream &out, const RoundContext& c) {
     for (Player p : c.players)
         out << p << endl;
+
+    return out;
 }

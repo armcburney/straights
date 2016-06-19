@@ -11,7 +11,7 @@
 
 using namespace std;
 
-Straights::Straights() : currentRound(0) {
+Straights::Straights() {
     currentPlayer = players.begin();
 }
 
@@ -82,8 +82,8 @@ TurnResult Straights::next (const Command &input) {
     return turnResult;
 }
 
-void automateCurrentPlayer (Player p) {
-    p.automate();
+void automateCurrentPlayer (Player) {
+    //TODO p.automate();
 }
 
 void Straights::clearRound() {
@@ -122,7 +122,7 @@ vector<HandItr> Straights::getLegalPlays(list<CardPtr> hand, const vector<CardPt
 
 // Output
 ostream &operator<<(ostream &out, const Straights &s) {
-    const Player &winningPlayer = find_if(
+    const auto &winningPlayer = find_if(
         s.players.begin(),
         s.players.end(),
         [] (const Player &p) {
@@ -130,12 +130,12 @@ ostream &operator<<(ostream &out, const Straights &s) {
         }
     );
 
-    if (winningPlayer != players.end()) {
+    if (winningPlayer != s.players.end()) {
         // We have a winner!
-        out << "Player " << winningPlayer.getID() << " wins!";
+        out << "Player " << winningPlayer->getID() << " wins!";
     } else {
         // No winner, we're starting a new round
-        out << "A new round begins. It's player " << currentPlayer->getId() << "'s turn to play."
+        out << "A new round begins. It's player " << s.currentPlayer->getId() << "'s turn to play."
     }
 
     return out;

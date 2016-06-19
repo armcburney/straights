@@ -7,9 +7,10 @@
 using namespace std;
 
 Deck::Deck () {
-    for (int i = CLUB; i < SUIT_COUNT; i++) {
-        for (int j = ACE; j < RANK_COUNT; j++) {
-            CardPtr c = shared_ptr<Card>(new Card(static_cast<Suit>(i), static_cast<Rank>(j)));
+    for (int i = Card::CLUB; i < Card::SUIT_COUNT; i++) {
+        for (int j = Card::ACE; j < Card::RANK_COUNT; j++) {
+            CardPtr c = shared_ptr<Card>(
+                new Card(static_cast<Card::Suit>(i), static_cast<Card::Rank>(j)));
             cards_.push_back(c);
         }
     }
