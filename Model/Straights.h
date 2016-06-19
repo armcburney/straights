@@ -15,7 +15,7 @@
 typedef std::vector<Player>::iterator PlayerItr;
 
 class Straights {
-    friend ostream &operator<<(ostream &out, const Straights &s);
+    friend std::ostream &operator<<(std::ostream &out, const Straights &s);
 
 public:
     Straights();
@@ -43,6 +43,6 @@ private:
 };
 
 // Output
-ostream &operator<<(ostream &out, const Straights &s);
+std::ostream &operator<<(std::ostream &out, const Straights &s);
 
 #endif

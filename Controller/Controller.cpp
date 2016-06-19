@@ -10,6 +10,15 @@ Controller::Controller(Straights &model, View &view)
 void Controller::startGame() {
     view.printObject(model);
 
+    vector<char> players = view.getPlayers();
+
+    for (auto i : players) {
+        if (i == 'c')
+            model.addComputerPlayer(0);
+        else
+            model.addHumanPlayer(0);
+    }
+
     while (true) {
         TurnResult turnResult = model.next();
 

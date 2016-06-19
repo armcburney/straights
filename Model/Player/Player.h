@@ -12,7 +12,7 @@
 #include "../../Global/TurnResult.h"
 
 class Player {
-    friend ostream &operator<<(ostream &out, const Player &p);
+    friend std::ostream &operator<<(std::ostream &out, const Player &p);
 
 public:
     Player(int, std::shared_ptr<PlayerStrategy> strategy);
@@ -21,8 +21,8 @@ public:
     TurnResult playStrategy(std::vector<CardPtr>&, const Command&);
     bool allCardsPlayed() const;
     void clearRound();
-    void setHand(list<CardPtr>);
-    list<CardPtr> getHand() const;
+    void setHand(std::list<CardPtr>);
+    std::list<CardPtr> getHand() const;
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score
@@ -37,6 +37,6 @@ private:
 typedef std::list<CardPtr>::iterator HandItr;
 
 // Output
-ostream &operator<<(ostream &out, const Player &p);
+std::ostream &operator<<(std::ostream &out, const Player &p);
 
 #endif

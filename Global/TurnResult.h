@@ -40,6 +40,6 @@ private:
     std::shared_ptr<Player> currentPlayer;
 };
 
-ostream &operator<<(ostream &out, const TurnResult &tr);
+std::ostream &operator<<(std::ostream &out, const TurnResult &tr);
 
 #endif
