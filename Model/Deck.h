@@ -12,7 +12,7 @@ class Deck {
 public:
     Deck();
     std::vector<CardPtr> cards() const;     // cards accessor
-    void shuffle(int);                         // cards accessor
+    void shuffle(int);
 private:
     std::vector<CardPtr> cards_;
 };
