@@ -26,19 +26,12 @@ void Straights::addComputerPlayer (int id) {
 
 /* Deals the cards to players 1 to 4 */
 void Straights::deal () {
-    for (auto i : deck.cards()) {
-        cout << *i << " ";
-    } cout << endl;
-
     deck.shuffle();
 
-    for (auto i : deck.cards()) {
-        cout << *i << " ";
-    } cout << endl;
-
     // partition the vector
-    for (auto i : players) {
-        cout << i.getID() << endl;
+    for (int i = 0; i < 4; i++) {
+        list<CardPtr> list(deck.cards().begin()+(i*13), deck.cards().begin()+((i+1)*13));
+        players[i].setHand(list);
     }
 }
 

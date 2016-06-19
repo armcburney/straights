@@ -38,6 +38,10 @@ void Player::clearRound() {
     discardPile.clear();
 }
 
+void Player::setHand(list<CardPtr> l) {
+    hand = l;
+}
+
 int Player::getID () const {
     return id;
 }
