@@ -1,6 +1,3 @@
-A - Output for Deck
-A - Add ragequit function
-A - get it to compile
   - Comment all the code
   - Precondition and code
   - Take in shuffle seeding param
