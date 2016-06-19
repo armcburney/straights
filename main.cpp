@@ -1,18 +1,23 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <memory>
 
-// Game
+// Model
 #include "Straights.h"
-
-// MVC - TODO
-#include "model.h"
-#include "controller.h"
-#include "view.h"
+// View
+#include "View.h"
+// Controller
+#include "Controller.h"
 
 using namespace std;
 
 int main () {
-    Straights s = Straights();
+    Straights model;
+    View view(cin, cout);
+    Controller controller(model, view);
+
+    controller.startGame();
+
     return 0;
 }
