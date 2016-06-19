@@ -15,7 +15,11 @@ using namespace std;
 const Score Straights::endingScoreThreshold = Score(80);
 
 Straights::Straights() {
+    seed_ = 0;
     currentPlayer = players.begin();
+}
+void Straights::setShuffleSeed(int seed) {
+    seed_ = seed;
 }
 
 void Straights::addHumanPlayer (int id) {
@@ -29,7 +33,7 @@ void Straights::addComputerPlayer (int id) {
 
 /* Deals the cards to players 1 to 4 */
 void Straights::deal () {
-    deck.shuffle();
+    deck.shuffle(seed_);
 
     // partition the vector
     for (int i = 0; i < 4; i++) {

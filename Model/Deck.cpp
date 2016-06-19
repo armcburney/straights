@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 
+#include "Straights.h"
 #include "Card.h"
 #include "Deck.h"
 
@@ -20,8 +21,7 @@ vector<CardPtr> Deck::cards() const {
     return cards_;
 }
 
-void Deck::shuffle() {
-    int seed = 0;
+void Deck::shuffle(int seed) {
     static mt19937 rng(seed);
 
     int n = CARD_COUNT;

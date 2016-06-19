@@ -22,6 +22,7 @@ public:
     void addHumanPlayer(int);
     void addComputerPlayer(int);
     void deal();
+    void setShuffleSeed(int);
     TurnResult next(const Command &input = Command());
     TurnContext getTurnContext() const;
     RoundContext getRoundContext() const;
@@ -34,6 +35,7 @@ public:
 private:
     void clearRound();
 
+    int seed_;
     Deck deck;
     std::vector<CardPtr> gamePile;
     std::vector<Player> players;
