@@ -25,7 +25,9 @@ vector<char> View::getPlayers() {
     return players;
 }
 
-Command View::getCommand() const {
+Command View::getCommand() {
+    outputStream << ">";
+
     Command cmd;
     inputStream >> cmd;
     return cmd;

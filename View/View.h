@@ -18,7 +18,7 @@ public:
     template<typename T>
     void printObject(T object) { outputStream << object; };
 
-    Command getCommand() const;
+    Command getCommand();
 
 private:
     std::istream& inputStream;

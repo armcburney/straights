@@ -5,6 +5,8 @@
 using namespace std;
 
 istream &operator>>(istream &in, Command &c){
+    in.ignore();
+
 	c.type = Command::NO_COMMAND;
 
 	string str;
