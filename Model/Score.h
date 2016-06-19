@@ -5,13 +5,14 @@
 
 class Score {
 public:
+    friend std::ostream& operator<< (std::ostream&, const Score&);
+    Score& operator= ( const Score& );
+    bool operator== ( const Score& ) const;
+
     Score(int);
     int toInt() const;
 private:
     int score;
-    friend std::ostream& operator<< (std::ostream&, const Score&);  // insertion operator (insert graph into output stream)
-    Score& operator= ( const Score& );                              // assignment operator for graph objects
-    bool operator== ( const Score& ) const;                         // equality operator for graph objects
 };
 
 // Operators
