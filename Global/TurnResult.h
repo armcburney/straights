@@ -41,8 +41,8 @@ public:
 
 private:
     Status status;
-    const Type type;
-    const HandItr card;
+    Type type;
+    HandItr card;
     std::shared_ptr<Player> currentPlayer;
 };
 
