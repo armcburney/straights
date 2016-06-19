@@ -10,10 +10,13 @@
 #include "Player/Player.h"
 #include "../Global/Command.h"
 #include "../Global/TurnResult.h"
+#include "../Global/Context.h"
 
 typedef std::vector<Player>::iterator PlayerItr;
 
 class Straights {
+    friend ostream &operator<<(ostream &out, const Straights &s);
+
 public:
     Straights();
     void addHumanPlayer(int);
@@ -35,9 +38,11 @@ private:
     std::vector<CardPtr> gamePile;
     std::vector<Player> players;
     PlayerItr currentPlayer;
-    int currentRound;
 
-    static const Score endingScore;
+    static const Score endingScoreThreshold;
 };
+
+// Output
+ostream &operator<<(ostream &out, const Straights &s);
 
 #endif

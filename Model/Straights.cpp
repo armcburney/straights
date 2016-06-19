@@ -59,7 +59,7 @@ TurnResult Straights::next (const Command &input) {
             bool scoreAboveEndingThreshold = any_of(
                 players.begin(),
                 players.end(),
-                [] (Player p) { return p.getScore() >= endingScore; }
+                [] (Player p) { return p.getScore() >= endingScoreThreshold; }
             );
 
             if (scoreAboveEndingThreshold) {
@@ -72,6 +72,11 @@ TurnResult Straights::next (const Command &input) {
             // Clear the table
             clearRound();
         }
+
+        // Move to next player
+        currentPlayer++;
+        if (currentPlayer == players.end())
+            currentPlayer = players.begin();
     }
 
     return turnResult;
@@ -95,6 +100,14 @@ Deck Straights::getDeck() const {
     return deck;
 }
 
+TurnContext Straights::getTurnContext() const {
+    return TurnContext(gamePile, currentPlayer->getHand());
+}
+
+RoundContext Straights::getRoundContext() const {
+    return RoundContext(players);
+}
+
 vector<HandItr> Straights::getLegalPlays(list<CardPtr> hand, const vector<CardPtr> &gamePile) {
     vector<HandItr> legalPlays;
     const Card &topCard = *gamePile.back();
@@ -105,4 +118,25 @@ vector<HandItr> Straights::getLegalPlays(list<CardPtr> hand, const vector<CardPt
             legalPlays.push_back(it);
     }
     return legalPlays;
+}
+
+// Output
+ostream &operator<<(ostream &out, const Straights &s) {
+    const Player &winningPlayer = find_if(
+        s.players.begin(),
+        s.players.end(),
+        [] (const Player &p) {
+            return p.getScore() > Straights::endingScoreThreshold;
+        }
+    );
+
+    if (winningPlayer != players.end()) {
+        // We have a winner!
+        out << "Player " << winningPlayer.getID() << " wins!";
+    } else {
+        // No winner, we're starting a new round
+        out << "A new round begins. It's player " << currentPlayer->getId() << "'s turn to play."
+    }
+
+    return out;
 }

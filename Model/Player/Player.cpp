@@ -6,10 +6,15 @@ using namespace std;
 Player::Player (int id, shared_ptr<PlayerStrategy> strategy)
     : id(id),
       score(0),
+      roundScore(0),
       strategy(strategy) {}
 
 Score Player::getScore () const {
     return score;
+}
+
+Score Player::getRoundScore () const {
+    return roundScore;
 }
 
 TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input) {
@@ -36,10 +41,19 @@ TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input)
 void Player::clearRound() {
     hand.clear();
     discardPile.clear();
+
+    // Add this rounds score to the overall score
+    score += roundScore;
+    lastRoundScore = roundScore;
+    roundScore = 0;
 }
 
 void Player::setHand(list<CardPtr> l) {
     hand = l;
+}
+
+void Player::getHand() const {
+    return hand;
 }
 
 int Player::getID () const {
@@ -48,4 +62,14 @@ int Player::getID () const {
 
 bool Player::allCardsPlayed() const {
     return hand.empty();
+}
+
+ostream &operator<<(ostream &out, const Player &p) {
+    out << "Player " << p.getID() << "'s discards:";
+    for (CardPtr c : p.discardPile)
+        out << " " << *c;
+
+    out << "Player " << p.getID() << "'s score: ";
+    out << p.getScore() << " + " p.lastRoundScore << " = ";
+    out << p.getScore() + p.lastRoundScore;
 }

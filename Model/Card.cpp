@@ -11,11 +11,11 @@ Card::Card (Suit s, Rank r) {
 	rank_ = r;
 }
 
-Suit Card::getSuit() const{
+Card::Suit Card::getSuit() const{
 	return suit_;
 }
 
-Rank Card::getRank() const{
+Card::Rank Card::getRank() const{
 	return rank_;
 }
 
@@ -24,8 +24,8 @@ bool operator==(const Card &a, const Card &b){
 }
 
 ostream &operator<<(ostream &out, const Card &c){
-	string suits[SUIT_COUNT] = {"C", "D", "H", "S"};
-	string ranks[RANK_COUNT] = {"A", "2", "3", "4", "5", "6",
+	string suits[Card::SUIT_COUNT] = {"C", "D", "H", "S"};
+	string ranks[Card::RANK_COUNT] = {"A", "2", "3", "4", "5", "6",
 		"7", "8", "9", "10", "J", "Q", "K"};
 
 	out << ranks[c.getRank()] << suits[c.getSuit()];

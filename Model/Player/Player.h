@@ -12,6 +12,8 @@
 #include "../../Global/TurnResult.h"
 
 class Player {
+    friend ostream &operator<<(ostream &out, const Player &p);
+
 public:
     Player(int, std::shared_ptr<PlayerStrategy> strategy);
     int getID() const;                           // Returns id
@@ -19,10 +21,13 @@ public:
     TurnResult playStrategy(std::vector<CardPtr>&, const Command&);
     bool allCardsPlayed() const;
     void clearRound();
-    void setHand(std::list<CardPtr>);
+    void setHand(list<CardPtr>);
+    list<CardPtr> getHand() const;
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score
+    Score roundScore;
+    Score lastRoundScore;
     std::shared_ptr<PlayerStrategy> strategy;
     std::list<CardPtr> hand;              // Player hand
     std::vector<CardPtr> discardPile;     // Player discard pile
@@ -30,5 +35,8 @@ private:
 
 // Convenient shorthand for card hand iterator
 typedef std::list<CardPtr>::iterator HandItr;
+
+// Output
+ostream &operator<<(ostream &out, const Player &p);
 
 #endif
