@@ -14,4 +14,11 @@ private:
     bool operator== ( const Score& ) const;                         // equality operator for graph objects
 };
 
+bool operator== (const BCode &a, const BCode &b);
+bool operator!= (const BCode &a, const BCode &b);
+bool operator< (const BCode &a, const BCode &b);
+bool operator<= (const BCode &a, const BCode &b);
+bool operator> (const BCode &a, const BCode &b);
+bool operator>= (const BCode &a, const BCode &b);
+
 #endif

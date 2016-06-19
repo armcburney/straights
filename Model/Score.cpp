@@ -24,3 +24,32 @@ bool Score::operator==(const Score& s) const {
     else
         return false;
 }
+
+
+//===================================================================
+// Comparison operators
+//===================================================================
+
+bool operator== (const BCode &a, const BCode &b) {
+	return a.toString() == b.toString();
+}
+
+bool operator!= (const BCode &a, const BCode &b) {
+	return !(a==b);
+}
+
+bool operator< (const BCode &a, const BCode &b) {
+	return a.toString() < b.toString();
+}
+
+bool operator<= (const BCode &a, const BCode &b) {
+	return (a<b) || (a==b);
+}
+
+bool operator> (const BCode &a, const BCode &b) {
+	return !(a<=b);
+}
+
+bool operator>= (const BCode &a, const BCode &b) {
+	return !(a<b);
+}
