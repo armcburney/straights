@@ -19,11 +19,11 @@ private:
 Score operator+(const Score &a, const Score &b);
 Score operator-(const Score &a, const Score &b);
 
-bool operator== (const BCode &a, const BCode &b);
-bool operator!= (const BCode &a, const BCode &b);
-bool operator< (const BCode &a, const BCode &b);
-bool operator<= (const BCode &a, const BCode &b);
-bool operator> (const BCode &a, const BCode &b);
-bool operator>= (const BCode &a, const BCode &b);
+bool operator== (const Score &a, const Score &b);
+bool operator!= (const Score &a, const Score &b);
+bool operator< (const Score &a, const Score &b);
+bool operator<= (const Score &a, const Score &b);
+bool operator> (const Score &a, const Score &b);
+bool operator>= (const Score &a, const Score &b);
 
 #endif

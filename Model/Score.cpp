@@ -38,26 +38,26 @@ Score operator-(const Score &a, const Score &b) {
     return Score(a.toInt() - b.toInt());
 }
 
-bool operator== (const BCode &a, const BCode &b) {
-	return a.toString() == b.toString();
+bool operator== (const Score &a, const Score &b) {
+	return a.toInt() == b.toInt();
 }
 
-bool operator!= (const BCode &a, const BCode &b) {
+bool operator!= (const Score &a, const Score &b) {
 	return !(a==b);
 }
 
-bool operator< (const BCode &a, const BCode &b) {
-	return a.toString() < b.toString();
+bool operator< (const Score &a, const Score &b) {
+	return a.toInt() < b.toInt();
 }
 
-bool operator<= (const BCode &a, const BCode &b) {
+bool operator<= (const Score &a, const Score &b) {
 	return (a<b) || (a==b);
 }
 
-bool operator> (const BCode &a, const BCode &b) {
+bool operator> (const Score &a, const Score &b) {
 	return !(a<=b);
 }
 
-bool operator>= (const BCode &a, const BCode &b) {
+bool operator>= (const Score &a, const Score &b) {
 	return !(a<b);
 }
