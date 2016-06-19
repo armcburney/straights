@@ -27,6 +27,8 @@ public:
     };
 
     TurnResult(Status, Type, HandItr = HandItr(), std::shared_ptr<Player> = nullptr);
+    TurnResult(const TurnResult &);
+    TurnResult& operator=(TurnResult);
 
     Type getType() const;
     HandItr getCard() const;

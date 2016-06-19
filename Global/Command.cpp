@@ -28,7 +28,7 @@ istream &operator>>(istream &in, Command &c){
 		c.type = Command::RAGEQUIT;
 	}
 
-	assert(!in.fail() && !ss.fail() && c.type != BAD_COMMAND);
+	assert(!in.fail() && !ss.fail() && c.type != Command::NO_COMMAND);
 
 	return in;
 }

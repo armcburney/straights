@@ -8,6 +8,16 @@ TurnResult::TurnResult(Status status, Type type, HandItr card, shared_ptr<Player
       card(card),
       currentPlayer(currentPlayer) {};
 
+TurnResult::TurnResult(const TurnResult &) = default;
+
+TurnResult& TurnResult::operator=(TurnResult r) {;
+    swap(status, r.status);
+    swap(type, r.type);
+    swap(card, r.card);
+    swap(currentPlayer, r.currentPlayer);
+    return *this;
+}
+
 
 TurnResult::Type TurnResult::getType() const {
     return type;
