@@ -31,7 +31,6 @@ TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input)
         hand.erase(card);
     }
 
-    turnResult.setCurrentPlayer(shared_ptr<Player>(this));
     return turnResult;
 }
 

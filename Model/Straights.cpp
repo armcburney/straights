@@ -86,6 +86,7 @@ TurnResult Straights::next (const Command &input) {
             currentPlayer = players.begin();
     }
 
+    turnResult.setCurrentPlayer(shared_ptr<Player>(&*currentPlayer));
     return turnResult;
 }
 
