@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include "ComputerPlayer.h"
-#include "AutomatedPlayerStrategy.h"
+#include "../Strategy/AutomatedPlayerStrategy.h"
 
 using namespace std;
 

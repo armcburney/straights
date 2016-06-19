@@ -3,9 +3,9 @@
 #ifndef MVC_CONTROLLER_H
 #define MVC_CONTROLLER_H
 
-#include "Straights.h"
-#include "View.h"
-#include "TurnResult.h"
+#include "../Model/Straights.h"
+#include "../View/View.h"
+#include "../Global/TurnResult.h"
 
 #include <memory>
 

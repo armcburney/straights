@@ -1,8 +1,8 @@
 #ifndef _TURNRESULT_
 #define _TURNRESULT_
 
-#include "Player.h"
-#include "Card.h"
+#include "../Model/Player/Player.h"
+#include "../Model/Card.h"
 
 #include <istream>
 #include <memory>

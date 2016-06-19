@@ -7,7 +7,7 @@
 
 #include "Card.h"
 #include "Deck.h"
-#include "Player.h"
+#include "Player/Player.h"
 
 typedef std::vector<Player>::iterator PlayerItr;
 

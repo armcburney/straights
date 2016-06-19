@@ -1,7 +1,8 @@
 // view.cpp
 
-#include "View.h"
 #include <iostream>
+
+#include "View.h"
 
 using namespace std;
 

@@ -4,11 +4,11 @@
 #include <memory>
 
 // Model
-#include "Straights.h"
+#include "Model/Straights.h"
 // View
-#include "View.h"
+#include "View/View.h"
 // Controller
-#include "Controller.h"
+#include "Controller/Controller.h"
 
 using namespace std;
 

@@ -3,8 +3,9 @@
 #ifndef MVC_VIEW_H
 #define MVC_VIEW_H
 
-#include "Command.h"
 #include <iostream>
+
+#include "../Global/Command.h"
 
 class View {
 public:

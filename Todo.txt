@@ -11,3 +11,4 @@ A - Deal the cards
   - Move into folders & update Makefile
   - Comment all the code
   - Precondition and code
+A - get it to compile

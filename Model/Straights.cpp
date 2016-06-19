@@ -4,9 +4,9 @@
 #include <vector>
 
 #include "Deck.h"
-#include "Player.h"
-#include "ComputerPlayer.h"
-#include "HumanPlayer.h"
+#include "Player/Player.h"
+#include "Player/ComputerPlayer.h"
+#include "Player/HumanPlayer.h"
 #include "Straights.h"
 
 using namespace std;

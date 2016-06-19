@@ -1,7 +1,9 @@
-#include "Card.h"
 #include <string>
 #include <cassert>
 #include <iostream>
+
+#include "Card.h"
+
 using namespace std;
 
 Card::Card (Suit s, Rank r) {

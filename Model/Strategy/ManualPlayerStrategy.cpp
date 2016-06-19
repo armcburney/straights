@@ -1,4 +1,4 @@
-#include "Straights.h"
+#include "../Straights.h"
 #include "ManualPlayerStrategy.h"
 
 #include <algorithm>

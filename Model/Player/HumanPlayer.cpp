@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include "HumanPlayer.h"
-#include "ManualPlayerStrategy.h"
+#include "../Strategy/ManualPlayerStrategy.h"
 
 using namespace std;
 

@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Player.h"
+
+#include "Player/Player.h"
 #include "Score.h"
 
 using namespace std;

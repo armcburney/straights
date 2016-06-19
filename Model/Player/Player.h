@@ -6,15 +6,15 @@
 #include <vector>
 #include <list>
 
-#include "Card.h"
-#include "Score.h"
-#include "PlayerStrategy.h"
-#include "TurnResult.h"
+#include "../Card.h"
+#include "../Score.h"
+#include "../Strategy/PlayerStrategy.h"
+#include "../../Global/TurnResult.h"
 
 class Player {
 public:
     Player(int, std::shared_ptr<PlayerStrategy> strategy);
-    int getID() const;                          // Returns id
+    int getID() const;                           // Returns id
     Score getScore() const;                      // Prints players score
     TurnResult playStrategy(std::vector<CardPtr>&, const Command&);
     bool allCardsPlayed() const;

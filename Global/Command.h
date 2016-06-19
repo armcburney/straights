@@ -1,7 +1,7 @@
 #ifndef _COMMAND_
 #define _COMMAND_
 
-#include "Card.h"
+#include "../Model/Card.h"
 #include <istream>
 
 struct Command{

@@ -1,4 +1,4 @@
-#include "Straights.h"
+#include "../Straights.h"
 #include "AutomatedPlayerStrategy.h"
 
 using namespace std;

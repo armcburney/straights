@@ -1,13 +1,13 @@
 #ifndef _PLAYERSTRATEGY_
 #define _PLAYERSTRATEGY_
 
-#include "TurnResult.h"
-#include "Card.h"
-#include "Command.h"
-
 #include <istream>
 #include <list>
 #include <vector>
+
+#include "../../Global/TurnResult.h"
+#include "../../Global/Command.h"
+#include "../Card.h"
 
 class PlayerStrategy {
 public:
