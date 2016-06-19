@@ -9,6 +9,8 @@ Score::Score(int n) {
     score = n;
 }
 
+Score& Score::operator=(const Score&) = default;
+
 int Score::toInt() const {
     return score;
 }

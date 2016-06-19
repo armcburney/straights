@@ -40,7 +40,7 @@ void Player::clearRound() {
     discardPile.clear();
 
     // Add this rounds score to the overall score
-    score += roundScore;
+    score = score + roundScore;
     lastRoundScore = roundScore;
     roundScore = 0;
 }
