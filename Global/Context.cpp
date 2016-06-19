@@ -23,23 +23,23 @@ std::ostream &operator<<(std::ostream &out, const TurnContext& c) {
     map<Card::Suit, string> suits = {{Card::CLUB, "Clubs"}, {Card::DIAMOND, "Diamonds"}, {Card::HEART, "Hearts"}, {Card::SPADE, "Spades"}};
     for (auto suit : suits) {
         out << suit.second << ":";
-        for (CardPtr c : c.gamePile)
-            if (c->getSuit() == suit.first)
-                out << " " << ranks[c->getRank()];
+        for (CardPtr card : c.gamePile)
+            if (card->getSuit() == suit.first)
+                out << " " << ranks[card->getRank()];
     }
     out << endl;
 
     // Print the current player's hand
     out << "Your hand:";
-    for (CardPtr c : c.hand)
-        out << " " << *c;
+    for (CardPtr card : c.hand)
+        out << " " << *card;
     out << endl;
 
     // Print the player's legal plays
     vector<HandItr> legalPlays = Straights::getLegalPlays(c.hand, c.gamePile);
     out << "Legal plays:";
-    for (HandItr c : legalPlays)
-        out << " " << **c;
+    for (HandItr card : legalPlays)
+        out << " " << **card;
     out << endl;
 
     return out;
