@@ -77,6 +77,10 @@ TurnResult Straights::next (const Command &input) {
     return turnResult;
 }
 
+void automateCurrentPlayer (Player p) {
+    p.automate();
+}
+
 void Straights::clearRound() {
     // Clear the table
     gamePile.clear();

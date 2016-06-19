@@ -13,6 +13,7 @@ public:
 
     template<typename T>
     void printObject(T);
+    void initGame();
 
     Command getCommand() const;
 

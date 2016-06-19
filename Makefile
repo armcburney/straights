@@ -5,5 +5,5 @@ EXEC = a.out
 
 ${EXEC} : ${OBJECTS}
 	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
-main.o : main.cpp Card.h Command.h Deck.h Player.h ComputerPlayer.h HumanPlayer.h AutomatedPlayerStrategy.h ManualPlayerStrategy.h PlayerStrategy.h Score.h Straights.h
+main.o : main.cpp Model/Card.h Global/Command.h Model/Deck.h Model/Player/Player.h Model/Player/ComputerPlayer.h Model/Player/HumanPlayer.h Model/Strategy/AutomatedPlayerStrategy.h Model/Strategy/ManualPlayerStrategy.h Model/Strategy/PlayerStrategy.h Model/Score.h Model/Straights.h
 	${CXX} ${CXXFLAGS} -c main.cpp

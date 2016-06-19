@@ -8,6 +8,8 @@
 #include "Card.h"
 #include "Deck.h"
 #include "Player/Player.h"
+#include "../Global/Command.h"
+#include "../Global/TurnResult.h"
 
 typedef std::vector<Player>::iterator PlayerItr;
 

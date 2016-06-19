@@ -9,13 +9,13 @@ using namespace std;
 Deck::Deck () {
     for (int i = CLUB; i < SUIT_COUNT; i++) {
         for (int j = ACE; j < RANK_COUNT; j++) {
-            Card* c = new Card(static_cast<Suit>(i), static_cast<Rank>(j));
+            CardPtr c = shared_ptr<Card>(new Card(static_cast<Suit>(i), static_cast<Rank>(j)));
             cards_.push_back(c);
         }
     }
 }
 
-vector<Card *> Deck::cards() {
+vector<CardPtr> Deck::cards() {
     return cards_;
 }
 
@@ -28,7 +28,7 @@ void Deck::shuffle() {
     while ( n > 1 ) {
         int k = (int) (rng() % n);
         --n;
-        Card *c = cards_[n];
+        CardPtr c = cards_[n];
         cards_[n] = cards_[k];
         cards_[k] = c;
     }

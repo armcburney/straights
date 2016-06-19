@@ -19,7 +19,7 @@ public:
     TurnResult playStrategy(std::vector<CardPtr>&, const Command&);
     bool allCardsPlayed() const;
     void clearRound();
-    void setHand(list<CardPtr>);
+    void setHand(std::list<CardPtr>);
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score

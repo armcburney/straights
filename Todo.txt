@@ -6,9 +6,8 @@ M - Create TurnContext object & ostream
 M - Create RoundContext object & ostream
   - Lots of commenting & precondition stuff
 A - Deal the cards
-  - Add ragequit function
+A - Add ragequit function
   - Update UML
-  - Move into folders & update Makefile
   - Comment all the code
   - Precondition and code
 A - get it to compile
