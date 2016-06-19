@@ -12,3 +12,15 @@ Score::Score(int n) {
 int Score::toInt() {
     return score;
 }
+
+ostream & operator<<(ostream &sout, const Score & s) {
+    sout << s.score << endl;
+    return sout;
+}
+
+bool Score::operator==(const Score& s) const {
+    if (score == s.score)
+        return true;
+    else
+        return false;
+}
