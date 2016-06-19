@@ -37,7 +37,7 @@ public:
     void setStatus(Status);
 
     std::shared_ptr<Player> getCurrentPlayer() const;
-    void setCurrentPlayer(std::shared_ptr<Player>) const;
+    void setCurrentPlayer(std::shared_ptr<Player>);
 
 private:
     Status status;

@@ -1,4 +1,5 @@
 #include "TurnResult.h"
+#include "../Model/Player/Player.h"
 
 using namespace std;
 
@@ -41,7 +42,7 @@ shared_ptr<Player> TurnResult::getCurrentPlayer() const {
     return currentPlayer;
 }
 
-void TurnResult::setCurrentPlayer(shared_ptr<Player> player) const {
+void TurnResult::setCurrentPlayer(shared_ptr<Player> player) {
     currentPlayer = player;
 }
 

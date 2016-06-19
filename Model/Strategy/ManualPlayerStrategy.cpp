@@ -23,7 +23,7 @@ TurnResult ManualPlayerStrategy::play(
             auto legal_play_to_make = find_if(
                 legalPlays.begin(),
                 legalPlays.end(),
-                [input] (HandItr it) {
+                [&input] (HandItr it) {
                     return **it == input.card;
                 }
             );
@@ -43,8 +43,8 @@ TurnResult ManualPlayerStrategy::play(
             HandItr card_to_discard = find_if(
                 hand.begin(),
                 hand.end(),
-                [input] (HandItr it) {
-                    return **it == input.card;
+                [&input] (const CardPtr &c) {
+                    return *c == input.card;
                 }
             );
             return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::DISCARD, card_to_discard);

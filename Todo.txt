@@ -1,5 +1,4 @@
-A - Score overloaded functions
-M - Output for Deck
+A - Output for Deck
 A - Add ragequit function
 A - get it to compile
   - Comment all the code
