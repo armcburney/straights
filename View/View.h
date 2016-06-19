@@ -12,10 +12,11 @@
 class View {
 public:
     View(std::istream &inputStream, std::ostream &outputStream);
-    template<typename T>
-    void printObject(T);
+
     std::vector<char> getPlayers();
-    void initGame();
+
+    template<typename T>
+    void printObject(T object) { outputStream << object; };
 
     Command getCommand() const;
 

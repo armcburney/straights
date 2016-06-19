@@ -1,6 +1,6 @@
-// controller.cpp
-
 #include "Controller.h"
+#include "../Global/Context.h"
+#include "../Model/Deck.h"
 
 using namespace std;
 
@@ -8,7 +8,7 @@ Controller::Controller(Straights &model, View &view)
     : model(model), view(view) {}
 
 void Controller::startGame() {
-    view.printObject(model);
+    view.printObject<Straights>(model);
 
     vector<char> players = view.getPlayers();
 
@@ -23,14 +23,14 @@ void Controller::startGame() {
         TurnResult turnResult = model.next();
 
         if (turnResult.getType() == TurnResult::REQUIRE_HUMAN_INPUT) {
-            view.printObject(model.getTurnContext());
+            view.printObject<TurnContext>(model.getTurnContext());
 
             bool validInputProvided = false;
             while (!validInputProvided) {
                 Command input = view.getCommand();
                 switch (input.type) {
                     case Command::DECK: {
-                        view.printObject(model.getDeck());
+                        view.printObject<Deck>(model.getDeck());
                         break;
                     }
                     case Command::QUIT: {
@@ -45,7 +45,7 @@ void Controller::startGame() {
                             turnResult = model.next(input);
                             validInputProvided = true;
                         } catch (const invalid_argument &e) {
-                            view.printObject(e.what());
+                            view.printObject<string>(e.what());
                         }
                         break;
                     }
@@ -53,13 +53,13 @@ void Controller::startGame() {
             }
         }
 
-        view.printObject(turnResult);
+        view.printObject<TurnResult>(turnResult);
 
         if (turnResult.getStatus() == TurnResult::ROUND_COMPLETE ||
             turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
 
-            view.printObject(model.getRoundContext());
-            view.printObject(model);
+            view.printObject<RoundContext>(model.getRoundContext());
+            view.printObject<Straights>(model);
         }
 
         if (turnResult.getStatus() == TurnResult::GAME_COMPLETE)

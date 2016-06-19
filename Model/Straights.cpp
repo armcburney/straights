@@ -12,6 +12,8 @@
 
 using namespace std;
 
+const Score Straights::endingScoreThreshold = Score(80);
+
 Straights::Straights() {
     currentPlayer = players.begin();
 }

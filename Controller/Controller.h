@@ -8,6 +8,7 @@
 #include "../Global/TurnResult.h"
 
 #include <memory>
+#include <string>
 
 class Controller {
 public:

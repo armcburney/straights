@@ -12,11 +12,6 @@ View::View(istream &inputStream, ostream &outputStream)
     : inputStream(inputStream),
       outputStream(outputStream) {}
 
-template<typename T>
-void View::printObject(T object) {
-    outputStream << object;
-}
-
 vector<char> View::getPlayers() {
     vector<char> players;
     char player;
