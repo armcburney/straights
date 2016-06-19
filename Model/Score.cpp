@@ -9,7 +9,7 @@ Score::Score(int n) {
     score = n;
 }
 
-int Score::toInt() {
+int Score::toInt() const {
     return score;
 }
 
@@ -29,6 +29,14 @@ bool Score::operator==(const Score& s) const {
 //===================================================================
 // Comparison operators
 //===================================================================
+
+Score operator+(const Score &a, const Score &b) {
+    return Score(a.toInt() + b.toInt());
+}
+
+Score operator-(const Score &a, const Score &b) {
+    return Score(a.toInt() - b.toInt());
+}
 
 bool operator== (const BCode &a, const BCode &b) {
 	return a.toString() == b.toString();
