@@ -16,7 +16,6 @@ void Controller::startGame() {
         else
             model.addHumanPlayer(i+1);
     }
-    cout << "test?" << endl;
 
     model.deal();
 
