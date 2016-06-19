@@ -1,11 +1,15 @@
 #ifndef _TURNRESULT_
 #define _TURNRESULT_
 
-#include "../Model/Player/Player.h"
 #include "../Model/Card.h"
 
 #include <istream>
 #include <memory>
+#include <list>
+
+typedef std::list<CardPtr>::iterator HandItr;
+
+class Player;
 
 class TurnResult {
 public:
