@@ -22,6 +22,8 @@ vector<char> View::getPlayers() {
         inputStream >> player;
         players.push_back(player);
     }
+    inputStream.ignore();
+
     return players;
 }
 

@@ -14,14 +14,14 @@
 using namespace std;
 
 int main (int argc, char *argv[]) {
-    assert(argc <= 1);  // assert less than equal since optional command line parameter
+    assert(argc <= 2);  // assert less than equal since optional command line parameter
 
     Straights model;
     View view(cin, cout);
     Controller controller(model, view);
 
-    if (argc == 1)
-        model.setShuffleSeed(atoi(argv[0]));
+    if (argc == 2)
+        model.setShuffleSeed(atoi(argv[1]));
 
     controller.startGame();
 

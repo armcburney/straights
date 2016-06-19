@@ -4,9 +4,17 @@
 
 using namespace std;
 
-istream &operator>>(istream &in, Command &c){
-    in.ignore();
+Command::Command() : type(NO_COMMAND), card(Card::SPADE, Card::ACE) {}
 
+Command::Command(const Command&) = default;
+
+Command& Command::operator=(Command c) {
+    swap(type, c.type);
+    swap(card, c.card);
+    return *this;
+}
+
+istream &operator>>(istream &in, Command &c){
 	c.type = Command::NO_COMMAND;
 
 	string str;
@@ -29,8 +37,6 @@ istream &operator>>(istream &in, Command &c){
 	} else if (cmd == "ragequit") {
 		c.type = Command::RAGEQUIT;
 	}
-
-	assert(!in.fail() && !ss.fail() && c.type != Command::NO_COMMAND);
 
 	return in;
 }

@@ -10,7 +10,9 @@ struct Command{
 	Type type;
 	Card card;
 
-	Command() : type(NO_COMMAND), card(Card::SPADE, Card::ACE) {}
+	Command();
+    Command(const Command&);
+    Command& operator=(Command);
 };
 
 std::istream &operator>>(std::istream &, Command &);

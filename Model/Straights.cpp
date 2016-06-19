@@ -14,6 +14,11 @@ using namespace std;
 
 const Score Straights::endingScoreThreshold = Score(80);
 
+// For using shared_ptr on statically allocated objects
+struct null_deleter {
+    void operator()(void const *) const {}
+};
+
 Straights::Straights() {
     seed_ = 0;
     currentPlayer = players.begin();
@@ -95,7 +100,7 @@ TurnResult Straights::next (const Command &input) {
             currentPlayer = players.begin();
     }
 
-    turnResult.setCurrentPlayer(shared_ptr<Player>(&*currentPlayer));
+    turnResult.setCurrentPlayer(shared_ptr<Player>(&*currentPlayer, null_deleter()));
     return turnResult;
 }
 
