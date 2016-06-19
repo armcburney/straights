@@ -19,6 +19,7 @@ public:
     void deal();
     TurnResult next(const Command &input = Command());
     TurnContext getTurnContext() const;
+    RoundContext getRoundContext() const;
     Deck getDeck() const;
     void automateCurrentPlayer();
 

@@ -46,9 +46,12 @@ void Controller::startGame() {
 
         view.printObject(turnResult);
 
-        if (turnResult.getStatus() == TurnResult::GAME_COMPLETE ||
-            turnResult.getStatus() == TurnResult::ROUND_COMPLETE)
+        if (turnResult.getStatus() == TurnResult::ROUND_COMPLETE ||
+            turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
+
+            view.printObject(model.getRoundContext());
             view.printObject(model);
+        }
 
         if (turnResult.getStatus() == TurnResult::GAME_COMPLETE)
             return;
