@@ -31,7 +31,7 @@ TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input)
         hand.erase(card);
     }
 
-    turnResult.setCurrentPlayer(this);
+    turnResult.setCurrentPlayer(shared_ptr<Player>(this));
     return turnResult;
 }
 
@@ -61,6 +61,10 @@ bool Player::allCardsPlayed() const {
     return hand.empty();
 }
 
+void Player::setStrategy(shared_ptr<PlayerStrategy> newStrategy) {
+    strategy = newStrategy;
+}
+
 ostream &operator<<(ostream &out, const Player &p) {
     out << "Player " << p.getID() << "'s discards:";
     for (CardPtr c : p.discardPile)
@@ -69,4 +73,6 @@ ostream &operator<<(ostream &out, const Player &p) {
     out << "Player " << p.getID() << "'s score: ";
     out << p.getScore() << " + " << p.lastRoundScore << " = ";
     out << p.getScore() + p.lastRoundScore;
+
+    return out;
 }

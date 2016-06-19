@@ -7,7 +7,6 @@ class Score {
 public:
     friend std::ostream& operator<< (std::ostream&, const Score&);
     Score& operator= ( const Score& );
-    bool operator== ( const Score& ) const;
 
     Score(int);
     int toInt() const;

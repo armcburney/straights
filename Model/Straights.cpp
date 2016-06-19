@@ -8,6 +8,7 @@
 #include "Player/ComputerPlayer.h"
 #include "Player/HumanPlayer.h"
 #include "Straights.h"
+#include "Strategy/AutomatedPlayerStrategy.h"
 
 using namespace std;
 
@@ -82,8 +83,9 @@ TurnResult Straights::next (const Command &input) {
     return turnResult;
 }
 
-void automateCurrentPlayer (Player) {
-    //TODO p.automate();
+void Straights::automateCurrentPlayer() {
+    auto newStrategy = shared_ptr<PlayerStrategy>(new AutomatedPlayerStrategy);
+    currentPlayer->setStrategy(newStrategy);
 }
 
 void Straights::clearRound() {

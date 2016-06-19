@@ -20,13 +20,6 @@ ostream & operator<<(ostream &sout, const Score & s) {
     return sout;
 }
 
-bool Score::operator==(const Score& s) const {
-    if (score == s.score)
-        return true;
-    else
-        return false;
-}
-
 
 //===================================================================
 // Comparison operators

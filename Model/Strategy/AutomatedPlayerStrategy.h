@@ -4,7 +4,7 @@
 #include <istream>
 #include "PlayerStrategy.h"
 
-class AutomatedPlayerStrategy : PlayerStrategy {
+class AutomatedPlayerStrategy : public PlayerStrategy {
     TurnResult play(
         std::list<CardPtr> &hand,
         const std::vector<CardPtr> &gamePile,

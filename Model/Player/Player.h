@@ -23,6 +23,7 @@ public:
     void clearRound();
     void setHand(std::list<CardPtr>);
     std::list<CardPtr> getHand() const;
+    void setStrategy(std::shared_ptr<PlayerStrategy>);
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score
