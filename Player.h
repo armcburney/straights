@@ -2,25 +2,29 @@
 #define _PLAYER_
 
 #include <istream>
+#include <memory>
 #include <vector>
 #include <list>
 
 #include "Card.h"
 #include "Score.h"
 #include "PlayerStrategy.h"
+#include "TurnResult.h"
 
 class Player {
 public:
-    Player(int);                        // Constructor
-    int getID();                       // Returns id
-    void getScore();                    // Prints players score
-    void playStrategy();                // Plays the current turn
+    Player(int, std::shared_ptr<PlayerStrategy> strategy);
+    int getID() const;                          // Returns id
+    Score getScore() const;                      // Prints players score
+    TurnResult playStrategy(std::vector<CardPtr>&, const Command&);
+    bool allCardsPlayed() const;
+    void clearRound();
 private:
-    int id;                             // Player id -> integer 1-4, (ie. Player 1)
-    Score score;                        // Current player score
-    PlayerStrategy * strategy;          // Player strategy (human or computer -> inherited in child classes)
-    std::list<CardPtr> hand;            // Player hand
-    std::vector<CardPtr> discardPile;   // Player discard pile
+    int id;                               // Player id -> integer 1-4, (ie. Player 1)
+    Score score;                          // Current player score
+    std::shared_ptr<PlayerStrategy> strategy;
+    std::list<CardPtr> hand;              // Player hand
+    std::vector<CardPtr> discardPile;     // Player discard pile
 };
 
 // Convenient shorthand for card hand iterator

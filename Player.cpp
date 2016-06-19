@@ -1,16 +1,47 @@
-#include <iostream>
 #include "Player.h"
+#include <iostream>
 
 using namespace std;
 
-Player::Player (int id) : id(id), score() {}
+Player::Player (int id, shared_ptr<PlayerStrategy> strategy)
+    : id(id),
+      score(0),
+      strategy(strategy) {}
 
-void Player::getScore () {
-    cout << "Score is" << score.toInt() << endl;
+Score Player::getScore () const {
+    return score;
 }
 
-void Player::playStrategy () {}
+TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input) {
+    TurnResult turnResult = strategy->play(hand, gamePile, input);
 
-int Player::getID () {
+    if (turnResult.getType() == TurnResult::PLAY) {
+        // A card was played, add it to the gamePile and remove it
+        // from the player's hand
+        HandItr card = turnResult.getCard();
+        gamePile.push_back(*card);
+        hand.erase(card);
+    } else if (turnResult.getType() == TurnResult::DISCARD) {
+        // A card was discarded, add it to the discardPile and remove it
+        // from the player's hand
+        HandItr card = turnResult.getCard();
+        discardPile.push_back(*card);
+        hand.erase(card);
+    }
+
+    turnResult.setCurrentPlayer(this);
+    return turnResult;
+}
+
+void Player::clearRound() {
+    hand.clear();
+    discardPile.clear();
+}
+
+int Player::getID () const {
     return id;
+}
+
+bool Player::allCardsPlayed() const {
+    return hand.empty();
 }

@@ -1,14 +1,12 @@
 #ifndef _HUMANPLAYER_
 #define _HUMANPLAYER_
 
-#include <istream>
 #include "Player.h"
+#include <istream>
 
 class HumanPlayer : public Player {
 public:
     HumanPlayer(int);
-private:
-// By default will have manual strategy
 };
 
 #endif

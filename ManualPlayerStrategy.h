@@ -5,7 +5,7 @@
 #include "PlayerStrategy.h"
 
 class ManualPlayerStrategy : PlayerStrategy {
-    StrategyDecision play(
+    TurnResult play(
         std::list<CardPtr> &hand,
         const std::vector<CardPtr> &gamePile,
         const Command &input) final;

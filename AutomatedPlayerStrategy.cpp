@@ -3,7 +3,7 @@
 
 using namespace std;
 
-StrategyDecision AutomatedPlayerStrategy::play(
+TurnResult AutomatedPlayerStrategy::play(
     list<CardPtr> &hand,
     const vector<CardPtr> &gamePile,
     const Command&) {
@@ -12,9 +12,9 @@ StrategyDecision AutomatedPlayerStrategy::play(
 
     if (!legalPlays.empty()) {
         // There are legal moves, so make the first one
-        return StrategyDecision(StrategyDecision::PLAY, legalPlays[0]);
+        return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::PLAY, legalPlays[0]);
     } else {
         // No moves, discard the first card
-        return StrategyDecision(StrategyDecision::DISCARD, hand.begin());
+        return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::DISCARD, hand.begin());
     }
 }

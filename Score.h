@@ -5,7 +5,7 @@
 
 class Score {
 public:
-    Score();
+    Score(int);
     int toInt();
 private:
     int score;

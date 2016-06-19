@@ -1,7 +1,7 @@
 #ifndef _PLAYERSTRATEGY_
 #define _PLAYERSTRATEGY_
 
-#include "StrategyDecision.h"
+#include "TurnResult.h"
 #include "Card.h"
 #include "Command.h"
 
@@ -11,7 +11,7 @@
 
 class PlayerStrategy {
 public:
-    virtual StrategyDecision play(
+    virtual TurnResult play(
         std::list<CardPtr> &hand,
         const std::vector<CardPtr> &gamePile,
         const Command &input) = 0;

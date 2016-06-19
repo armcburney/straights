@@ -1,11 +1,10 @@
 #include <string>
 #include <iostream>
 
-#include "Player.h"
 #include "HumanPlayer.h"
+#include "ManualPlayerStrategy.h"
 
 using namespace std;
 
-HumanPlayer::HumanPlayer(int id) : Player(id) {
-    // cout << "human player" << endl;
-}
+HumanPlayer::HumanPlayer(int id)
+    : Player(id, shared_ptr<PlayerStrategy>(new ManualPlayerStrategy)) {}

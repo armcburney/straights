@@ -6,7 +6,7 @@
 
 using namespace std;
 
-StrategyDecision ManualPlayerStrategy::play(
+TurnResult ManualPlayerStrategy::play(
     list<CardPtr> &hand,
     const vector<CardPtr> &gamePile,
     const Command &input) {
@@ -14,7 +14,7 @@ StrategyDecision ManualPlayerStrategy::play(
     if (input.type == Command::NO_COMMAND) {
         // The manual strategy must get input from the user
         // to know what card to play / discard
-        return StrategyDecision(StrategyDecision::REQUIRE_HUMAN_INPUT);
+        return TurnResult(TurnResult::TURN_IN_PROGRESS, TurnResult::REQUIRE_HUMAN_INPUT);
     } else {
         vector<HandItr> legalPlays = Straights::getLegalPlays(hand, gamePile);
 
@@ -32,7 +32,7 @@ StrategyDecision ManualPlayerStrategy::play(
                 throw invalid_argument("This is not a legal play.");
             }
             HandItr card_to_play = *legal_play_to_make;
-            return StrategyDecision(StrategyDecision::PLAY, card_to_play);
+            return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::PLAY, card_to_play);
         } else if (input.type == Command::DISCARD) {
             // User wants to discard a card
             if (!legalPlays.empty()) {
@@ -47,7 +47,7 @@ StrategyDecision ManualPlayerStrategy::play(
                     return **it == input.card;
                 }
             );
-            return StrategyDecision(StrategyDecision::DISCARD, card_to_discard);
+            return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::DISCARD, card_to_discard);
         } else {
             throw logic_error("The strategy should only ever deal with commands of NO_COMMAND, PLAY, or DISCARD");
         }

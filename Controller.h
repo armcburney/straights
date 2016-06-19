@@ -5,6 +5,7 @@
 
 #include "Straights.h"
 #include "View.h"
+#include "TurnResult.h"
 
 #include <memory>
 

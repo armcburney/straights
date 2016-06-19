@@ -1,11 +1,10 @@
 #include <string>
 #include <iostream>
 
-#include "Player.h"
 #include "ComputerPlayer.h"
+#include "AutomatedPlayerStrategy.h"
 
 using namespace std;
 
-ComputerPlayer::ComputerPlayer(int id) : Player(id) {
-    cout << "computer player" << endl;
-}
+ComputerPlayer::ComputerPlayer(int id)
+    : Player(id, shared_ptr<PlayerStrategy>(new AutomatedPlayerStrategy)) {}

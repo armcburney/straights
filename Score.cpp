@@ -4,8 +4,8 @@
 
 using namespace std;
 
-Score::Score() {
-    score = 0;
+Score::Score(int n) {
+    score = n;
 }
 
 int Score::toInt() {

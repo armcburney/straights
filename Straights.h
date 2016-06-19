@@ -9,23 +9,30 @@
 #include "Deck.h"
 #include "Player.h"
 
+typedef std::vector<Player>::iterator PlayerItr;
+
 class Straights {
 public:
     Straights();
     void addHumanPlayer(int);
     void addComputerPlayer(int);
     void deal();
-    void next(bool);
+    TurnResult next(const Command &input = Command());
+    TurnContext getTurnContext() const;
 
     static std::vector<HandItr> getLegalPlays(
-        const std::list<CardPtr> &hand,
+        std::list<CardPtr> hand,
         const std::vector<CardPtr> &gamePile);
 private:
+    void clearRound();
+
     Deck deck;
     std::vector<CardPtr> gamePile;
     std::vector<Player> players;
-    int currentPlayer; // id
+    PlayerItr currentPlayer;
     int currentRound;
+
+    static const Score endingScore;
 };
 
 #endif
