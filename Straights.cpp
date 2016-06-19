@@ -94,6 +94,10 @@ void Straights::clearRound() {
     }
 }
 
+Deck Straights::getDeck() const {
+    return deck;
+}
+
 vector<HandItr> Straights::getLegalPlays(list<CardPtr> hand, const vector<CardPtr> &gamePile) {
     vector<HandItr> legalPlays;
     const Card &topCard = *gamePile.back();

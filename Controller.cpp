@@ -12,10 +12,36 @@ void Controller::startGame() {
 
     while (true) {
         TurnResult turnResult = model.next();
+
         if (turnResult.getType() == TurnResult::REQUIRE_HUMAN_INPUT) {
             view.printObject(model.getTurnContext);
-            // Insert for loop with try-catch n such
-            turnResult = model.next(view.getCommand());
+
+            bool validInputProvided = false;
+            while (!validInputProvided) {
+                Command input = view.getCommand();
+                switch (input.type) {
+                    case Command::DECK: {
+                        view.printObject(model.getDeck());
+                        break;
+                    }
+                    case Command::QUIT: {
+                        return;
+                    }
+                    case Command::RAGEQUIT: {
+                        model.automateCurrentPlayer();
+                        break;
+                    }
+                    default: {
+                        try {
+                            turnResult = model.next(input);
+                            validInputProvided = true;
+                        } catch (const invalid_argument &e) {
+                            view.printObject(e.what());
+                        }
+                        break;
+                    }
+                }
+            }
         }
 
         view.printObject(turnResult);
@@ -25,6 +51,6 @@ void Controller::startGame() {
             view.printObject(model);
 
         if (turnResult.getStatus() == TurnResult::GAME_COMPLETE)
-            break;
+            return;
     }
 }

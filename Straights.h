@@ -19,6 +19,8 @@ public:
     void deal();
     TurnResult next(const Command &input = Command());
     TurnContext getTurnContext() const;
+    Deck getDeck() const;
+    void automateCurrentPlayer();
 
     static std::vector<HandItr> getLegalPlays(
         std::list<CardPtr> hand,
