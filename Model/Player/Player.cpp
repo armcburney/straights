@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -8,7 +9,9 @@ Player::Player (int id, shared_ptr<PlayerStrategy> strategy)
       score(0),
       roundScore(0),
       lastRoundScore(0),
-      strategy(strategy) {}
+      strategy(strategy),
+      hand(),
+      discardPile() {}
 
 Score Player::getScore () const {
     return score;
@@ -48,7 +51,7 @@ void Player::setHand(list<CardPtr> l) {
     hand = l;
 }
 
-list<CardPtr> Player::getHand() const {
+list<CardPtr> Player::getHand() {
     return hand;
 }
 
@@ -62,6 +65,14 @@ bool Player::allCardsPlayed() const {
 
 void Player::setStrategy(shared_ptr<PlayerStrategy> newStrategy) {
     strategy = newStrategy;
+}
+
+bool Player::hasCard(Card card) const {
+    return any_of(
+        hand.begin(),
+        hand.end(),
+        [card] (CardPtr c) { return *c == card; }
+    );
 }
 
 ostream &operator<<(ostream &out, const Player &p) {

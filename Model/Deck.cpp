@@ -36,10 +36,11 @@ void Deck::shuffle(int seed) {
 }
 
 ostream & operator<<(std::ostream &out, const Deck &d) {
-    for (int i = 0; i < 4; i ++) {
-        for (int j = 0; j < 12; j ++) {
-            out << d.cards()[j + 13*i] << " ";
-        } out << d.cards()[13*i-1] << endl;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 12; j++) {
+            out << *(d.cards()[j + 13*i]) << " ";
+        }
+        out << *(d.cards()[13*(i+1)-1]) << endl;
     }
     return out;
 }

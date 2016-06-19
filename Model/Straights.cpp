@@ -37,9 +37,18 @@ void Straights::deal () {
 
     // partition the vector
     for (int i = 0; i < 4; i++) {
-        list<CardPtr> list(deck.cards().begin()+(i*13), deck.cards().begin()+((i+1)*13));
+        auto cards = deck.cards();
+        list<CardPtr> list(cards.begin()+(i*13), cards.begin()+((i+1)*13));
         players[i].setHand(list);
     }
+
+    currentPlayer = find_if(
+        players.begin(),
+        players.end(),
+        [] (const Player &p) {
+            return p.hasCard(Card(Card::SPADE, Card::SEVEN));
+        }
+    );
 }
 
 /* Initiates next round */

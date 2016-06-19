@@ -1,4 +1,4 @@
-#include <istream>
+#include <iostream>
 #include <map>
 
 #include "../Model/Straights.h"
@@ -26,8 +26,8 @@ std::ostream &operator<<(std::ostream &out, const TurnContext& c) {
         for (CardPtr card : c.gamePile)
             if (card->getSuit() == suit.first)
                 out << " " << ranks[card->getRank()];
+        out << endl;
     }
-    out << endl;
 
     // Print the current player's hand
     out << "Your hand:";

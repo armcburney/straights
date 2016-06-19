@@ -9,14 +9,14 @@
 #include "../Model/Player/Player.h"
 
 struct TurnContext {
-    const std::vector<CardPtr> &gamePile;
-    const std::list<CardPtr> &hand;
+    const std::vector<CardPtr> gamePile;
+    const std::list<CardPtr> hand;
 
     TurnContext(const std::vector<CardPtr>&, const std::list<CardPtr>&);
 };
 
 struct RoundContext {
-    const std::vector<Player> &players;
+    const std::vector<Player> players;
 
     RoundContext(const std::vector<Player>&);
 };

@@ -22,8 +22,9 @@ public:
     bool allCardsPlayed() const;
     void clearRound();
     void setHand(std::list<CardPtr>);
-    std::list<CardPtr> getHand() const;
+    std::list<CardPtr> getHand();
     void setStrategy(std::shared_ptr<PlayerStrategy>);
+    bool hasCard(Card) const;
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score

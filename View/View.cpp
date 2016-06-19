@@ -17,7 +17,8 @@ vector<char> View::getPlayers() {
     char player;
 
     for (int i = 0; i < 4; i++) {
-        outputStream << "Is player <x> a human(h) or a computer(c)?" << endl;
+        outputStream << "Is player " << i+1 << " a human(h) or a computer(c)?" << endl;
+        outputStream << ">";
         inputStream >> player;
         players.push_back(player);
     }

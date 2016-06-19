@@ -8,16 +8,18 @@ Controller::Controller(Straights &model, View &view)
     : model(model), view(view) {}
 
 void Controller::startGame() {
-    view.printObject<Straights>(model);
+    vector<char> playerTypes = view.getPlayers();
 
-    vector<char> players = view.getPlayers();
-
-    for (auto i : players) {
-        if (i == 'c')
-            model.addComputerPlayer(0);
+    for (int i = 0; i < 4; i++) {
+        if (playerTypes[i] == 'c')
+            model.addComputerPlayer(i+1);
         else
-            model.addHumanPlayer(0);
+            model.addHumanPlayer(i+1);
     }
+
+    model.deal();
+
+    view.printObject<Straights>(model);
 
     while (true) {
         TurnResult turnResult = model.next();
