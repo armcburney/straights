@@ -1,8 +1,11 @@
-- Score overloaded functions
-- Output for Deck
-- Output for Straights
-- Output for TurnResult
-- Create TurnContext object & ostream
-- Lots of commenting & precondition stuff
-- Deal the cards
-- Add ragequit function
+  - Score overloaded functions
+M - Output for Deck
+M - Output for Straights
+M - Output for TurnResult
+M - Create TurnContext object & ostream
+M - Create RoundContext object & ostream
+  - Lots of commenting & precondition stuff
+A - Deal the cards
+  - Add ragequit function
+  - Update UML
+  - Move into folders & update Makefile
