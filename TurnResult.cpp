@@ -34,3 +34,17 @@ shared_ptr<Player> TurnResult::getCurrentPlayer() const {
 void TurnResult::setCurrentPlayer(shared_ptr<Player> player) const {
     currentPlayer = player;
 }
+
+// Output
+
+ostream &operator<<(ostream &out, const TurnResult &tr){
+    shared_ptr<Player> player = tr.getCurrentPlayer();
+    string action;
+    if (tr.getType() == TurnResult::PLAY)
+        action = "plays";
+    else
+        action = "discards";
+
+    out << "Player " << player->getID() << " " << action << " " << *tr.getCard() << ".";
+    return out;
+}
