@@ -16,7 +16,7 @@ Deck::Deck () {
     }
 }
 
-vector<CardPtr> Deck::cards() {
+vector<CardPtr> Deck::cards() const {
     return cards_;
 }
 
@@ -33,4 +33,13 @@ void Deck::shuffle() {
         cards_[n] = cards_[k];
         cards_[k] = c;
     }
+}
+
+ostream & operator<<(std::ostream &out, const Deck &d) {
+    for (int i = 0; i < 4; i ++) {
+        for (int j = 0; j < 12; j ++) {
+            out << d.cards()[j + 13*i] << " ";
+        } out << d.cards()[13*i-1] << endl;
+    }
+    return out;
 }

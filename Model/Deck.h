@@ -9,10 +9,12 @@
 enum {CARD_COUNT = 52};
 
 class Deck {
+    friend std::ostream &operator<<(std::ostream &out, const Deck &d);
+
 public:
     Deck();
-    std::vector<CardPtr> cards();     // cards accessor
-    void shuffle();                 // cards accessor
+    std::vector<CardPtr> cards() const;     // cards accessor
+    void shuffle();                         // cards accessor
 private:
     std::vector<CardPtr> cards_;
 };
