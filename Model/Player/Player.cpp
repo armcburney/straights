@@ -30,6 +30,9 @@ TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input)
         // A card was discarded, add it to the discardPile and remove it
         // from the player's hand
         HandItr card = turnResult.getCard();
+        // Add to the players score with the value of the card
+        roundScore = roundScore + (*card)->getRank();
+
         discardPile.push_back(*card);
         hand.erase(card);
     }
