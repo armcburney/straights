@@ -39,6 +39,7 @@ TurnResult Player::playStrategy(set<CardPtr, CardPtrComp> &gamePile, const Comma
     return turnResult;
 }
 
+// Clears the hand, discard pile and updates score
 void Player::clearRound() {
     hand.clear();
     discardPile.clear();
@@ -60,6 +61,7 @@ int Player::getID () const {
     return id;
 }
 
+// Returns true if the player's hand is empty
 bool Player::allCardsPlayed() const {
     return hand.empty();
 }
@@ -68,6 +70,7 @@ void Player::setStrategy(shared_ptr<PlayerStrategy> newStrategy) {
     strategy = newStrategy;
 }
 
+// Returns true if the player has the card
 bool Player::hasCard(Card card) const {
     return any_of(
         hand.begin(),

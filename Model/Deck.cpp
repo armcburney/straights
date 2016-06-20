@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// Initializes an ordered deck of 52 cards
 Deck::Deck () {
     for (int i = Card::CLUB; i < Card::SUIT_COUNT; i++) {
         for (int j = Card::ACE; j < Card::RANK_COUNT; j++) {

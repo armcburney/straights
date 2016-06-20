@@ -36,7 +36,7 @@ void Straights::addComputerPlayer (int id) {
     players.push_back(p);
 }
 
-/* Deals the cards to players 1 to 4 */
+// Deals the cards to players 1 to 4
 void Straights::deal () {
     deck.shuffle(seed_);
 
@@ -56,7 +56,7 @@ void Straights::deal () {
     );
 }
 
-/* Initiates next round */
+// Initiates next round
 TurnResult Straights::next (const Command &input) {
     TurnResult turnResult = currentPlayer->playStrategy(gamePile, input);
     turnResult.setCurrentPlayer(shared_ptr<Player>(&*currentPlayer, null_deleter()));
@@ -105,6 +105,7 @@ PlayerItr Straights::returnCurrentPlayer() const {
     return currentPlayer;
 }
 
+// Changes the player's strategy to the AutomatedPlayerStrategy
 void Straights::automateCurrentPlayer() {
     auto newStrategy = shared_ptr<PlayerStrategy>(new AutomatedPlayerStrategy);
     currentPlayer->setStrategy(newStrategy);
