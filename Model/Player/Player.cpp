@@ -17,24 +17,24 @@ Score Player::getScore () const {
     return score;
 }
 
-TurnResult Player::playStrategy(vector<CardPtr> &gamePile, const Command& input) {
+TurnResult Player::playStrategy(set<CardPtr, CardPtrComp> &gamePile, const Command& input) {
     TurnResult turnResult = strategy->play(hand, gamePile, input);
 
     if (turnResult.getType() == TurnResult::PLAY) {
         // A card was played, add it to the gamePile and remove it
         // from the player's hand
-        HandItr card = turnResult.getCard();
-        gamePile.push_back(*card);
-        hand.erase(card);
+        CardPtr card = turnResult.getCard();
+        gamePile.insert(card);
+        hand.remove(card);
     } else if (turnResult.getType() == TurnResult::DISCARD) {
         // A card was discarded, add it to the discardPile and remove it
         // from the player's hand
-        HandItr card = turnResult.getCard();
+        CardPtr card = turnResult.getCard();
         // Add to the players score with the value of the card
-        roundScore = roundScore + (*card)->getRank();
+        roundScore = roundScore + card->getRank();
 
-        discardPile.push_back(*card);
-        hand.erase(card);
+        discardPile.push_back(card);
+        hand.remove(card);
     }
 
     return turnResult;

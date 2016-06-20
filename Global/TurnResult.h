@@ -7,8 +7,6 @@
 #include <memory>
 #include <list>
 
-typedef std::list<CardPtr>::iterator HandItr;
-
 class Player;
 
 class TurnResult {
@@ -26,12 +24,12 @@ public:
         GAME_COMPLETE = 'g',
     };
 
-    TurnResult(Status, Type, HandItr = HandItr(), std::shared_ptr<Player> = nullptr);
+    TurnResult(Status, Type, CardPtr = nullptr, std::shared_ptr<Player> = nullptr);
     TurnResult(const TurnResult &);
     TurnResult& operator=(TurnResult);
 
     Type getType() const;
-    HandItr getCard() const;
+    CardPtr getCard() const;
 
     Status getStatus() const;
     void setStatus(Status);
@@ -42,7 +40,7 @@ public:
 private:
     Status status;
     Type type;
-    HandItr card;
+    CardPtr card;
     std::shared_ptr<Player> currentPlayer;
 };
 

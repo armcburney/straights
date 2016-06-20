@@ -3,7 +3,7 @@
 
 #include <istream>
 #include <list>
-#include <vector>
+#include <set>
 
 #include "../../Global/TurnResult.h"
 #include "../../Global/Command.h"
@@ -13,7 +13,7 @@ class PlayerStrategy {
 public:
     virtual TurnResult play(
         std::list<CardPtr> &hand,
-        const std::vector<CardPtr> &gamePile,
+        const std::set<CardPtr, CardPtrComp> &gamePile,
         const Command &input) = 0;
 };
 

@@ -7,7 +7,7 @@
 class AutomatedPlayerStrategy : public PlayerStrategy {
     TurnResult play(
         std::list<CardPtr> &hand,
-        const std::vector<CardPtr> &gamePile,
+        const std::set<CardPtr, CardPtrComp> &gamePile,
         const Command &input) final;
 };
 

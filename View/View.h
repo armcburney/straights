@@ -17,6 +17,7 @@ public:
 
     template<typename T>
     void printObject(T object) { outputStream << object; };
+    void printNewLine();
 
     Command getCommand();
 

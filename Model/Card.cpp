@@ -56,3 +56,8 @@ istream &operator>>(istream &in, Card &c){
 
 	return in;
 }
+
+bool CardPtrComp::operator()(const CardPtr lhs, const CardPtr rhs) const {
+    return lhs->getSuit() < rhs->getSuit() ||
+        (lhs->getSuit() == rhs->getSuit() && lhs->getRank() < rhs->getRank());
+}

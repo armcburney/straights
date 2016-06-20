@@ -4,15 +4,16 @@
 #include <istream>
 #include <vector>
 #include <list>
+#include <set>
 
 #include "../Model/Card.h"
 #include "../Model/Player/Player.h"
 
 struct TurnContext {
-    const std::vector<CardPtr> gamePile;
+    const std::set<CardPtr, CardPtrComp> gamePile;
     const std::list<CardPtr> hand;
 
-    TurnContext(const std::vector<CardPtr>&, const std::list<CardPtr>&);
+    TurnContext(const std::set<CardPtr, CardPtrComp>&, const std::list<CardPtr>&);
 };
 
 struct RoundContext {

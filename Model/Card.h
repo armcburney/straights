@@ -31,4 +31,9 @@ std::istream &operator>>(std::istream &, Card &);
 // Convenient shorthand for smart pointer
 typedef std::shared_ptr<Card> CardPtr;
 
+// Key for sorting CardPtrs
+struct CardPtrComp {
+    bool operator()(const CardPtr, const CardPtr) const;
+};
+
 #endif

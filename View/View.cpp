@@ -27,6 +27,10 @@ vector<char> View::getPlayers() {
     return players;
 }
 
+void View::printNewLine() {
+    outputStream << endl;
+}
+
 Command View::getCommand() {
     outputStream << ">";
 

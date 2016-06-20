@@ -48,6 +48,7 @@ void Controller::startGame() {
                             validInputProvided = true;
                         } catch (const invalid_argument &e) {
                             view.printObject<string>(e.what());
+                            view.printNewLine();
                         }
                         break;
                     }

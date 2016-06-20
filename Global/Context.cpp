@@ -6,7 +6,7 @@
 
 using namespace std;
 
-TurnContext::TurnContext(const vector<CardPtr> &gamePile, const list<CardPtr> &hand)
+TurnContext::TurnContext(const set<CardPtr, CardPtrComp> &gamePile, const list<CardPtr> &hand)
     : gamePile(gamePile), hand(hand) {}
 
 RoundContext::RoundContext(const vector<Player> &players)
@@ -36,10 +36,10 @@ std::ostream &operator<<(std::ostream &out, const TurnContext& c) {
     out << endl;
 
     // Print the player's legal plays
-    vector<HandItr> legalPlays = Straights::getLegalPlays(c.hand, c.gamePile);
+    set<CardPtr, CardPtrComp> legalPlays = Straights::getLegalPlays(c.hand, c.gamePile);
     out << "Legal plays:";
-    for (HandItr card : legalPlays)
-        out << " " << **card;
+    for (CardPtr card : legalPlays)
+        out << " " << *card;
     out << endl;
 
     return out;

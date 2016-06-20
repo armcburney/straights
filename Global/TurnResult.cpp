@@ -3,7 +3,7 @@
 
 using namespace std;
 
-TurnResult::TurnResult(Status status, Type type, HandItr card, shared_ptr<Player> currentPlayer)
+TurnResult::TurnResult(Status status, Type type, CardPtr card, shared_ptr<Player> currentPlayer)
     : status(status),
       type(type),
       card(card),
@@ -24,7 +24,7 @@ TurnResult::Type TurnResult::getType() const {
     return type;
 }
 
-HandItr TurnResult::getCard() const {
+CardPtr TurnResult::getCard() const {
     return card;
 }
 

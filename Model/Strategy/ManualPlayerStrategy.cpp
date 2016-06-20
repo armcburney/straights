@@ -8,7 +8,7 @@ using namespace std;
 
 TurnResult ManualPlayerStrategy::play(
     list<CardPtr> &hand,
-    const vector<CardPtr> &gamePile,
+    const set<CardPtr, CardPtrComp> &gamePile,
     const Command &input) {
 
     if (input.type == Command::NO_COMMAND) {
@@ -16,22 +16,22 @@ TurnResult ManualPlayerStrategy::play(
         // to know what card to play / discard
         return TurnResult(TurnResult::TURN_IN_PROGRESS, TurnResult::REQUIRE_HUMAN_INPUT);
     } else {
-        vector<HandItr> legalPlays = Straights::getLegalPlays(hand, gamePile);
+        set<CardPtr, CardPtrComp> legalPlays = Straights::getLegalPlays(hand, gamePile);
 
         if (input.type == Command::PLAY) {
             // User wants to play a card
             auto legal_play_to_make = find_if(
                 legalPlays.begin(),
                 legalPlays.end(),
-                [&input] (HandItr it) {
-                    return **it == input.card;
+                [&input] (CardPtr c) {
+                    return *c == input.card;
                 }
             );
             if (legal_play_to_make == legalPlays.end()) {
                 // Card user wants to play is not a legal move
                 throw invalid_argument("This is not a legal play.");
             }
-            HandItr card_to_play = *legal_play_to_make;
+            CardPtr card_to_play = *legal_play_to_make;
             return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::PLAY, card_to_play);
         } else if (input.type == Command::DISCARD) {
             // User wants to discard a card
@@ -40,7 +40,7 @@ TurnResult ManualPlayerStrategy::play(
                 throw invalid_argument("You have a legal play. You may not discard.");
             }
             // Find the card in the hand
-            HandItr card_to_discard = find_if(
+            CardPtr card_to_discard = *find_if(
                 hand.begin(),
                 hand.end(),
                 [&input] (const CardPtr &c) {

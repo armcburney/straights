@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include <list>
+#include <set>
 
 #include "../Card.h"
 #include "../Score.h"
@@ -18,7 +19,7 @@ public:
     Player(int, std::shared_ptr<PlayerStrategy> strategy);
     int getID() const;                           // Returns id
     Score getScore() const;                      // Prints players score
-    TurnResult playStrategy(std::vector<CardPtr>&, const Command&);
+    TurnResult playStrategy(std::set<CardPtr, CardPtrComp>&, const Command&);
     bool allCardsPlayed() const;
     void clearRound();
     void setHand(std::list<CardPtr>);
@@ -34,9 +35,6 @@ private:
     std::list<CardPtr> hand;              // Player hand
     std::vector<CardPtr> discardPile;     // Player discard pile
 };
-
-// Convenient shorthand for card hand iterator
-typedef std::list<CardPtr>::iterator HandItr;
 
 // Output
 std::ostream &operator<<(std::ostream &out, const Player &p);

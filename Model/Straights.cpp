@@ -59,6 +59,7 @@ void Straights::deal () {
 /* Initiates next round */
 TurnResult Straights::next (const Command &input) {
     TurnResult turnResult = currentPlayer->playStrategy(gamePile, input);
+    turnResult.setCurrentPlayer(shared_ptr<Player>(&*currentPlayer, null_deleter()));
 
     if (turnResult.getStatus() == TurnResult::TURN_COMPLETE) {
         // After each turn, check if the round is over
@@ -100,7 +101,6 @@ TurnResult Straights::next (const Command &input) {
             currentPlayer = players.begin();
     }
 
-    turnResult.setCurrentPlayer(shared_ptr<Player>(&*currentPlayer, null_deleter()));
     return turnResult;
 }
 
@@ -131,29 +131,32 @@ RoundContext Straights::getRoundContext() const {
     return RoundContext(players);
 }
 
-vector<HandItr> Straights::getLegalPlays(list<CardPtr> hand, const vector<CardPtr> &gamePile) {
-    vector<HandItr> legalPlays;
+set<CardPtr, CardPtrComp> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, CardPtrComp> &gamePile) {
+    set<CardPtr, CardPtrComp> legalPlays;
 
     // If this is the first move, then only 7S is a legal move
     if (gamePile.empty()) {
         Card sevenOfSpades = Card(Card::SPADE, Card::SEVEN);
-        HandItr firstMove = find_if(
+        CardPtr firstMove = *find_if(
             hand.begin(),
             hand.end(),
             [sevenOfSpades] (CardPtr c) {
                 return *c == sevenOfSpades;
             }
         );
-        legalPlays.push_back(firstMove);
+        legalPlays.insert(firstMove);
         return legalPlays;
     }
     
-    const Card &topCard = *gamePile.back();
-    for (auto it = hand.begin(); it != hand.end(); it++) {
-        const Card &cardInHand = **it;
-        if (cardInHand.getSuit() == topCard.getSuit() ||
-                abs(cardInHand.getRank() - topCard.getRank()) <= 1)
-            legalPlays.push_back(it);
+    for (CardPtr pileCard : gamePile) {
+        for (auto it = hand.begin(); it != hand.end(); it++) {
+            CardPtr cardInHand = *it;
+            if ((cardInHand->getSuit() == pileCard->getSuit() &&
+                    abs(cardInHand->getRank() - pileCard->getRank()) <= 1) ||
+                (cardInHand->getRank() == pileCard->getRank())) {
+                legalPlays.insert(cardInHand);
+            }
+        }
     }
     return legalPlays;
 }

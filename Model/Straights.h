@@ -2,7 +2,7 @@
 #define _STRAIGHTS_
 
 #include <istream>
-#include <list>
+#include <set>
 #include <vector>
 
 #include "Card.h"
@@ -29,15 +29,15 @@ public:
     Deck getDeck() const;
     void automateCurrentPlayer();
 
-    static std::vector<HandItr> getLegalPlays(
+    static std::set<CardPtr, CardPtrComp> getLegalPlays(
         std::list<CardPtr> hand,
-        const std::vector<CardPtr> &gamePile);
+        const std::set<CardPtr, CardPtrComp> &gamePile);
 private:
     void clearRound();
 
     int seed_;
     Deck deck;
-    std::vector<CardPtr> gamePile;
+    std::set<CardPtr, CardPtrComp> gamePile;
     std::vector<Player> players;
     PlayerItr currentPlayer;
 
