@@ -21,7 +21,15 @@ public:
 		rank_ = Rank
 	*/
 	Suit getSuit() const;
+	/*
+	POSTCONDITIONS:
+	  - returns: the object suit
+	*/
 	Rank getRank() const;
+	/*
+	POSTCONDITIONS:
+	  - returns: the object rank
+	*/
 
 private:
 	Suit suit_;

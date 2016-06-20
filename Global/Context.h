@@ -14,12 +14,22 @@ struct TurnContext {
     const std::list<CardPtr> hand;
 
     TurnContext(const std::set<CardPtr, CardPtrComp>&, const std::list<CardPtr>&);
+    /*
+    POSTCONDITIONS:
+      - ensures: initializes this to a TurnContext with gamePile and
+      hand initialized.
+    */
 };
 
 struct RoundContext {
     const std::vector<Player> players;
 
     RoundContext(const std::vector<Player>&);
+    /*
+    POSTCONDITIONS:
+      - ensures: initializes this to a RoundContext with players
+      initialized.
+    */
 };
 
 std::ostream &operator<<(std::ostream &, const TurnContext&);

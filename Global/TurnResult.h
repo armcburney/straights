@@ -25,17 +25,55 @@ public:
     };
 
     TurnResult(Status, Type, CardPtr = nullptr, std::shared_ptr<Player> = nullptr);
+    /*
+    POSTCONDITIONS:
+      - ensures: initializes this to a TurnResult with status
+      and type initialized.
+    */
     TurnResult(const TurnResult &);
+    /*
+    PRECONDITION:
+      - requires: a valid TurnResult object
+    POSTCONDITIONS:
+      - ensures: the current object becomes a copy of the object passed in
+    */
     TurnResult& operator=(TurnResult);
-
+    /*
+    POSTCONDITIONS:
+      - returns: a copy of the object passed in
+    */
     Type getType() const;
+    /*
+    POSTCONDITIONS:
+      - returns: the object type
+    */
     CardPtr getCard() const;
-
+    /*
+    POSTCONDITIONS:
+      - returns: the object card
+    */
     Status getStatus() const;
+    /*
+    POSTCONDITIONS:
+      - returns: the object status
+    */
     void setStatus(Status);
-
+    /*
+    POSTCONDITIONS:
+      - modifies: this
+      - ensures: this.status equals the status passed in
+    */
     std::shared_ptr<Player> getCurrentPlayer() const;
+    /*
+    POSTCONDITIONS:
+      - returns: the object player
+    */
     void setCurrentPlayer(std::shared_ptr<Player>);
+    /*
+    POSTCONDITIONS:
+      - modifies: this
+      - ensures: this.player equals the player passed in
+    */
 
 private:
     Status status;

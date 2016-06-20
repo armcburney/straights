@@ -15,6 +15,10 @@ public:
         std::list<CardPtr> &hand,
         const std::set<CardPtr, CardPtrComp> &gamePile,
         const Command &input) = 0;
+    /*
+    POSTCONDITIONS:
+      - returns: a decision on the correct move to make
+    */
 };
 
 #endif

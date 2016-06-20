@@ -9,7 +9,15 @@ public:
     Score& operator= ( const Score& );
 
     Score(int);
+    /*
+    POSTCONDITIONS:
+      - ensures: initializes this to a Score with score passed in
+    */
     int toInt() const;
+    /*
+    POSTCONDITIONS:
+      - returns: the object's score as an int
+    */
 private:
     int score;
 };

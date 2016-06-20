@@ -9,7 +9,7 @@ public:
     HumanPlayer(int);
     /*
     POSTCONDITIONS:
-      - ensures: created a derived ComputerPlayer of the parent Player with:
+      - ensures: creates a derived HumanPlayer of the parent Player with:
         id = id
         score = 0
         roundScore = 0
