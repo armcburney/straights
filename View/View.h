@@ -18,6 +18,7 @@ public:
     template<typename T>
     void printObject(T object) { outputStream << object; };
     void printNewLine();
+    void printRagequit(int);
 
     Command getCommand();
 

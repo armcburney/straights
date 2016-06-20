@@ -40,7 +40,8 @@ void Controller::startGame() {
                     }
                     case Command::RAGEQUIT: {
                         model.automateCurrentPlayer();
-                        break;
+                        view.printRagequit(model.returnCurrentPlayer()->getID());
+                        input = Command();
                     }
                     default: {
                         try {

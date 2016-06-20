@@ -31,6 +31,10 @@ void View::printNewLine() {
     outputStream << endl;
 }
 
+void View::printRagequit(int id) {
+    cout << "Player " << id << " ragequits. A computer will now take over." << endl;
+}
+
 Command View::getCommand() {
     outputStream << ">";
 

@@ -23,6 +23,7 @@ public:
     void addComputerPlayer(int);
     void deal();
     void setShuffleSeed(int);
+    PlayerItr returnCurrentPlayer();
     TurnResult next(const Command &input = Command());
     TurnContext getTurnContext() const;
     RoundContext getRoundContext() const;

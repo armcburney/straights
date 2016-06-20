@@ -104,6 +104,10 @@ TurnResult Straights::next (const Command &input) {
     return turnResult;
 }
 
+PlayerItr Straights::returnCurrentPlayer() {
+    return currentPlayer;
+}
+
 void Straights::automateCurrentPlayer() {
     auto newStrategy = shared_ptr<PlayerStrategy>(new AutomatedPlayerStrategy);
     currentPlayer->setStrategy(newStrategy);
@@ -147,7 +151,7 @@ set<CardPtr, CardPtrComp> Straights::getLegalPlays(list<CardPtr> hand, const set
         legalPlays.insert(firstMove);
         return legalPlays;
     }
-    
+
     for (CardPtr pileCard : gamePile) {
         for (auto it = hand.begin(); it != hand.end(); it++) {
             CardPtr cardInHand = *it;
