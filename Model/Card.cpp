@@ -57,6 +57,8 @@ istream &operator>>(istream &in, Card &c){
 	return in;
 }
 
+// Enables creating sets that are ordered based on the dereferenced
+// value of the CardPtrs
 bool CardPtrComp::operator()(const CardPtr lhs, const CardPtr rhs) const {
     return lhs->getSuit() < rhs->getSuit() ||
         (lhs->getSuit() == rhs->getSuit() && lhs->getRank() < rhs->getRank());

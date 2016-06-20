@@ -9,6 +9,7 @@ Command::Command() : type(NO_COMMAND), card(Card::SPADE, Card::ACE) {}
 Command::Command(const Command&) = default;
 
 Command& Command::operator=(Command c) {
+    // Copy-swap idiom
     swap(type, c.type);
     swap(card, c.card);
     return *this;
