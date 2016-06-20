@@ -16,7 +16,7 @@ TurnResult ManualPlayerStrategy::play(
         // to know what card to play / discard
         return TurnResult(TurnResult::TURN_IN_PROGRESS, TurnResult::REQUIRE_HUMAN_INPUT);
     } else {
-        set<CardPtr, CardPtrComp> legalPlays = Straights::getLegalPlays(hand, gamePile);
+        vector<CardPtr> legalPlays = Straights::getLegalPlays(hand, gamePile);
 
         if (input.type == Command::PLAY) {
             // User wants to play a card

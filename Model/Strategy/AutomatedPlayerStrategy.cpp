@@ -8,11 +8,11 @@ TurnResult AutomatedPlayerStrategy::play(
     const set<CardPtr, CardPtrComp> &gamePile,
     const Command&) {
 
-    set<CardPtr, CardPtrComp> legalPlays = Straights::getLegalPlays(hand, gamePile);
+    vector<CardPtr> legalPlays = Straights::getLegalPlays(hand, gamePile);
 
     if (!legalPlays.empty()) {
         // There are legal moves, so make the first one
-        return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::PLAY, *legalPlays.begin());
+        return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::PLAY, legalPlays[0]);
     } else {
         // No moves, discard the first card
         return TurnResult(TurnResult::TURN_COMPLETE, TurnResult::DISCARD, hand.front());

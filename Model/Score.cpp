@@ -16,7 +16,7 @@ int Score::toInt() const {
 }
 
 ostream & operator<<(ostream &sout, const Score & s) {
-    sout << s.score << endl;
+    sout << s.score;
     return sout;
 }
 

@@ -36,7 +36,7 @@ std::ostream &operator<<(std::ostream &out, const TurnContext& c) {
     out << endl;
 
     // Print the player's legal plays
-    set<CardPtr, CardPtrComp> legalPlays = Straights::getLegalPlays(c.hand, c.gamePile);
+    vector<CardPtr> legalPlays = Straights::getLegalPlays(c.hand, c.gamePile);
     out << "Legal plays:";
     for (CardPtr card : legalPlays)
         out << " " << *card;
@@ -47,7 +47,7 @@ std::ostream &operator<<(std::ostream &out, const TurnContext& c) {
 
 std::ostream &operator<<(std::ostream &out, const RoundContext& c) {
     for (Player p : c.players)
-        out << p << endl;
+        out << p;
 
     return out;
 }

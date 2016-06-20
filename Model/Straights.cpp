@@ -135,8 +135,8 @@ RoundContext Straights::getRoundContext() const {
     return RoundContext(players);
 }
 
-set<CardPtr, CardPtrComp> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, CardPtrComp> &gamePile) {
-    set<CardPtr, CardPtrComp> legalPlays;
+vector<CardPtr> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, CardPtrComp> &gamePile) {
+    vector<CardPtr> legalPlays;
 
     // If this is the first move, then only 7S is a legal move
     if (gamePile.empty()) {
@@ -148,17 +148,21 @@ set<CardPtr, CardPtrComp> Straights::getLegalPlays(list<CardPtr> hand, const set
                 return *c == sevenOfSpades;
             }
         );
-        legalPlays.insert(firstMove);
+        legalPlays.push_back(firstMove);
         return legalPlays;
     }
-
-    for (CardPtr pileCard : gamePile) {
-        for (auto it = hand.begin(); it != hand.end(); it++) {
+    
+    for (auto it = hand.begin(); it != hand.end(); it++) {
+        for (CardPtr pileCard : gamePile) {
             CardPtr cardInHand = *it;
             if ((cardInHand->getSuit() == pileCard->getSuit() &&
                     abs(cardInHand->getRank() - pileCard->getRank()) <= 1) ||
-                (cardInHand->getRank() == pileCard->getRank())) {
-                legalPlays.insert(cardInHand);
+                (cardInHand->getRank() == Card::SEVEN)) {
+
+                // Don't add the same legal play twice
+                if (find(legalPlays.begin(), legalPlays.end(), cardInHand) == legalPlays.end()) {
+                    legalPlays.push_back(cardInHand);
+                }
             }
         }
     }

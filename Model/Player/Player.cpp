@@ -82,10 +82,12 @@ ostream &operator<<(ostream &out, const Player &p) {
     out << "Player " << p.getID() << "'s discards:";
     for (CardPtr c : p.discardPile)
         out << " " << *c;
+    out << endl;
 
     out << "Player " << p.getID() << "'s score: ";
     out << p.getScore() << " + " << p.lastRoundScore << " = ";
     out << p.getScore() + p.lastRoundScore;
+    out << endl;
 
     return out;
 }

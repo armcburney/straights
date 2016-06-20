@@ -30,7 +30,7 @@ public:
     Deck getDeck() const;
     void automateCurrentPlayer();
 
-    static std::set<CardPtr, CardPtrComp> getLegalPlays(
+    static std::vector<CardPtr> getLegalPlays(
         std::list<CardPtr> hand,
         const std::set<CardPtr, CardPtrComp> &gamePile);
 private:
