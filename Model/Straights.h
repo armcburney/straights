@@ -19,17 +19,20 @@ class Straights {
 
 public:
     Straights();
+
     void addHumanPlayer(int);
     void addComputerPlayer(int);
+    void automateCurrentPlayer();
+    PlayerItr returnCurrentPlayer() const;
+
+    void clearRound();
     void deal();
     void setShuffleSeed(int);
-    PlayerItr returnCurrentPlayer();
+
     TurnResult next(const Command &input = Command());
     TurnContext getTurnContext() const;
     RoundContext getRoundContext() const;
     Deck getDeck() const;
-    void automateCurrentPlayer();
-    void clearRound();
 
     static std::vector<CardPtr> getLegalPlays(
         std::list<CardPtr> hand,

@@ -14,6 +14,12 @@ public:
                 EIGHT, NINE, TEN, JACK, QUEEN, KING, RANK_COUNT };
 
 	Card(Suit, Rank);
+	/*
+	POSTCONDITIONS:
+	  - ensures: created a Card with
+		suit_ = Suit
+		rank_ = Rank
+	*/
 	Suit getSuit() const;
 	Rank getRank() const;
 

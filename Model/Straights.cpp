@@ -101,7 +101,7 @@ TurnResult Straights::next (const Command &input) {
     return turnResult;
 }
 
-PlayerItr Straights::returnCurrentPlayer() {
+PlayerItr Straights::returnCurrentPlayer() const {
     return currentPlayer;
 }
 
@@ -148,7 +148,7 @@ vector<CardPtr> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, 
         legalPlays.push_back(firstMove);
         return legalPlays;
     }
-    
+
     for (auto it = hand.begin(); it != hand.end(); it++) {
         for (CardPtr pileCard : gamePile) {
             CardPtr cardInHand = *it;
