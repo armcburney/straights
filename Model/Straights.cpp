@@ -81,7 +81,7 @@ TurnResult Straights::next (const Command &input) {
             bool scoreAboveEndingThreshold = any_of(
                 players.begin(),
                 players.end(),
-                [] (Player p) { return p.getScore() >= endingScoreThreshold; }
+                [] (const Player &p) { return p.getScore() >= endingScoreThreshold; }
             );
 
             if (scoreAboveEndingThreshold) {
@@ -90,9 +90,6 @@ TurnResult Straights::next (const Command &input) {
                 // --------------------------
                 turnResult.setStatus(TurnResult::GAME_COMPLETE);
             }
-
-            // Clear the table
-            clearRound();
         }
 
         // Move to next player
@@ -171,7 +168,7 @@ vector<CardPtr> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, 
 
 // Output
 ostream &operator<<(ostream &out, const Straights &s) {
-    const auto &winningPlayer = find_if(
+    const auto &losingPlayer = find_if(
         s.players.begin(),
         s.players.end(),
         [] (const Player &p) {
@@ -179,8 +176,15 @@ ostream &operator<<(ostream &out, const Straights &s) {
         }
     );
 
-    if (winningPlayer != s.players.end()) {
+    if (losingPlayer != s.players.end()) {
         // We have a winner!
+        const auto &winningPlayer = min_element(
+            s.players.begin(),
+            s.players.end(),
+            [] (const Player &p1, const Player &p2) {
+                return p1.getScore() < p2.getScore();
+            }
+        );
         out << "Player " << winningPlayer->getID() << " wins!";
     } else {
         // No winner, we're starting a new round

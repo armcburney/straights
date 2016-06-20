@@ -8,13 +8,12 @@ Player::Player (int id, shared_ptr<PlayerStrategy> strategy)
     : id(id),
       score(0),
       roundScore(0),
-      lastRoundScore(0),
       strategy(strategy),
       hand(),
       discardPile() {}
 
 Score Player::getScore () const {
-    return score;
+    return score + roundScore;
 }
 
 TurnResult Player::playStrategy(set<CardPtr, CardPtrComp> &gamePile, const Command& input) {
@@ -31,7 +30,7 @@ TurnResult Player::playStrategy(set<CardPtr, CardPtrComp> &gamePile, const Comma
         // from the player's hand
         CardPtr card = turnResult.getCard();
         // Add to the players score with the value of the card
-        roundScore = roundScore + card->getRank();
+        roundScore = roundScore + card->getRank() + 1;
 
         discardPile.push_back(card);
         hand.remove(card);
@@ -46,7 +45,6 @@ void Player::clearRound() {
 
     // Add this rounds score to the overall score
     score = score + roundScore;
-    lastRoundScore = roundScore;
     roundScore = 0;
 }
 
@@ -85,8 +83,8 @@ ostream &operator<<(ostream &out, const Player &p) {
     out << endl;
 
     out << "Player " << p.getID() << "'s score: ";
-    out << p.getScore() << " + " << p.lastRoundScore << " = ";
-    out << p.getScore() + p.lastRoundScore;
+    out << p.score << " + " << p.roundScore << " = ";
+    out << p.score + p.roundScore;
     out << endl;
 
     return out;

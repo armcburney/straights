@@ -63,6 +63,11 @@ void Controller::startGame() {
             turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
 
             view.printObject<RoundContext>(model.getRoundContext());
+
+            // Prepare the next round
+            model.clearRound();
+            model.deal();
+
             view.printObject<Straights>(model);
         }
 

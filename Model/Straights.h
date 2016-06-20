@@ -29,13 +29,12 @@ public:
     RoundContext getRoundContext() const;
     Deck getDeck() const;
     void automateCurrentPlayer();
+    void clearRound();
 
     static std::vector<CardPtr> getLegalPlays(
         std::list<CardPtr> hand,
         const std::set<CardPtr, CardPtrComp> &gamePile);
 private:
-    void clearRound();
-
     int seed_;
     Deck deck;
     std::set<CardPtr, CardPtrComp> gamePile;

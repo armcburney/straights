@@ -48,6 +48,7 @@ void TurnResult::setCurrentPlayer(shared_ptr<Player> player) {
 
 // Output
 
+#include<iostream>
 ostream &operator<<(ostream &out, const TurnResult &tr) {
     shared_ptr<Player> player = tr.getCurrentPlayer();
     string action;
