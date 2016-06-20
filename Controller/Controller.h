@@ -13,8 +13,19 @@
 class Controller {
 public:
     Controller(Straights& model, View& view);
+    /*
+    POSTCONDITIONS:
+      - ensures: initializes this to a Command with:
+        Straights& = model
+        View& = view
+    */
     void startGame();
-
+    /*
+    POSTCONDITIONS:
+      - ensures: initializes this to a Command with:
+        type = NO_COMMAND
+        card = Ace of spades
+    */
 private:
     Straights& model;
     View& view;
