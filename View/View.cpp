@@ -12,7 +12,7 @@ View::View(istream &inputStream, ostream &outputStream)
     : inputStream(inputStream),
       outputStream(outputStream) {}
 
-vector<char> View::getPlayers() {
+vector<char> View::getPlayerTypes() {
     vector<char> players;
     char player;
 

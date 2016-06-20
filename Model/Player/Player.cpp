@@ -52,7 +52,7 @@ void Player::setHand(list<CardPtr> l) {
     hand = l;
 }
 
-list<CardPtr> Player::getHand() {
+list<CardPtr> Player::getHand() const {
     return hand;
 }
 

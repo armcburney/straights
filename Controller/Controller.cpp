@@ -8,7 +8,7 @@ Controller::Controller(Straights &model, View &view)
     : model(model), view(view) {}
 
 void Controller::startGame() {
-    vector<char> playerTypes = view.getPlayers();
+    vector<char> playerTypes = view.getPlayerTypes();
 
     for (int i = 0; i < 4; i++) {
         if (playerTypes[i] == 'c')

@@ -23,7 +23,7 @@ public:
     bool allCardsPlayed() const;
     void clearRound();
     void setHand(std::list<CardPtr>);
-    std::list<CardPtr> getHand();
+    std::list<CardPtr> getHand() const;
     void setStrategy(std::shared_ptr<PlayerStrategy>);
     bool hasCard(Card) const;
 private:

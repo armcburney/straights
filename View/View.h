@@ -13,7 +13,7 @@ class View {
 public:
     View(std::istream &inputStream, std::ostream &outputStream);
 
-    std::vector<char> getPlayers();
+    std::vector<char> getPlayerTypes();
 
     template<typename T>
     void printObject(T object) { outputStream << object; };
