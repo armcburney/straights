@@ -12,14 +12,14 @@
 
 class Controller {
 public:
-    Controller(std::unique_ptr<Straights> model, std::unique_ptr<TextView> textView);
+    Controller(std::unique_ptr<TextView> textView);
     void initialize();
-    void startGame();
+    void startGame(std::vector<Player::Type>, int seed);
 private:
     std::unique_ptr<Straights> model;
     std::unique_ptr<TextView> textView;
     std::unique_ptr<InitializationView> initializationView;
-    std::unique_ptr<GameView> gameView;
+    std::shared_ptr<GameView> gameView;
 };
 
 #endif

@@ -16,6 +16,8 @@ class Player {
     friend std::ostream &operator<<(std::ostream &out, const Player &p);
 
 public:
+    enum Type { COMPUTER, HUMAN };
+
     Player(int, std::shared_ptr<PlayerStrategy> strategy);
     /*
     POSTCONDITIONS:

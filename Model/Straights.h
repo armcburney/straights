@@ -11,14 +11,15 @@
 #include "../Global/Command.h"
 #include "../Global/TurnResult.h"
 #include "../Global/Context.h"
+#include "../Global/Subject.h"
 
 typedef std::vector<Player>::iterator PlayerItr;
 
-class Straights {
+class Straights : public Subject {
     friend std::ostream &operator<<(std::ostream &out, const Straights &s);
 
 public:
-    Straights();
+    Straights(int seed);
     /*
     POSTCONDITIONS:
       - ensures: initializes this to Straights with seed = 0, empty gamePile, full
@@ -59,14 +60,6 @@ public:
     POSTCONDITIONS:
       - modifies: players, deck
       - ensures: shuffles the deck and evenly distributes them amongst players
-    */
-    void setShuffleSeed(int);
-    /*
-    PRECONDITION:
-      - requires: an integer passed in
-    POSTCONDITIONS:
-      - modifies: seed
-      - ensures: updates seed to the value passed in
     */
 
     TurnResult next(const Command &input = Command());

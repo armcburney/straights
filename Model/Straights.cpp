@@ -19,12 +19,8 @@ struct null_deleter {
     void operator()(void const *) const {}
 };
 
-Straights::Straights() {
-    seed_ = 0;
+Straights::Straights(int seed) : seed_(seed) {
     currentPlayer = players.begin();
-}
-void Straights::setShuffleSeed(int seed) {
-    seed_ = seed;
 }
 
 void Straights::addHumanPlayer (int id) {

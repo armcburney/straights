@@ -4,25 +4,34 @@
 
 using namespace std;
 
-Controller::Controller(unique_ptr<Straights> model, unique_ptr<TextView> textView)
-    : model(move(model)), textView(move(textView)) {}
+Controller::Controller(unique_ptr<TextView> textView) : textView(move(textView)) {}
 
 void Controller::initialize() {
-
+    // Show the initialization window
+    initializationView = unique_ptr<InitializationView>(new InitializationView);
+    initializationView->show();
 }
 
-void Controller::startGame() {
-    vector<char> playerTypes = textView->getPlayerTypes();
+void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
+    // Create the game model & view
+    model = unique_ptr<Straights>(new Straights(randomSeed));
+    gameView = shared_ptr<GameView>(new GameView);
+
+    // Make the view subscribe to updates from the model
+    model->subscribe(gameView);
 
     // Given the 4 player types, create the players in the game
     for (int i = 0; i < 4; i++) {
-        if (playerTypes[i] == 'c')
+        if (playerTypes[i] == Player::Type::COMPUTER)
             model->addComputerPlayer(i+1);
         else
             model->addHumanPlayer(i+1);
     }
 
     model->deal();
+
+    // Show the game window
+    gameView->show();
 
     // Print a summary of the game before starting
     textView->printObject<Straights>(*model);

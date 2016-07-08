@@ -14,11 +14,8 @@
 using namespace std;
 
 int main (void) {
-    assert(argc <= 2);  // assert less than equal since optional command line parameter
-
-    auto model = unique_ptr<Straights>(new Straights);
     auto textView = unique_ptr<TextView>(new TextView(cin, cout));
-    Controller controller(move(model), move(textView));
+    Controller controller(move(textView));
 
     controller.initialize();
 

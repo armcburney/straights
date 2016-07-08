@@ -2,19 +2,20 @@
 #define MVC_SUBJECT_H
 
 #include <set>
+#include <memory>
 
 class Observer;
 
 class Subject {
 public:
-       void subscribe( Observer* );
-       void unsubscribe( Observer* );
+       void subscribe( std::shared_ptr<Observer> );
+       void unsubscribe( std::shared_ptr<Observer> );
 
 protected:
        void notify();
 
 private:
-       typedef std::set< Observer* > Observers;
+       typedef std::set< std::shared_ptr<Observer> > Observers;
        Observers observers_;
 };
 
