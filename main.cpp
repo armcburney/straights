@@ -7,7 +7,7 @@
 // Model
 #include "Model/Straights.h"
 // View
-#include "View/View.h"
+#include "View/TextView.h"
 // Controller
 #include "Controller/Controller.h"
 
@@ -16,14 +16,11 @@ using namespace std;
 int main (int argc, char *argv[]) {
     assert(argc <= 2);  // assert less than equal since optional command line parameter
 
-    Straights model;
-    View view(cin, cout);
-    Controller controller(model, view);
+    unique_ptr<Straights> model;
+    unique_ptr<TextView> textView = new TextView(cin, cout);
+    Controller controller(model, textView);
 
-    if (argc == 2)
-        model.setShuffleSeed(atoi(argv[1]));
-
-    controller.startGame();
+    controller.initialize();
 
     return 0;
 }

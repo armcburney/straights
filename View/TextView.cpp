@@ -4,15 +4,15 @@
 #include <string>
 #include <vector>
 
-#include "View.h"
+#include "TextView.h"
 
 using namespace std;
 
-View::View(istream &inputStream, ostream &outputStream)
+TextView::TextView(istream &inputStream, ostream &outputStream)
     : inputStream(inputStream),
       outputStream(outputStream) {}
 
-vector<char> View::getPlayerTypes() {
+vector<char> TextView::getPlayerTypes() {
     vector<char> players;
     char player;
 
@@ -27,15 +27,15 @@ vector<char> View::getPlayerTypes() {
     return players;
 }
 
-void View::printNewLine() {
+void TextView::printNewLine() {
     outputStream << endl;
 }
 
-void View::printRagequit(int id) {
+void TextView::printRagequit(int id) {
     cout << "Player " << id << " ragequits. A computer will now take over." << endl;
 }
 
-Command View::getCommand() {
+Command TextView::getCommand() {
     outputStream << ">";
 
     Command cmd;

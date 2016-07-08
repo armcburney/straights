@@ -4,11 +4,11 @@
 
 using namespace std;
 
-Controller::Controller(Straights &model, View &view)
-    : model(model), view(view) {}
+Controller::Controller(unique_ptr<Straights> model, unique_ptr<TextView> textView)
+    : model(model), textView(textView) {}
 
 void Controller::startGame() {
-    vector<char> playerTypes = view.getPlayerTypes();
+    vector<char> playerTypes = textView.getPlayerTypes();
 
     // Given the 4 player types, create the players in the game
     for (int i = 0; i < 4; i++) {
@@ -21,7 +21,7 @@ void Controller::startGame() {
     model.deal();
 
     // Print a summary of the game before starting
-    view.printObject<Straights>(model);
+    textView.printObject<Straights>(model);
 
     while (true) {
         // Start the next round
@@ -31,16 +31,16 @@ void Controller::startGame() {
             // We require more input from the user to complete the round
 
             // Print the context for the user to decide
-            view.printObject<TurnContext>(model.getTurnContext());
+            textView.printObject<TurnContext>(model.getTurnContext());
 
             bool validInputProvided = false;
             while (!validInputProvided) {
                 // Read commands from the player
 
-                Command input = view.getCommand();
+                Command input = textView.getCommand();
                 switch (input.type) {
                     case Command::DECK: {
-                        view.printObject<Deck>(model.getDeck());
+                        textView.printObject<Deck>(model.getDeck());
                         break;
                     }
                     case Command::QUIT: {
@@ -48,7 +48,7 @@ void Controller::startGame() {
                     }
                     case Command::RAGEQUIT: {
                         model.automateCurrentPlayer();
-                        view.printRagequit(model.returnCurrentPlayer()->getID());
+                        textView.printRagequit(model.returnCurrentPlayer()->getID());
                         input = Command();
                     }
                     default: {
@@ -56,8 +56,8 @@ void Controller::startGame() {
                             turnResult = model.next(input);
                             validInputProvided = true;
                         } catch (const invalid_argument &e) {
-                            view.printObject<string>(e.what());
-                            view.printNewLine();
+                            textView.printObject<string>(e.what());
+                            textView.printNewLine();
                         }
                         break;
                     }
@@ -66,19 +66,19 @@ void Controller::startGame() {
         }
 
         // Print a summary of the move made
-        view.printObject<TurnResult>(turnResult);
+        textView.printObject<TurnResult>(turnResult);
 
         if (turnResult.getStatus() == TurnResult::ROUND_COMPLETE ||
             turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
 
-            view.printObject<RoundContext>(model.getRoundContext());
+            textView.printObject<RoundContext>(model.getRoundContext());
 
             // Prepare the next round
             model.clearRound();
             model.deal();
 
             // Print a summarry of the game
-            view.printObject<Straights>(model);
+            textView.printObject<Straights>(model);
         }
 
         if (turnResult.getStatus() == TurnResult::GAME_COMPLETE)

@@ -9,12 +9,12 @@
 
 #include "../Global/Command.h"
 
-class View {
+class TextView {
 public:
-    View(std::istream &inputStream, std::ostream &outputStream);
+    TextView(std::istream &inputStream, std::ostream &outputStream);
     /*
     POSTCONDITIONS:
-      - ensures: initializes this to a View with input and output stream
+      - ensures: initializes this to a TextView with input and output stream
     */
     std::vector<char> getPlayerTypes();
     /*

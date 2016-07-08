@@ -2,7 +2,9 @@
 #define MVC_CONTROLLER_H
 
 #include "../Model/Straights.h"
-#include "../View/View.h"
+#include "../View/TextView.h"
+#include "../View/InitializationView.h"
+#include "../View/GameView.h"
 #include "../Global/TurnResult.h"
 
 #include <memory>
@@ -10,25 +12,13 @@
 
 class Controller {
 public:
-    Controller(Straights& model, View& view);
-    /*
-    POSTCONDITIONS:
-      - ensures: initializes this to a Controller with:
-        - Straights& = model
-        - View& = view
-    */
+    Controller(unique_ptr<Straights> model, unique_ptr<TextView> textView);
+    void initialize();
     void startGame();
-    /*
-    POSTCONDITIONS:
-      - modifies:
-        - View: with output from the game
-        - Model: width statistics and properties of the game
-      - ensures: that the game finishes, players are added to the model,
-        and the deck is shuffled, and dealt
-    */
 private:
-    Straights& model;
-    View& view;
+    unique_ptr<Straights> model;
+    unique_ptr<TextView> textView;
+    unique_ptr<InitializationView> textView;
 };
 
 #endif
