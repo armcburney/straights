@@ -1,5 +1,3 @@
-// view.h
-
 #ifndef MVC_VIEW_H
 #define MVC_VIEW_H
 
@@ -22,7 +20,7 @@ public:
       - returns: a vector of player types for four players provided by the user
     */
     template<typename T>
-    void printObject(T object) { outputStream << object; };
+    void printObject(const T &object) { outputStream << object; };
     /*
     PRECONDITIONS:
       - requires: a printable object

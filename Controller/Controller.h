@@ -12,13 +12,14 @@
 
 class Controller {
 public:
-    Controller(unique_ptr<Straights> model, unique_ptr<TextView> textView);
+    Controller(std::unique_ptr<Straights> model, std::unique_ptr<TextView> textView);
     void initialize();
     void startGame();
 private:
-    unique_ptr<Straights> model;
-    unique_ptr<TextView> textView;
-    unique_ptr<InitializationView> textView;
+    std::unique_ptr<Straights> model;
+    std::unique_ptr<TextView> textView;
+    std::unique_ptr<InitializationView> initializationView;
+    std::unique_ptr<GameView> gameView;
 };
 
 #endif

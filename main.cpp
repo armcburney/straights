@@ -13,12 +13,12 @@
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
+int main (void) {
     assert(argc <= 2);  // assert less than equal since optional command line parameter
 
-    unique_ptr<Straights> model;
-    unique_ptr<TextView> textView = new TextView(cin, cout);
-    Controller controller(model, textView);
+    auto model = unique_ptr<Straights>(new Straights);
+    auto textView = unique_ptr<TextView>(new TextView(cin, cout));
+    Controller controller(move(model), move(textView));
 
     controller.initialize();
 
