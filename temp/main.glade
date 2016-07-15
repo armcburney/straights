@@ -415,7 +415,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">True</property>
-                                    <signal name="clicked" handler="button1_clicked_cb" object="card" swapped="no"/>
+                                    <signal name="clicked" handler="test" swapped="no"/>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
