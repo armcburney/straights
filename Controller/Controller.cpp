@@ -28,74 +28,62 @@ void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
             model->addHumanPlayer(i+1);
     }
 
-    model->deal();
-
     // Show the game window
     gameView->show();
+
+    model->deal();
 
     // Print a summary of the game before starting
     textView->printObject<Straights>(*model);
 
-    while (true) {
-        // Start the next round
-        TurnResult turnResult = model->next();
+    continueGame();
+}
 
-        if (turnResult.getType() == TurnResult::REQUIRE_HUMAN_INPUT) {
-            // We require more input from the user to complete the round
+void Controller::continueGame(const Command &input) {
+    if (input.type == Command::RAGEQUIT) {
+        textView->printRagequit(model->returnCurrentPlayer()->getID());
+    }
 
-            // Print the context for the user to decide
-            textView->printObject<TurnContext>(model->getTurnContext());
+    //TODO Lock game window controlls
+    TurnResult turnResult = model->next(input);
 
-            bool validInputProvided = false;
-            while (!validInputProvided) {
-                // Read commands from the player
+    if (turnResult.getType() == TurnResult::REQUIRE_HUMAN_INPUT) {
+        // We require more input from the user to complete the round
 
-                Command input = textView->getCommand();
-                switch (input.type) {
-                    case Command::DECK: {
-                        textView->printObject<Deck>(model->getDeck());
-                        break;
-                    }
-                    case Command::QUIT: {
-                        return;
-                    }
-                    case Command::RAGEQUIT: {
-                        model->automateCurrentPlayer();
-                        textView->printRagequit(model->returnCurrentPlayer()->getID());
-                        input = Command();
-                    }
-                    default: {
-                        try {
-                            turnResult = model->next(input);
-                            validInputProvided = true;
-                        } catch (const invalid_argument &e) {
-                            textView->printObject<string>(e.what());
-                            textView->printNewLine();
-                        }
-                        break;
-                    }
-                }
-            }
-        }
+        // Print the context for the user to decide
+        textView->printObject<TurnContext>(model->getTurnContext());
 
-        // Print a summary of the move made
-        textView->printObject<TurnResult>(turnResult);
+        //TODO Make the view show the player's choices
+        //TODO Unlock game window controlls
+        return;
+    }
 
-        if (turnResult.getStatus() == TurnResult::ROUND_COMPLETE ||
-            turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
+    // Print a summary of the move made
+    textView->printObject<TurnResult>(turnResult);
 
-            textView->printObject<RoundContext>(model->getRoundContext());
+    //TODO print the summary of the move on the game window
 
-            // Prepare the next round
-            model->clearRound();
-            model->deal();
+    if (turnResult.getStatus() == TurnResult::ROUND_COMPLETE ||
+        turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
 
-            // Print a summarry of the game
-            textView->printObject<Straights>(*model);
-        }
+        textView->printObject<RoundContext>(model->getRoundContext());
 
-        if (turnResult.getStatus() == TurnResult::GAME_COMPLETE)
-            // The game is over
-            return;
+        // Prepare the next round
+        model->clearRound();
+        model->deal();
+
+        // Print a summarry of the game
+        textView->printObject<Straights>(*model);
+    }
+
+    if (turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
+        // The game is over
+        //TODO Show the game result on the game window & make all buttons unclickable
+        return;
+    }
+
+    if (model && gameView) {
+        // Continue if the game hasn't yet been quit
+        continueGame();
     }
 }
