@@ -11,7 +11,7 @@
 class View : public Gtk::Window {
 public:
     View();
-    void test();
+    void temp(Glib::RefPtr<Gtk::Builder>);
 };
 
 #endif
