@@ -10,10 +10,13 @@
 #include "../Model/Player/Player.h"
 
 struct TurnContext {
-    const std::set<CardPtr, CardPtrComp> gamePile;
     const std::list<CardPtr> hand;
+    const std::set<CardPtr, CardPtrComp> gamePile;
 
-    TurnContext(const std::set<CardPtr, CardPtrComp>&, const std::list<CardPtr>&);
+    TurnContext(
+        const std::list<CardPtr>                & hand,
+        const std::set<CardPtr, CardPtrComp>    & gamePile
+    );
     /*
     POSTCONDITIONS:
       - ensures: initializes this to a TurnContext with gamePile and
@@ -23,13 +26,18 @@ struct TurnContext {
 
 struct RoundContext {
     const std::vector<Player> players;
+    const int currentPlayerId;
+    const std::set<CardPtr, CardPtrComp> gamePile;
+    const std::vector<int> numDiscardsPerPlayer;
+    const std::vector<Score> playerScores;
 
-    RoundContext(const std::vector<Player>&);
-    /*
-    POSTCONDITIONS:
-      - ensures: initializes this to a RoundContext with players
-      initialized.
-    */
+    RoundContext(
+        const std::vector<Player>               & players,
+        const int                               & currentPlayerId,
+        const std::set<CardPtr, CardPtrComp>    & gamePile,
+        const std::vector<int>                  & numDiscardsPerPlayer,
+        const std::vector<Score>                & playerScores
+    );
 };
 
 std::ostream &operator<<(std::ostream &, const TurnContext&);

@@ -24,8 +24,8 @@ int main (int argc, char** argv) {
     kit.run();
 
     auto textView = unique_ptr<TextView>(new TextView(cin, cout));
-    Controller controller(move(textView));
+    auto controller = shared_ptr<Controller>(new Controller(move(textView)));
 
-    controller.initialize();
+    controller->initialize();
     return 0;
 }

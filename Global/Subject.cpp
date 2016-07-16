@@ -4,18 +4,20 @@
 
 using namespace std;
 
-void Subject::subscribe (shared_ptr<Observer> newView) {
+template <typename NotificationContext>
+void Subject<NotificationContext>::subscribe (shared_ptr<Observer<NotificationContext>> newView) {
     observers_.insert(newView);
 }
 
 
-void Subject::unsubscribe (shared_ptr<Observer> formerView) {
-     observers_.erase(formerView);
+template <typename NotificationContext>
+void Subject<NotificationContext>::unsubscribe (shared_ptr<Observer<NotificationContext>> formerView) {
+    observers_.erase(formerView);
 }
 
 
-void Subject::notify() {
-  Observers::iterator i;
-  for (i = observers_.begin(); i != observers_.end(); ++i)
-    (*i)->update();
+template <typename NotificationContext>
+void Subject<NotificationContext>::notify(NotificationContext context) {
+    for (auto i = observers_.begin(); i != observers_.end(); ++i)
+        (*i)->update(context);
 }

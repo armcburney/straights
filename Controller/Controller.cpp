@@ -1,5 +1,4 @@
 #include "Controller.h"
-#include "../Global/Context.h"
 #include "../Model/Deck.h"
 
 using namespace std;
@@ -8,14 +7,21 @@ Controller::Controller(unique_ptr<TextView> textView) : textView(move(textView))
 
 void Controller::initialize() {
     // Show the initialization window
-    initializationView = unique_ptr<InitializationView>(new InitializationView);
-    initializationView->show();
+    initializationView = unique_ptr<InitializationView>(
+        new InitializationView(shared_from_this())
+    );
+    // TODO Show initializationView
 }
 
 void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
     // Create the game model & view
     model = unique_ptr<Straights>(new Straights(randomSeed));
-    gameView = shared_ptr<GameView>(new GameView);
+    gameView = shared_ptr<GameView>(
+        new GameView(shared_from_this())
+    );
+
+    // TODO Close the initializationView
+    initializationView.release();
 
     // Make the view subscribe to updates from the model
     model->subscribe(gameView);
@@ -28,8 +34,7 @@ void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
             model->addHumanPlayer(i+1);
     }
 
-    // Show the game window
-    gameView->show();
+    // TODO Show the game window
 
     model->deal();
 

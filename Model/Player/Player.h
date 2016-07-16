@@ -78,6 +78,8 @@ public:
     POSTCONDITIONS:
       - returns: true if the player has the card
     */
+    int getNumCardsDiscarded() const;
+
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score

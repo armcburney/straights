@@ -5,13 +5,20 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "../Global/Command.h"
 #include "../Global/Observer.h"
+#include "../Global/Context.h"
 
-class InitializationView : public Gtk::Window, public Observer {
+class Controller;
+
+class InitializationView : public Gtk::Window {
 public:
+    InitializationView(std::weak_ptr<Controller>);
 private:
+    std::weak_ptr<Controller> controller;
+    void startGameButtonClicked();
 };
 
 #endif

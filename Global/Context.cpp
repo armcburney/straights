@@ -6,11 +6,25 @@
 
 using namespace std;
 
-TurnContext::TurnContext(const set<CardPtr, CardPtrComp> &gamePile, const list<CardPtr> &hand)
-    : gamePile(gamePile), hand(hand) {}
+TurnContext::TurnContext(
+    const list<CardPtr>                     & hand,
+    const std::set<CardPtr, CardPtrComp>    & gamePile
+)
+    : hand(hand),
+      gamePile(gamePile) {}
 
-RoundContext::RoundContext(const vector<Player> &players)
-    : players(players) {}
+RoundContext::RoundContext(
+    const std::vector<Player>   & players,
+    const int                   & currentPlayerId,
+    const std::set<CardPtr, CardPtrComp>    & gamePile,
+    const std::vector<int>      & numDiscardsPerPlayer,
+    const std::vector<Score>    & playerScores
+)
+    : players(players),
+      currentPlayerId(currentPlayerId),
+      gamePile(gamePile),
+      numDiscardsPerPlayer(numDiscardsPerPlayer),
+      playerScores(playerScores) {}
 
 
 std::ostream &operator<<(std::ostream &out, const TurnContext& c) {

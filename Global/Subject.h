@@ -4,19 +4,20 @@
 #include <set>
 #include <memory>
 
+template <typename NotificationContext>
 class Observer;
 
+template <typename NotificationContext>
 class Subject {
 public:
-       void subscribe( std::shared_ptr<Observer> );
-       void unsubscribe( std::shared_ptr<Observer> );
+       void subscribe( std::shared_ptr<Observer<NotificationContext>> );
+       void unsubscribe( std::shared_ptr<Observer<NotificationContext>> );
 
 protected:
-       void notify();
+       void notify(NotificationContext context);
 
 private:
-       typedef std::set< std::shared_ptr<Observer> > Observers;
-       Observers observers_;
+       std::set< std::shared_ptr<Observer<NotificationContext>> > observers_;
 };
 
 #endif

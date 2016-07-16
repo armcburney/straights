@@ -122,11 +122,42 @@ Deck Straights::getDeck() const {
 }
 
 TurnContext Straights::getTurnContext() const {
-    return TurnContext(gamePile, currentPlayer->getHand());
+    return TurnContext(
+        currentPlayer->getHand(),
+        gamePile
+    );
 }
 
 RoundContext Straights::getRoundContext() const {
-    return RoundContext(players);
+    // Custom variables to be returned in the context
+    std::vector<int>                  numDiscardsPerPlayer;
+    std::vector<Score>                playerScores;
+
+    // Get the values for these variables
+    transform(
+        players.begin(),
+        players.end(),
+        back_inserter(numDiscardsPerPlayer),
+        [] (const Player &p) {
+            return p.getNumCardsDiscarded();
+        }
+    );
+    transform(
+        players.begin(),
+        players.end(),
+        back_inserter(playerScores),
+        [] (const Player &p) {
+            return p.getScore();
+        }
+    );
+
+    return RoundContext(
+        players,
+        currentPlayer->getID(),
+        gamePile,
+        numDiscardsPerPlayer,
+        playerScores
+    );
 }
 
 vector<CardPtr> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, CardPtrComp> &gamePile) {

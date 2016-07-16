@@ -8,10 +8,16 @@
 
 #include "../Global/Command.h"
 #include "../Global/Observer.h"
+#include "../Global/Context.h"
 
-class GameView : public Gtk::Window, public Observer {
+class Controller;
+
+class GameView : public Gtk::Window, public Observer<RoundContext> {
 public:
+    GameView(std::weak_ptr<Controller>);
+    virtual void update(RoundContext context) final;
 private:
+    std::weak_ptr<Controller> controller;
 };
 
 #endif

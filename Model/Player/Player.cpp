@@ -79,6 +79,10 @@ bool Player::hasCard(Card card) const {
     );
 }
 
+int Player::getNumCardsDiscarded() const {
+    return discardPile.size();
+}
+
 ostream &operator<<(ostream &out, const Player &p) {
     out << "Player " << p.getID() << "'s discards:";
     for (CardPtr c : p.discardPile)

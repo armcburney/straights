@@ -15,7 +15,7 @@
 
 typedef std::vector<Player>::iterator PlayerItr;
 
-class Straights : public Subject {
+class Straights : public Subject<RoundContext> {
     friend std::ostream &operator<<(std::ostream &out, const Straights &s);
 
 public:
@@ -96,6 +96,7 @@ public:
     POSTCONDITIONS:
       - returns: all possible legal moves given the hand and game pile
     */
+
 private:
     int seed_;
     Deck deck;

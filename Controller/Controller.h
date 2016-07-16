@@ -6,11 +6,13 @@
 #include "../View/InitializationView.h"
 #include "../View/GameView.h"
 #include "../Global/TurnResult.h"
+#include "../Global/Observer.h"
+#include "../Global/Context.h"
 
 #include <memory>
 #include <string>
 
-class Controller {
+class Controller : public std::enable_shared_from_this<Controller> {
 public:
     Controller(std::unique_ptr<TextView> textView);
     void initialize();
