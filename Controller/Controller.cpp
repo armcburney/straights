@@ -1,6 +1,8 @@
 #include "Controller.h"
 #include "../Model/Deck.h"
 
+#include "../Global/Subject.cpp"
+
 using namespace std;
 
 Controller::Controller(unique_ptr<TextView> textView) : textView(move(textView)) {}
@@ -10,7 +12,7 @@ void Controller::initialize() {
     initializationView = unique_ptr<InitializationView>(
         new InitializationView(shared_from_this())
     );
-    // TODO Show initializationView
+    initializationView->show();
 }
 
 void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {

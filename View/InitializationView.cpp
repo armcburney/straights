@@ -9,9 +9,9 @@ using namespace std;
 
 InitializationView::InitializationView(weak_ptr<Controller> controller)
     : controller(controller) {
-    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("gui.glade");
+    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("View/gui.glade");
 
-    Gtk::Window* w = this;
+    Gtk::Window *w;
     builder->get_widget("InitializationView", w);
 
     Gtk::Button *startGameButton;

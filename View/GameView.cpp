@@ -10,7 +10,10 @@ using namespace std;
 GameView::GameView(weak_ptr<Controller> controller)
     : controller(controller),
       selectedCardIndex(-1) {
-    // TODO Load glade template
+    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("View/gui.glade");
+
+    Gtk::Window* w = this;
+    builder->get_widget("GameView", w);
 }
 
 void GameView::update(RoundContext) {

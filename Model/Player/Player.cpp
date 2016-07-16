@@ -83,6 +83,11 @@ int Player::getNumCardsDiscarded() const {
     return discardPile.size();
 }
 
+Player::Type Player::getType() const {
+    // Default
+    return Player::HUMAN;
+}
+
 ostream &operator<<(ostream &out, const Player &p) {
     out << "Player " << p.getID() << "'s discards:";
     for (CardPtr c : p.discardPile)

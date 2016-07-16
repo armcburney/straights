@@ -19,6 +19,7 @@ public:
     enum Type { COMPUTER, HUMAN };
 
     Player(int, std::shared_ptr<PlayerStrategy> strategy);
+    virtual ~Player() = default;
     /*
     POSTCONDITIONS:
       - ensures: initializes this to Player with id, score = 0, roundScore = 0, and

@@ -10,6 +10,8 @@
 #include "Straights.h"
 #include "Strategy/AutomatedPlayerStrategy.h"
 
+#include "../Global/Subject.cpp"
+
 using namespace std;
 
 const Score Straights::endingScoreThreshold = Score(80);
