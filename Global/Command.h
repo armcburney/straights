@@ -10,7 +10,7 @@ struct Command{
 	Type type;
 	Card card;
 
-	Command();
+	Command(Type type = NO_COMMAND, Card card = Card(Card::SPADE, Card::ACE));
     /*
     POSTCONDITIONS:
       - ensures: initializes this to a Command with:

@@ -50,6 +50,8 @@ void Straights::deal () {
             return p.hasCard(Card(Card::SPADE, Card::SEVEN));
         }
     );
+
+    notify();
 }
 
 // Initiates next round
@@ -94,6 +96,8 @@ TurnResult Straights::next (const Command &input) {
             currentPlayer = players.begin();
     }
 
+    notify();
+
     return turnResult;
 }
 
@@ -105,6 +109,8 @@ PlayerItr Straights::returnCurrentPlayer() const {
 void Straights::automateCurrentPlayer() {
     auto newStrategy = shared_ptr<PlayerStrategy>(new AutomatedPlayerStrategy);
     currentPlayer->setStrategy(newStrategy);
+
+    notify();
 }
 
 void Straights::clearRound() {
@@ -115,6 +121,8 @@ void Straights::clearRound() {
     for (auto &p : players) {
         p.clearRound();
     }
+
+    notify();
 }
 
 Deck Straights::getDeck() const {
@@ -132,6 +140,7 @@ RoundContext Straights::getRoundContext() const {
     // Custom variables to be returned in the context
     std::vector<int>                  numDiscardsPerPlayer;
     std::vector<Score>                playerScores;
+    std::vector<Player::Type>         playerTypes;
 
     // Get the values for these variables
     transform(
@@ -150,13 +159,22 @@ RoundContext Straights::getRoundContext() const {
             return p.getScore();
         }
     );
+    transform(
+        players.begin(),
+        players.end(),
+        back_inserter(playerTypes),
+        [] (const Player &p) {
+            return p.getType();
+        }
+    );
 
     return RoundContext(
         players,
         currentPlayer->getID(),
         gamePile,
         numDiscardsPerPlayer,
-        playerScores
+        playerScores,
+        playerTypes
     );
 }
 
@@ -192,6 +210,10 @@ vector<CardPtr> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, 
         }
     }
     return legalPlays;
+}
+
+void Straights::notify() {
+    notifyWithContext(getRoundContext());
 }
 
 // Output

@@ -14,7 +14,8 @@ public:
        void unsubscribe( std::shared_ptr<Observer<NotificationContext>> );
 
 protected:
-       void notify(NotificationContext context);
+       void notifyWithContext(NotificationContext context);
+       virtual void notify() = 0;
 
 private:
        std::set< std::shared_ptr<Observer<NotificationContext>> > observers_;

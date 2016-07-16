@@ -18,6 +18,7 @@ public:
     void initialize();
     void startGame(std::vector<Player::Type>, int seed);
     void continueGame(const Command &input = Command());
+    void endGame();
 private:
     std::unique_ptr<Straights> model;
     std::unique_ptr<TextView> textView;

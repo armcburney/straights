@@ -79,6 +79,7 @@ public:
       - returns: true if the player has the card
     */
     int getNumCardsDiscarded() const;
+    virtual Type getType() const;
 
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)

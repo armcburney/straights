@@ -21,7 +21,7 @@ void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
     );
 
     // TODO Close the initializationView
-    initializationView.release();
+    initializationView.reset();
 
     // Make the view subscribe to updates from the model
     model->subscribe(gameView);
@@ -91,4 +91,10 @@ void Controller::continueGame(const Command &input) {
         // Continue if the game hasn't yet been quit
         continueGame();
     }
+}
+
+void Controller::endGame() {
+    gameView.reset();
+    model.reset();
+    initialize();
 }

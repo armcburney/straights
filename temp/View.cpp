@@ -18,6 +18,10 @@ View::View() {
 
     Gtk::Button * button1;
     builder->get_widget("button1", button1);
+    button1->signal_clicked().connect([&] () {
+        return test();
+    });
+
     button1->signal_clicked().connect(sigc::mem_fun(*this, &View::test));
 }
 

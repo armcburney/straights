@@ -18,6 +18,13 @@ public:
     virtual void update(RoundContext context) final;
 private:
     std::weak_ptr<Controller> controller;
+    int selectedCardIndex;
+    std::vector<CardPtr> hand;
+
+    void cardSelected(int index);
+    void playButtonClicked();
+    void discardButtonClicked();
+    void rageQuitButtonClicked();
 };
 
 #endif

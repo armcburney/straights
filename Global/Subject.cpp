@@ -17,7 +17,7 @@ void Subject<NotificationContext>::unsubscribe (shared_ptr<Observer<Notification
 
 
 template <typename NotificationContext>
-void Subject<NotificationContext>::notify(NotificationContext context) {
+void Subject<NotificationContext>::notifyWithContext(NotificationContext context) {
     for (auto i = observers_.begin(); i != observers_.end(); ++i)
         (*i)->update(context);
 }
