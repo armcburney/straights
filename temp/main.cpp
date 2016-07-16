@@ -8,6 +8,7 @@
 using namespace std;
 
 int main (int argc, char** argv) {
-  View view(argc, argv);
-  cout << "test this" << endl;
+    Gtk::Main kit(argc, argv);
+    View view;
+    kit.run();
 }

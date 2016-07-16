@@ -10,17 +10,15 @@
 
 using namespace std;
 
-View::View(int argc, char ** argv) {
-  Gtk::Main kit(argc, argv);
-  Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("main.glade");
-  Gtk::Window* window;
-  builder->get_widget("window1", window);
-  window->show();
-  kit.run();
+View::View() {
+    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("main.glade");
+    Gtk::Window* window;
+    builder->get_widget("window1", window);
+    window->show();
 
-  Gtk::Button * button1;
-  builder->get_widget("button1", button1);
-  button1->signal_clicked().connect(sigc::mem_fun(*this, &View::test));
+    Gtk::Button * button1 = new Gtk::Button("button1");
+    builder->get_widget("button1", button1);
+    button1->signal_clicked().connect(sigc::mem_fun(*this, &View::test));
 }
 
 void View::test() {

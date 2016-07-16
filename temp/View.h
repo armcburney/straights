@@ -5,11 +5,12 @@
 #include <string>
 #include <vector>
 
+#include "gtkmm.h"
 #include "../Global/Command.h"
 
 class View : public Gtk::Window {
 public:
-    View(int, char**);
+    View();
     void test();
 };
 
