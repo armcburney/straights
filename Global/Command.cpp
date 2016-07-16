@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Command::Command() : type(NO_COMMAND), card(Card::SPADE, Card::ACE) {}
+Command::Command(Type type, Card card) : type(type), card(card) {}
 
 Command::Command(const Command&) = default;
 

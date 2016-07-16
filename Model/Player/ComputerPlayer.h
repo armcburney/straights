@@ -16,6 +16,7 @@ public:
         lastRoundScore = 0
         strategy = AutomatedPlayerStrategy
     */
+    virtual Type getType() const final;
 };
 
 #endif

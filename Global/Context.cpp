@@ -14,17 +14,19 @@ TurnContext::TurnContext(
       gamePile(gamePile) {}
 
 RoundContext::RoundContext(
-    const std::vector<Player>   & players,
-    const int                   & currentPlayerId,
+    const std::vector<Player>               & players,
+    const int                               & currentPlayerId,
     const std::set<CardPtr, CardPtrComp>    & gamePile,
-    const std::vector<int>      & numDiscardsPerPlayer,
-    const std::vector<Score>    & playerScores
+    const std::vector<int>                  & numDiscardsPerPlayer,
+    const std::vector<Score>                & playerScores,
+    const std::vector<Player::Type>         & playerTypes
 )
     : players(players),
       currentPlayerId(currentPlayerId),
       gamePile(gamePile),
       numDiscardsPerPlayer(numDiscardsPerPlayer),
-      playerScores(playerScores) {}
+      playerScores(playerScores),
+      playerTypes(playerTypes) {}
 
 
 std::ostream &operator<<(std::ostream &out, const TurnContext& c) {

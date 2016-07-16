@@ -8,3 +8,7 @@ using namespace std;
 
 ComputerPlayer::ComputerPlayer(int id)
     : Player(id, shared_ptr<PlayerStrategy>(new AutomatedPlayerStrategy)) {}
+
+Player::Type ComputerPlayer::getType() const {
+    return Player::COMPUTER;
+}

@@ -16,7 +16,7 @@ View::View() {
     builder->get_widget("window1", window);
     window->show();
 
-    Gtk::Button * button1 = new Gtk::Button("button1");
+    Gtk::Button * button1;
     builder->get_widget("button1", button1);
     button1->signal_clicked().connect([&] () {
         return temp(builder);

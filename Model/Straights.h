@@ -97,6 +97,9 @@ public:
       - returns: all possible legal moves given the hand and game pile
     */
 
+protected:
+    void notify();
+
 private:
     int seed_;
     Deck deck;

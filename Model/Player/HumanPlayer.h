@@ -16,6 +16,7 @@ public:
         lastRoundScore = 0
         strategy = ManualPlayerStrategy
     */
+    virtual Type getType() const final;
 };
 
 #endif
