@@ -332,7 +332,7 @@
     </child>
   </object>
   <object class="GtkAdjustment" id="adjustment1">
-    <property name="upper">15.660000006482008</property>
+    <property name="upper">15.66</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
@@ -401,7 +401,6 @@
     <property name="can_focus">False</property>
     <property name="stock">CardImages/back_1.png</property>
   </object>
-  <object class="GtkTextBuffer" id="textbuffer1"/>
   <object class="GtkWindow" id="GameView">
     <property name="can_focus">False</property>
     <property name="margin_left">10</property>
@@ -1522,13 +1521,19 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkTextView" id="statusTextView">
+                      <object class="GtkScrolledWindow" id="scrolledwindow1">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="hexpand">True</property>
-                        <property name="vexpand">True</property>
-                        <property name="editable">False</property>
-                        <property name="buffer">textbuffer1</property>
+                        <property name="hscrollbar_policy">never</property>
+                        <property name="shadow_type">in</property>
+                        <child>
+                          <object class="GtkTextView" id="summaryTextView">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">False</property>
+                            <property name="cursor_visible">False</property>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>
@@ -2296,7 +2301,7 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
@@ -2620,5 +2625,14 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer1"/>
+  <object class="GtkTextView" id="statusTextView">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <property name="editable">False</property>
+    <property name="buffer">textbuffer1</property>
   </object>
 </interface>

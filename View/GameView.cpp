@@ -16,7 +16,7 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
     builder->get_widget("discardButton", discardButton);
     builder->get_widget("rageQuitButton", rageQuitButton);
 
-    builder->get_widget("statusTextView", statusTextView);
+    builder->get_widget("summaryTextView", statusTextView);
     builder->get_widget("currentPlayerLabel", currentPlayerLabel);
     builder->get_widget("currentCardLabel", currentCardLabel);
 
