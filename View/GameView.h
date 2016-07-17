@@ -33,6 +33,8 @@ private:
     void windowClosed();
 
     Gtk::TextView *statusTextView;
+    Gtk::Label *currentPlayerLabel;
+    Gtk::Label *currentCardLabel;
 };
 
 #endif
