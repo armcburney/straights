@@ -643,14 +643,27 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score1">
+                          <object class="GtkLabel" id="labe">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="margin_left">140</property>
-                            <property name="label" translatable="yes">Score: 0</property>
+                            <property name="label" translatable="yes">Score: </property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
+                            <property name="top_attach">0</property>
+                            <property name="width">1</property>
+                            <property name="height">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="score1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
                             <property name="top_attach">0</property>
                             <property name="width">1</property>
                             <property name="height">1</property>
@@ -896,14 +909,27 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score2">
+                          <object class="GtkLabel" id="lab">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="margin_left">140</property>
-                            <property name="label" translatable="yes">Score: 0</property>
+                            <property name="label" translatable="yes">Score: </property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
+                            <property name="top_attach">0</property>
+                            <property name="width">1</property>
+                            <property name="height">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="score2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
                             <property name="top_attach">0</property>
                             <property name="width">1</property>
                             <property name="height">1</property>
@@ -1163,14 +1189,27 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score4">
+                          <object class="GtkLabel" id="label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="margin_left">140</property>
-                            <property name="label" translatable="yes">Score: 0</property>
+                            <property name="label" translatable="yes">Score: </property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
+                            <property name="top_attach">0</property>
+                            <property name="width">1</property>
+                            <property name="height">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="score4">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
                             <property name="top_attach">0</property>
                             <property name="width">1</property>
                             <property name="height">1</property>
@@ -1429,14 +1468,27 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score3">
+                          <object class="GtkLabel" id="la">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="margin_left">140</property>
-                            <property name="label" translatable="yes">Score: 0</property>
+                            <property name="label" translatable="yes">Score: </property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
+                            <property name="top_attach">0</property>
+                            <property name="width">1</property>
+                            <property name="height">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="score3">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
                             <property name="top_attach">0</property>
                             <property name="width">1</property>
                             <property name="height">1</property>
@@ -2285,7 +2337,7 @@
                                   <object class="GtkLabel" id="currentCardLabel">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
-                                    <property name="label" translatable="yes">Current card: ##</property>
+                                    <property name="label" translatable="yes">Current card: N/A</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
