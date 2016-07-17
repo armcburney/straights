@@ -16,6 +16,11 @@ View::View() {
     builder->get_widget("window1", window);
     window->show();
 
+  Gtk::Image * image;
+  builder->get_widget("image1", image);
+  GtkImage *image2 = image->gobj();
+  gtk_image_set_from_file(image2, "cards_png/KD.png");
+
     Gtk::Button * button1;
     builder->get_widget("button1", button1);
     button1->signal_clicked().connect([&] () {
@@ -30,9 +35,10 @@ void View::temp(Glib::RefPtr<Gtk::Builder> builder) {
   //gtk_widget_override_color (GTK_WIDGET(button1), GTK_STATE_FLAG_NORMAL, color);
  // Gtk::TextView* text;
  // GtkTextBuffer* buffer;
-  GtkImage * image;
+  Gtk::Image * image;
   builder->get_widget("image1", image);
-  gtk_image_set_from_file(image, "cards_png/KD.png");
+  GtkImage *image2 = image->gobj();
+  gtk_image_set_from_file(image2, "cards_png/KD.png");
  // builder->get_widget("textview1", text);
   //builder->get_widget("textbuffer1", buffer);
 //gtk_text_buffer_set_text (GtkTextBuffer buffer,
