@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <array>
 
 #include "../Global/Command.h"
 #include "../Global/Observer.h"
@@ -20,7 +21,11 @@ public:
 private:
     std::weak_ptr<Controller> controller;
     void startGameButtonClicked();
+    void playerTypeChanged(int, bool);
     void windowClosed();
+
+    std::array<std::pair<Gtk::CheckButton*, Gtk::CheckButton*>, 4> playerTypeCheckboxes;
+    Gtk::Entry *randomSeedEntry;
 };
 
 #endif

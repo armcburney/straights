@@ -135,12 +135,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton1">
+              <object class="GtkCheckButton" id="p1HumanCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
+                <property name="yalign">1</property>
+                <property name="active">True</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -151,12 +153,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton2">
+              <object class="GtkCheckButton" id="p2HumanCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
+                <property name="active">True</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -167,12 +170,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton3">
+              <object class="GtkCheckButton" id="p3HumanCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
+                <property name="active">True</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -183,12 +187,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton4">
+              <object class="GtkCheckButton" id="p4HumanCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
+                <property name="active">True</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -199,7 +204,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton5">
+              <object class="GtkCheckButton" id="p1ComputerCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -214,7 +219,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton6">
+              <object class="GtkCheckButton" id="p2ComputerCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -229,7 +234,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton7">
+              <object class="GtkCheckButton" id="p3ComputerCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -244,7 +249,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="checkbutton8">
+              <object class="GtkCheckButton" id="p4ComputerCheckbox">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -287,9 +292,11 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="entry1">
+              <object class="GtkEntry" id="randomSeedEntry">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="text" translatable="yes">0</property>
+                <property name="input_purpose">digits</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
