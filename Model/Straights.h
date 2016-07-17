@@ -4,6 +4,7 @@
 #include <istream>
 #include <set>
 #include <vector>
+#include <string>
 
 #include "Card.h"
 #include "Deck.h"
@@ -48,10 +49,10 @@ public:
     POSTCONDITIONS:
       - return: currentPlayer
     */
-    std::vector<Player> returnPlayers() const;
+    std::string returnWinner(const Straights &s) const;
     /*
     POSTCONDITIONS:
-      - return: players 
+      - return: game winner
     */
     void clearRound();
     /*

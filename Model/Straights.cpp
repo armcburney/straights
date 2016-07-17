@@ -107,8 +107,17 @@ PlayerItr Straights::returnCurrentPlayer() const {
     return currentPlayer;
 }
 
-vector<Player> Straights::returnPlayers() const {
-  return players;
+string Straights::returnWinner(const Straights &s) const {
+        // We have a winner!
+        const auto &winningPlayer = min_element(
+            s.players.begin(),
+            s.players.end(),
+            [] (const Player &p1, const Player &p2) {
+                return p1.getScore() < p2.getScore();
+            }
+        );
+        return to_string(winningPlayer->getID());
+
 }
 
 // Changes the player's strategy to the AutomatedPlayerStrategy
@@ -233,15 +242,7 @@ ostream &operator<<(ostream &out, const Straights &s) {
     );
 
     if (losingPlayer != s.players.end()) {
-        // We have a winner!
-        const auto &winningPlayer = min_element(
-            s.players.begin(),
-            s.players.end(),
-            [] (const Player &p1, const Player &p2) {
-                return p1.getScore() < p2.getScore();
-            }
-        );
-        out << "Player " << winningPlayer->getID() << " wins!";
+        out << "Player " << s.returnWinner(s) << " wins!";
     } else {
         // No winner, we're starting a new round
         out << "A new round begins. It's player " << s.currentPlayer->getID() << "'s turn to play.";
