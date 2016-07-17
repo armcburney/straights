@@ -107,6 +107,7 @@
               <object class="GtkCheckButton" id="checkbutton1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
@@ -122,6 +123,7 @@
               <object class="GtkCheckButton" id="checkbutton2">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
@@ -137,6 +139,7 @@
               <object class="GtkCheckButton" id="checkbutton3">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
@@ -152,6 +155,7 @@
               <object class="GtkCheckButton" id="checkbutton4">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="is_focus">True</property>
                 <property name="receives_default">False</property>
                 <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>
@@ -180,7 +184,6 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="checkbutton6">
-                <property name="label" translatable="yes">checkbutton</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -196,7 +199,6 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="checkbutton7">
-                <property name="label" translatable="yes">checkbutton</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -212,7 +214,6 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="checkbutton8">
-                <property name="label" translatable="yes">checkbutton</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -293,7 +294,7 @@
     </child>
   </object>
   <object class="GtkTextBuffer" id="textbuffer1"/>
-  <object class="GtkWindow" id="GameWindow">
+  <object class="GtkWindow" id="GameView">
     <property name="can_focus">False</property>
     <child>
       <object class="GtkBox" id="box1">
@@ -510,7 +511,7 @@
                       <object class="GtkImage" id="image1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -523,7 +524,7 @@
                       <object class="GtkImage" id="image2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -536,7 +537,7 @@
                       <object class="GtkImage" id="image3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -549,7 +550,7 @@
                       <object class="GtkImage" id="image4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -562,7 +563,7 @@
                       <object class="GtkImage" id="image5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">4</property>
@@ -575,7 +576,7 @@
                       <object class="GtkImage" id="image6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
@@ -588,7 +589,7 @@
                       <object class="GtkImage" id="image7">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">6</property>
@@ -601,7 +602,7 @@
                       <object class="GtkImage" id="image8">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">7</property>
@@ -614,7 +615,7 @@
                       <object class="GtkImage" id="image9">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">8</property>
@@ -627,7 +628,7 @@
                       <object class="GtkImage" id="image10">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">9</property>
@@ -640,7 +641,7 @@
                       <object class="GtkImage" id="image11">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">10</property>
@@ -653,7 +654,7 @@
                       <object class="GtkImage" id="image12">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">11</property>
@@ -666,7 +667,7 @@
                       <object class="GtkImage" id="image13">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="pixbuf">../cards_png/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">12</property>
