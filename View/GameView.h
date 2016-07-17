@@ -42,6 +42,10 @@ private:
 
     std::array<Gtk::Button*, 13> handCardButtons;
     std::array<Gtk::Image*, 13> handCardImages;
+
+    std::array<Gtk::Image*, 54> tableCards;
+    std::array<std::array<Gtk::Image*, 13>, 54> playerHands;
+    std::array<Gtk::Label*, 4> playerScoreLabels;
 };
 
 #endif

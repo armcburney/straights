@@ -29,17 +29,17 @@ struct RoundContext {
     const std::vector<Player> players;
     const int currentPlayerId;
     const std::set<CardPtr, CardPtrComp> gamePile;
-    const std::vector<int> numDiscardsPerPlayer;
+    const std::vector<std::vector<TurnResult>> playerRoundMoves;
     const std::vector<Score> playerScores;
     const std::vector<Player::Type> playerTypes;
 
     RoundContext(
-        const std::vector<Player>               & players,
-        const int                               & currentPlayerId,
-        const std::set<CardPtr, CardPtrComp>    & gamePile,
-        const std::vector<int>                  & numDiscardsPerPlayer,
-        const std::vector<Score>                & playerScores,
-        const std::vector<Player::Type>         & playerTypes
+        const std::vector<Player>                       & players,
+        const int                                       & currentPlayerId,
+        const std::set<CardPtr, CardPtrComp>            & gamePile,
+        const std::vector<std::vector<TurnResult>> & numDiscardsPerPlayer,
+        const std::vector<Score>                        & playerScores,
+        const std::vector<Player::Type>                 & playerTypes
     );
 };
 

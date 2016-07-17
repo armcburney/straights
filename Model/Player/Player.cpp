@@ -36,6 +36,9 @@ TurnResult Player::playStrategy(set<CardPtr, CardPtrComp> &gamePile, const Comma
         hand.remove(card);
     }
 
+    if (turnResult.getType() == TurnResult::PLAY || turnResult.getType() == TurnResult::DISCARD)
+        roundMoves.push_back(turnResult);
+
     return turnResult;
 }
 
@@ -43,6 +46,7 @@ TurnResult Player::playStrategy(set<CardPtr, CardPtrComp> &gamePile, const Comma
 void Player::clearRound() {
     hand.clear();
     discardPile.clear();
+    roundMoves.clear();
 
     // Add this rounds score to the overall score
     score = score + roundScore;
@@ -55,6 +59,10 @@ void Player::setHand(list<CardPtr> l) {
 
 list<CardPtr> Player::getHand() const {
     return hand;
+}
+
+vector<TurnResult> Player::getRoundMoves() const {
+    return roundMoves;
 }
 
 int Player::getID () const {

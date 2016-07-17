@@ -140,17 +140,17 @@ TurnContext Straights::getTurnContext() const {
 
 RoundContext Straights::getRoundContext() const {
     // Custom variables to be returned in the context
-    std::vector<int>                  numDiscardsPerPlayer;
-    std::vector<Score>                playerScores;
-    std::vector<Player::Type>         playerTypes;
+    std::vector<std::vector<TurnResult>>    playerRoundMoves;
+    std::vector<Score>                      playerScores;
+    std::vector<Player::Type>               playerTypes;
 
     // Get the values for these variables
     transform(
         players.begin(),
         players.end(),
-        back_inserter(numDiscardsPerPlayer),
+        back_inserter(playerRoundMoves),
         [] (const Player &p) {
-            return p.getNumCardsDiscarded();
+            return p.getRoundMoves();
         }
     );
     transform(
@@ -174,7 +174,7 @@ RoundContext Straights::getRoundContext() const {
         players,
         currentPlayer->getID(),
         gamePile,
-        numDiscardsPerPlayer,
+        playerRoundMoves,
         playerScores,
         playerTypes
     );
