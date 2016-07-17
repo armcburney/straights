@@ -11,7 +11,10 @@
 class View : public Gtk::Window {
 public:
     View();
-    void temp(Glib::RefPtr<Gtk::Builder>);
+    void temp();
+    void rage();
+private:
+    Glib::RefPtr<Gtk::Builder> builder;
 };
 
 #endif

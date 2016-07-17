@@ -11,37 +11,35 @@
 using namespace std;
 
 View::View() {
-    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("main.glade");
+    builder = Gtk::Builder::create_from_file("main.glade");
     Gtk::Window* window;
     builder->get_widget("window1", window);
     window->show();
 
-  Gtk::Image * image;
-  builder->get_widget("image1", image);
-  GtkImage *image2 = image->gobj();
-  gtk_image_set_from_file(image2, "cards_png/KD.png");
-
-    Gtk::Button * button1;
+    Gtk::Button * button1, *button2;
     builder->get_widget("button1", button1);
-    button1->signal_clicked().connect([&] () {
-        return temp(builder);
-    });
+    builder->get_widget("button2", button2);
+    button1->signal_clicked().connect(sigc::mem_fun(*this, &View::temp));
+    button2->signal_clicked().connect(sigc::mem_fun(*this, &View::rage));
 }
 
-void View::temp(Glib::RefPtr<Gtk::Builder> builder) {
-  cout << "test if this bad boy is working or not" << endl;
+void View::rage() {
+  cout << "ragequit" << endl;
   //const GdkColor * color;
   //gdk_color_parse("#A22222", color);
   //gtk_widget_override_color (GTK_WIDGET(button1), GTK_STATE_FLAG_NORMAL, color);
- // Gtk::TextView* text;
- // GtkTextBuffer* buffer;
+}
+
+
+void View::temp() {
+  cout << "test if this bad boy is working or not" << endl;
+  //Gtk::TextBuffer* buffer;
   Gtk::Image * image;
   builder->get_widget("image1", image);
   GtkImage *image2 = image->gobj();
   gtk_image_set_from_file(image2, "cards_png/KD.png");
- // builder->get_widget("textview1", text);
-  //builder->get_widget("textbuffer1", buffer);
-//gtk_text_buffer_set_text (GtkTextBuffer buffer,
-   //                       "test", 4);
+  /*builder->get_widget("textbuffer1", buffer);
+  GtkTextBuffer* buffer2 = buffer->gobj();
+  gtk_text_buffer_set_text (buffer2, "test", 4);*/
 }
 
