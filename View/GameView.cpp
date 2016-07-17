@@ -16,6 +16,16 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
     builder->get_widget("currentPlayerLabel", currentPlayerLabel);
     builder->get_widget("currentCardLabel", currentCardLabel);
 
+    for (int i = 0; i < 13; i++) {
+        builder->get_widget("handCardImage" + to_string(i+1), handCardImages[i]);
+
+        Gtk::Button *btn;
+        builder->get_widget("handCard" + to_string(i+1), btn);
+        btn->signal_clicked().connect([this, i]() {
+            cardSelected(i);
+        });
+    }
+
     Gtk::Button *playButton;
     builder->get_widget("playButton", playButton);
     playButton->signal_clicked().connect(
@@ -82,5 +92,10 @@ void GameView::printTurnResult(TurnResult tr) {
 void GameView::printTurnContext(TurnContext tc) {
     hand.clear();
     copy(tc.hand.begin(), tc.hand.end(), back_inserter(hand));
-    // TODO show the cards in the hand
+
+    for (int i = 0; i < 13; i++) {
+        CardPtr card = hand[i];
+        GtkImage *cardImage = handCardImages[i]->gobj();
+        gtk_image_set_from_file(cardImage, card->getImageUrl().c_str());
+    }
 }
