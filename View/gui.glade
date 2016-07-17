@@ -331,6 +331,11 @@
       </object>
     </child>
   </object>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="upper">15.66</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkImage" id="handCardImage1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -396,7 +401,6 @@
     <property name="can_focus">False</property>
     <property name="stock">CardImages/back_1.png</property>
   </object>
-  <object class="GtkTextBuffer" id="textbuffer1"/>
   <object class="GtkWindow" id="GameView">
     <property name="can_focus">False</property>
     <property name="margin_left">10</property>
@@ -664,7 +668,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score1">
+                          <object class="GtkLabel" id="p1Score">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">0</property>
@@ -930,7 +934,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score2">
+                          <object class="GtkLabel" id="p2Score">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">0</property>
@@ -1210,7 +1214,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score4">
+                          <object class="GtkLabel" id="p3Score">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">0</property>
@@ -1311,19 +1315,6 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image45">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="pixbuf">CardImages/back.png</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">1</property>
-                                <property name="width">1</property>
-                                <property name="height">1</property>
-                              </packing>
-                            </child>
-                            <child>
                               <object class="GtkImage" id="P3_C8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -1371,19 +1362,6 @@
                               <packing>
                                 <property name="left_attach">1</property>
                                 <property name="top_attach">2</property>
-                                <property name="width">1</property>
-                                <property name="height">1</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkImage" id="P3_C7">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="pixbuf">CardImages/back.png</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">1</property>
                                 <property name="width">1</property>
                                 <property name="height">1</property>
                               </packing>
@@ -1453,6 +1431,19 @@
                                 <property name="height">1</property>
                               </packing>
                             </child>
+                            <child>
+                              <object class="GtkImage" id="P3_C7">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="pixbuf">CardImages/back.png</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">1</property>
+                                <property name="width">1</property>
+                                <property name="height">1</property>
+                              </packing>
+                            </child>
                           </object>
                         </child>
                       </object>
@@ -1489,7 +1480,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="score3">
+                          <object class="GtkLabel" id="p4Score">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">0</property>
@@ -1530,11 +1521,19 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkTextView" id="statusTextView">
+                      <object class="GtkScrolledWindow" id="scrolledwindow1">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="editable">False</property>
-                        <property name="buffer">textbuffer1</property>
+                        <property name="hscrollbar_policy">never</property>
+                        <property name="shadow_type">in</property>
+                        <child>
+                          <object class="GtkTextView" id="summaryTextView">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">False</property>
+                            <property name="cursor_visible">False</property>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>
@@ -2302,7 +2301,7 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
@@ -2626,5 +2625,14 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer1"/>
+  <object class="GtkTextView" id="statusTextView">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <property name="editable">False</property>
+    <property name="buffer">textbuffer1</property>
   </object>
 </interface>

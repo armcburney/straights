@@ -81,11 +81,13 @@ public:
     */
     int getNumCardsDiscarded() const;
     virtual Type getType() const;
+    std::vector<TurnResult> getRoundMoves() const;
 
 private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score
     Score roundScore;
+    std::vector<TurnResult> roundMoves;
     std::shared_ptr<PlayerStrategy> strategy;
     std::list<CardPtr> hand;              // Player hand
     std::vector<CardPtr> discardPile;     // Player discard pile

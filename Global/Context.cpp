@@ -15,17 +15,17 @@ TurnContext::TurnContext(
       legalPlays(Straights::getLegalPlays(hand, gamePile)) {}
 
 RoundContext::RoundContext(
-    const std::vector<Player>               & players,
-    const int                               & currentPlayerId,
-    const std::set<CardPtr, CardPtrComp>    & gamePile,
-    const std::vector<int>                  & numDiscardsPerPlayer,
-    const std::vector<Score>                & playerScores,
-    const std::vector<Player::Type>         & playerTypes
+    const std::vector<Player>                       & players,
+    const int                                       & currentPlayerId,
+    const std::set<CardPtr, CardPtrComp>            & gamePile,
+    const std::vector<std::vector<TurnResult>> & playerRoundMoves,
+    const std::vector<Score>                        & playerScores,
+    const std::vector<Player::Type>                 & playerTypes
 )
     : players(players),
       currentPlayerId(currentPlayerId),
       gamePile(gamePile),
-      numDiscardsPerPlayer(numDiscardsPerPlayer),
+      playerRoundMoves(playerRoundMoves),
       playerScores(playerScores),
       playerTypes(playerTypes) {}
 
