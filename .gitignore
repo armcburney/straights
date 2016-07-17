@@ -1,7 +1,7 @@
 *.o
 *.swp
 *.swo
-*~
+View/gui.glade~
 a.out
 .DS_Store
 a.out.dSYM

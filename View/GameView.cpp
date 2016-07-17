@@ -13,6 +13,8 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
       selectedCardIndex(-1) {
 
     builder->get_widget("statusTextView", statusTextView);
+    builder->get_widget("currentPlayerLabel", currentPlayerLabel);
+    builder->get_widget("currentCardLabel", currentCardLabel);
 
     Gtk::Button *playButton;
     builder->get_widget("playButton", playButton);
@@ -27,14 +29,20 @@ void GameView::setController(weak_ptr<Controller> c) {
     controller = c;
 }
 
-void GameView::update(RoundContext) {
-    // TODO Update the view with content from context
-    cout << "Updating the game view" << endl;
+void GameView::update(RoundContext rc) {
+    stringstream currentPlayerMessage;
+    currentPlayerMessage << "It's Player " << rc.currentPlayerId << "'s turn to play!";
+    currentPlayerLabel->set_label(currentPlayerMessage.str());
 }
 
 void GameView::cardSelected(int index) {
     selectedCardIndex = index;
-    // TODO Update the text in the view to indicate the selected card
+
+    // Update the label indicating the current card
+    CardPtr currentCard = hand[index];
+    stringstream currentCardMessage;
+    currentCardMessage << "Current card: " << *currentCard;
+    currentCardLabel->set_label(currentCardMessage.str());
 }
 
 void GameView::playButtonClicked() {
@@ -72,5 +80,7 @@ void GameView::printTurnResult(TurnResult tr) {
 }
 
 void GameView::printTurnContext(TurnContext tc) {
-    // TODO show the player's hand
+    hand.clear();
+    copy(tc.hand.begin(), tc.hand.end(), back_inserter(hand));
+    // TODO show the cards in the hand
 }

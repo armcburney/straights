@@ -1184,7 +1184,7 @@
                     <property name="can_focus">False</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkTextView" id="textview1">
+                      <object class="GtkTextView" id="statusTextView">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="buffer">textbuffer1</property>
@@ -1233,7 +1233,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkImage" id="image1">
+                      <object class="GtkImage" id="handCard1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1246,7 +1246,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image2">
+                      <object class="GtkImage" id="handCard2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1259,7 +1259,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image3">
+                      <object class="GtkImage" id="handCard3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1272,7 +1272,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image4">
+                      <object class="GtkImage" id="handCard4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1285,7 +1285,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image5">
+                      <object class="GtkImage" id="handCard5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1298,7 +1298,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image6">
+                      <object class="GtkImage" id="handCard6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1311,7 +1311,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image7">
+                      <object class="GtkImage" id="handCard7">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1324,7 +1324,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image8">
+                      <object class="GtkImage" id="handCard8">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1337,7 +1337,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image9">
+                      <object class="GtkImage" id="handCard9">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1350,7 +1350,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image10">
+                      <object class="GtkImage" id="handCard10">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1363,7 +1363,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image11">
+                      <object class="GtkImage" id="handCard11">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1376,7 +1376,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image12">
+                      <object class="GtkImage" id="handCard12">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1389,7 +1389,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image13">
+                      <object class="GtkImage" id="handCard13">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">../cards_png/back_1.png</property>
@@ -1418,7 +1418,7 @@
                                 <property name="can_focus">False</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkLabel" id="label8">
+                                  <object class="GtkLabel" id="currentCardLabel">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">Current card: ##</property>
@@ -1430,8 +1430,8 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="button1">
-                                    <property name="label" translatable="yes">Play card</property>
+                                  <object class="GtkButton" id="playButton">
+                                    <property name="label" translatable="yes">Play</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">True</property>
@@ -1443,8 +1443,8 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="button2">
-                                    <property name="label" translatable="yes">Ragequit</property>
+                                  <object class="GtkButton" id="discardButton">
+                                    <property name="label" translatable="yes">Discard</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">True</property>
@@ -1453,6 +1453,19 @@
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
                                     <property name="position">2</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="rageQuitButton">
+                                    <property name="label" translatable="yes">Rage Quit</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">3</property>
                                   </packing>
                                 </child>
                               </object>
@@ -1479,7 +1492,7 @@
               </object>
             </child>
             <child type="label">
-              <object class="GtkLabel" id="label6">
+              <object class="GtkLabel" id="currentPlayerLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">It's Player #'s turn to play!</property>
