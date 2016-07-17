@@ -1,3 +1,6 @@
+#include <vector>
+#include <iostream>
+
 #include "Controller.h"
 #include "../Model/Deck.h"
 
@@ -91,8 +94,27 @@ void Controller::continueGame(const Command &input) {
     }
 
     if (turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
+        std::vector<Player> players = model->returnPlayers();
+
+        const auto &winningPlayer = min_element(
+            players.begin(),
+            players.end(),
+            [] (const Player &p1, const Player &p2) {
+                return p1.getScore() < p2.getScore();
+            }
+        );
+
+        std::cout << "TEST THIS OUT YO" << std::endl;
+        std::cout << "Player " << to_string(winningPlayer->getID()) << " wins!" << std::endl;
+        std::string test = "Player " + to_string(winningPlayer->getID()) + "  has won the game!";
+        const char * temp = test.c_str();
+
         // The game is over
-        //TODO Show the game result on the game window & make all buttons unclickable
+        Gtk::MessageDialog *dialog;
+        gladeBuilder->get_widget("GameSummaryView", dialog);
+        GtkMessageDialog *run_dialog = dialog->gobj();
+        gtk_message_dialog_set_markup (run_dialog, temp); 
+        gtk_dialog_run( GTK_DIALOG(run_dialog) );
         return;
     }
 

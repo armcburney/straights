@@ -48,7 +48,11 @@ public:
     POSTCONDITIONS:
       - return: currentPlayer
     */
-
+    std::vector<Player> returnPlayers() const;
+    /*
+    POSTCONDITIONS:
+      - return: players 
+    */
     void clearRound();
     /*
     POSTCONDITIONS:

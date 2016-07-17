@@ -107,6 +107,10 @@ PlayerItr Straights::returnCurrentPlayer() const {
     return currentPlayer;
 }
 
+vector<Player> Straights::returnPlayers() const {
+  return players;
+}
+
 // Changes the player's strategy to the AutomatedPlayerStrategy
 void Straights::automateCurrentPlayer() {
     auto newStrategy = shared_ptr<PlayerStrategy>(new AutomatedPlayerStrategy);
