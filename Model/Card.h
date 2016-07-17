@@ -31,6 +31,8 @@ public:
 	  - returns: the object rank
 	*/
 
+    std::string getImageUrl() const;
+
 private:
 	Suit suit_;
 	Rank rank_;

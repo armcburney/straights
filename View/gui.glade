@@ -1951,7 +1951,7 @@
                       <object class="GtkImage" id="handCard1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -1964,7 +1964,7 @@
                       <object class="GtkImage" id="handCard2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1977,7 +1977,7 @@
                       <object class="GtkImage" id="handCard3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1990,7 +1990,7 @@
                       <object class="GtkImage" id="handCard4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -2003,7 +2003,7 @@
                       <object class="GtkImage" id="handCard5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">4</property>
@@ -2016,7 +2016,7 @@
                       <object class="GtkImage" id="handCard6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
@@ -2029,7 +2029,7 @@
                       <object class="GtkImage" id="handCard7">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">6</property>
@@ -2042,7 +2042,7 @@
                       <object class="GtkImage" id="handCard8">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">7</property>
@@ -2055,7 +2055,7 @@
                       <object class="GtkImage" id="handCard9">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">8</property>
@@ -2068,7 +2068,7 @@
                       <object class="GtkImage" id="handCard10">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">9</property>
@@ -2081,7 +2081,7 @@
                       <object class="GtkImage" id="handCard11">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">10</property>
@@ -2094,7 +2094,7 @@
                       <object class="GtkImage" id="handCard12">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">11</property>
@@ -2107,7 +2107,7 @@
                       <object class="GtkImage" id="handCard13">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">../cards_png/back_1.png</property>
+                        <property name="pixbuf">CardImages/back_1.png</property>
                       </object>
                       <packing>
                         <property name="left_attach">12</property>

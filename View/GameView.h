@@ -35,6 +35,8 @@ private:
     Gtk::TextView *statusTextView;
     Gtk::Label *currentPlayerLabel;
     Gtk::Label *currentCardLabel;
+
+    std::array<Gtk::Image*, 13> handCards;
 };
 
 #endif
