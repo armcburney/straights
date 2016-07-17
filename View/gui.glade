@@ -293,6 +293,71 @@
       </object>
     </child>
   </object>
+  <object class="GtkImage" id="handCardImage1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage10">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage11">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage12">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage13">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
+  <object class="GtkImage" id="handCardImage9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">CardImages/back_1.png</property>
+  </object>
   <object class="GtkTextBuffer" id="textbuffer1"/>
   <object class="GtkWindow" id="GameView">
     <property name="can_focus">False</property>
@@ -1948,175 +2013,6 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkImage" id="handCard1">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard2">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard3">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">2</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard4">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">3</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard5">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">4</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard6">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">5</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard7">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">6</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard8">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">7</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard9">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">8</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard10">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">9</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard11">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">10</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard12">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">11</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="handCard13">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixbuf">CardImages/back_1.png</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">12</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
                       <object class="GtkFrame" id="Actions">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -2197,6 +2093,188 @@
                       </object>
                       <packing>
                         <property name="left_attach">13</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage1</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage3</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage4</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage5</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage8</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">7</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard13">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage13</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">12</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard12">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage12</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">11</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard11">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage11</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">10</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage7</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">6</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage6</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage9</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">8</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard10">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage10</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">9</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="handCard2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">handCardImage2</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
                         <property name="top_attach">0</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
