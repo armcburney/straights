@@ -390,7 +390,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkImage" id="image14">
+                              <object class="GtkImage" id="P1_C1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -404,7 +404,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image15">
+                              <object class="GtkImage" id="P1_C2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -417,7 +417,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image16">
+                              <object class="GtkImage" id="P1_C3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -430,7 +430,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image17">
+                              <object class="GtkImage" id="P1_C4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -443,7 +443,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image18">
+                              <object class="GtkImage" id="P1_C6">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -456,7 +456,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image19">
+                              <object class="GtkImage" id="P1_C7">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -469,7 +469,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image20">
+                              <object class="GtkImage" id="P1_C8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -482,7 +482,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image21">
+                              <object class="GtkImage" id="P1_C9">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -495,7 +495,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image22">
+                              <object class="GtkImage" id="P1_C11">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -508,7 +508,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image23">
+                              <object class="GtkImage" id="P1_C12">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -521,7 +521,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image24">
+                              <object class="GtkImage" id="P1_C13">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -534,7 +534,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image105">
+                              <object class="GtkImage" id="P1_C5">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -547,7 +547,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image106">
+                              <object class="GtkImage" id="P1_C10">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -598,7 +598,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkImage" id="image27">
+                              <object class="GtkImage" id="P2_C1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -611,7 +611,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image28">
+                              <object class="GtkImage" id="P2_C2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -624,7 +624,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image29">
+                              <object class="GtkImage" id="P2_C3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -637,7 +637,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image30">
+                              <object class="GtkImage" id="P2_C4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -650,7 +650,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image31">
+                              <object class="GtkImage" id="P2_C6">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -663,7 +663,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image32">
+                              <object class="GtkImage" id="P2_C7">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -676,7 +676,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image33">
+                              <object class="GtkImage" id="P2_C8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -689,7 +689,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image34">
+                              <object class="GtkImage" id="P2_C9">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -702,7 +702,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image35">
+                              <object class="GtkImage" id="P2_C11">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -715,7 +715,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image36">
+                              <object class="GtkImage" id="P2_C12">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -728,7 +728,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image37">
+                              <object class="GtkImage" id="P2_C13">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -741,7 +741,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image25">
+                              <object class="GtkImage" id="P2_C5">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -754,7 +754,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image26">
+                              <object class="GtkImage" id="P2_C10">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -818,7 +818,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkImage" id="image53">
+                              <object class="GtkImage" id="P4_C1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -831,7 +831,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image54">
+                              <object class="GtkImage" id="P4_C2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -844,7 +844,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image55">
+                              <object class="GtkImage" id="P4_C3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -857,7 +857,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image56">
+                              <object class="GtkImage" id="P4_C4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -870,7 +870,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image57">
+                              <object class="GtkImage" id="P4_C6">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -883,7 +883,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image58">
+                              <object class="GtkImage" id="P4_C7">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -896,7 +896,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image59">
+                              <object class="GtkImage" id="P4_C8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -909,7 +909,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image60">
+                              <object class="GtkImage" id="P4_C9">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -922,7 +922,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image61">
+                              <object class="GtkImage" id="P4_C11">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -935,7 +935,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image62">
+                              <object class="GtkImage" id="P4_C12">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -948,7 +948,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image63">
+                              <object class="GtkImage" id="P4_C13">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -961,7 +961,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image38">
+                              <object class="GtkImage" id="P4_C5">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -974,7 +974,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image39">
+                              <object class="GtkImage" id="P4_C10">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1025,7 +1025,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkImage" id="image40">
+                              <object class="GtkImage" id="P3_C1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1038,7 +1038,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image41">
+                              <object class="GtkImage" id="P3_C2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1051,7 +1051,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image42">
+                              <object class="GtkImage" id="P3_C3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1064,7 +1064,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image43">
+                              <object class="GtkImage" id="P3_C4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1077,7 +1077,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image44">
+                              <object class="GtkImage" id="P3_C6">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1103,7 +1103,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image46">
+                              <object class="GtkImage" id="P3_C8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1116,7 +1116,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image47">
+                              <object class="GtkImage" id="P3_C9">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1129,7 +1129,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image48">
+                              <object class="GtkImage" id="P3_C11">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1142,7 +1142,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image49">
+                              <object class="GtkImage" id="P3_C12">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1155,7 +1155,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image50">
+                              <object class="GtkImage" id="P3_C7">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1168,7 +1168,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image52">
+                              <object class="GtkImage" id="P3_C5">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1181,7 +1181,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkImage" id="image64">
+                              <object class="GtkImage" id="P3_C10">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="pixbuf">CardImages/back.png</property>
@@ -1194,7 +1194,17 @@
                               </packing>
                             </child>
                             <child>
-                              <placeholder/>
+                              <object class="GtkImage" id="P3_C13">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="pixbuf">CardImages/back.png</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="top_attach">2</property>
+                                <property name="width">1</property>
+                                <property name="height">1</property>
+                              </packing>
                             </child>
                             <child>
                               <placeholder/>
@@ -1287,7 +1297,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkImage" id="image1">
+                      <object class="GtkImage" id="Table1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1300,7 +1310,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image2">
+                      <object class="GtkImage" id="Table2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1313,7 +1323,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image3">
+                      <object class="GtkImage" id="Table3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1326,7 +1336,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image4">
+                      <object class="GtkImage" id="Table4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1339,7 +1349,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image5">
+                      <object class="GtkImage" id="Table5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1352,7 +1362,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image6">
+                      <object class="GtkImage" id="Table6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1365,7 +1375,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image7">
+                      <object class="GtkImage" id="Table7">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1378,7 +1388,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image8">
+                      <object class="GtkImage" id="Table8">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1391,7 +1401,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image9">
+                      <object class="GtkImage" id="Table10">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1404,7 +1414,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image10">
+                      <object class="GtkImage" id="Table11">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1417,7 +1427,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image11">
+                      <object class="GtkImage" id="Table12">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1430,7 +1440,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image12">
+                      <object class="GtkImage" id="Table13">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1443,7 +1453,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image13">
+                      <object class="GtkImage" id="Table14">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1456,7 +1466,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image66">
+                      <object class="GtkImage" id="Table15">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1469,7 +1479,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image67">
+                      <object class="GtkImage" id="Table16">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1482,7 +1492,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image68">
+                      <object class="GtkImage" id="Table17">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1495,7 +1505,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image69">
+                      <object class="GtkImage" id="Table19">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1508,7 +1518,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image70">
+                      <object class="GtkImage" id="Table20">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1521,7 +1531,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image71">
+                      <object class="GtkImage" id="Table21">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1534,7 +1544,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image72">
+                      <object class="GtkImage" id="Table22">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1547,7 +1557,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image73">
+                      <object class="GtkImage" id="Table23">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/4S.png</property>
@@ -1560,7 +1570,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image74">
+                      <object class="GtkImage" id="Table24">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1573,7 +1583,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image75">
+                      <object class="GtkImage" id="Table25">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1586,7 +1596,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image76">
+                      <object class="GtkImage" id="Table26">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1599,7 +1609,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image77">
+                      <object class="GtkImage" id="Table28">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1612,7 +1622,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image78">
+                      <object class="GtkImage" id="Table29">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1625,7 +1635,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image79">
+                      <object class="GtkImage" id="Table30">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1638,7 +1648,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image80">
+                      <object class="GtkImage" id="Table31">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1651,7 +1661,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image81">
+                      <object class="GtkImage" id="Table32">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1664,7 +1674,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image82">
+                      <object class="GtkImage" id="Table33">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1677,7 +1687,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image83">
+                      <object class="GtkImage" id="Table34">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1690,7 +1700,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image84">
+                      <object class="GtkImage" id="Table35">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1703,7 +1713,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image85">
+                      <object class="GtkImage" id="Table37">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1716,7 +1726,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image86">
+                      <object class="GtkImage" id="Table38">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1729,7 +1739,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image87">
+                      <object class="GtkImage" id="Table39">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1742,7 +1752,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image88">
+                      <object class="GtkImage" id="Table40">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1755,7 +1765,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image89">
+                      <object class="GtkImage" id="Table41">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1768,7 +1778,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image90">
+                      <object class="GtkImage" id="Table42">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1781,7 +1791,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image91">
+                      <object class="GtkImage" id="Table43">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1794,7 +1804,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image92">
+                      <object class="GtkImage" id="Table44">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1807,7 +1817,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image93">
+                      <object class="GtkImage" id="Table46">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1820,7 +1830,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image94">
+                      <object class="GtkImage" id="Table47">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1833,7 +1843,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image95">
+                      <object class="GtkImage" id="Table48">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1846,7 +1856,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image96">
+                      <object class="GtkImage" id="Table49">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1859,7 +1869,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image97">
+                      <object class="GtkImage" id="Table50">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1872,7 +1882,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image98">
+                      <object class="GtkImage" id="Table51">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1885,7 +1895,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image99">
+                      <object class="GtkImage" id="Table52">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
@@ -1898,75 +1908,69 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image100">
+                      <object class="GtkImage" id="Table9">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
                       </object>
                       <packing>
-                        <property name="left_attach">7</property>
-                        <property name="top_attach">5</property>
+                        <property name="left_attach">8</property>
+                        <property name="top_attach">0</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image101">
+                      <object class="GtkImage" id="Table18">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
                       </object>
                       <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">6</property>
+                        <property name="left_attach">8</property>
+                        <property name="top_attach">1</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image102">
+                      <object class="GtkImage" id="Table27">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
                       </object>
                       <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">6</property>
+                        <property name="left_attach">8</property>
+                        <property name="top_attach">2</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image103">
+                      <object class="GtkImage" id="Table36">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
                       </object>
                       <packing>
-                        <property name="left_attach">2</property>
-                        <property name="top_attach">6</property>
+                        <property name="left_attach">8</property>
+                        <property name="top_attach">3</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image104">
+                      <object class="GtkImage" id="Table45">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixbuf">CardImages/none.png</property>
                       </object>
                       <packing>
-                        <property name="left_attach">3</property>
-                        <property name="top_attach">6</property>
+                        <property name="left_attach">8</property>
+                        <property name="top_attach">4</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
                     </child>
                     <child>
                       <placeholder/>
@@ -1980,9 +1984,6 @@
                     <property name="fill">True</property>
                     <property name="position">1</property>
                   </packing>
-                </child>
-                <child>
-                  <placeholder/>
                 </child>
               </object>
               <packing>
