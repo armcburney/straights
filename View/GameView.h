@@ -32,6 +32,10 @@ private:
     void rageQuitButtonClicked();
     void windowClosed();
 
+    Gtk::Button *playButton;
+    Gtk::Button *discardButton;
+    Gtk::Button *rageQuitButton;
+
     Gtk::TextView *statusTextView;
     Gtk::Label *currentPlayerLabel;
     Gtk::Label *currentCardLabel;

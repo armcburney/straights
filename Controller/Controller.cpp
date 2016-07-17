@@ -54,6 +54,7 @@ void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
 
 void Controller::continueGame(const Command &input) {
     if (input.type == Command::RAGEQUIT) {
+        model->automateCurrentPlayer();
         textView->printRagequit(model->returnCurrentPlayer()->getID());
     }
 

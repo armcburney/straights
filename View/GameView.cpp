@@ -12,6 +12,10 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
     : Gtk::Window(cObject),
       selectedCardIndex(-1) {
 
+    builder->get_widget("playButton", playButton);
+    builder->get_widget("discardButton", discardButton);
+    builder->get_widget("rageQuitButton", rageQuitButton);
+
     builder->get_widget("statusTextView", statusTextView);
     builder->get_widget("currentPlayerLabel", currentPlayerLabel);
     builder->get_widget("currentCardLabel", currentCardLabel);
@@ -25,10 +29,12 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
         });
     }
 
-    Gtk::Button *playButton;
-    builder->get_widget("playButton", playButton);
     playButton->signal_clicked().connect(
         sigc::mem_fun(*this, &GameView::playButtonClicked));
+    discardButton->signal_clicked().connect(
+        sigc::mem_fun(*this, &GameView::discardButtonClicked));
+    rageQuitButton->signal_clicked().connect(
+        sigc::mem_fun(*this, &GameView::rageQuitButtonClicked));
 
     this->signal_hide().connect(
         sigc::mem_fun(*this, &GameView::windowClosed));
@@ -92,19 +98,34 @@ void GameView::printTurnContext(TurnContext tc) {
     hand.clear();
     copy(tc.hand.begin(), tc.hand.end(), back_inserter(hand));
 
+    if (!tc.legalPlays.empty()) {
+        // This move will be a "Play"
+        playButton->set_sensitive(true);
+        discardButton->set_sensitive(false);
+    } else {
+        // This move will be a "Discard"
+        playButton->set_sensitive(false);
+        discardButton->set_sensitive(true);
+    }
+
     for (int i = 0; i < 13; i++) {
         CardPtr card = hand[i];
         GtkImage *cardImage = handCardImages[i]->gobj();
         gtk_image_set_from_file(cardImage, card->getImageUrl().c_str());
 
-        // Disable the card if it is not valid
-        auto legalPlay = find_if(
-            tc.legalPlays.begin(),
-            tc.legalPlays.end(),
-            [card] (CardPtr c) {
-                return *c == *card;
-            }
-        );
-        handCardButtons[i]->set_sensitive(legalPlay != tc.legalPlays.end());
+        if (tc.legalPlays.empty()) {
+            // If no legal plays, we can discard any card
+            handCardButtons[i]->set_sensitive(true);
+        } else {
+            // Disable the card if it is not valid
+            auto legalPlay = find_if(
+                tc.legalPlays.begin(),
+                tc.legalPlays.end(),
+                [card] (CardPtr c) {
+                    return *c == *card;
+                }
+            );
+            handCardButtons[i]->set_sensitive(legalPlay != tc.legalPlays.end());
+        }
     }
 }
