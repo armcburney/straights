@@ -11,10 +11,8 @@ TurnContext::TurnContext(
     const std::set<CardPtr, CardPtrComp>    & gamePile
 )
     : hand(hand),
-      gamePile(gamePile) {
-
-    vector<CardPtr> legalPlays = Straights::getLegalPlays(hand, gamePile);
-}
+      gamePile(gamePile),
+      legalPlays(Straights::getLegalPlays(hand, gamePile)) {}
 
 RoundContext::RoundContext(
     const std::vector<Player>               & players,

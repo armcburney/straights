@@ -11,8 +11,8 @@
 
 struct TurnContext {
     const std::list<CardPtr> hand;
-    const std::vector<CardPtr> legalPlays;
     const std::set<CardPtr, CardPtrComp> gamePile;
+    const std::vector<CardPtr> legalPlays;
 
     TurnContext(
         const std::list<CardPtr>                & hand,

@@ -18,10 +18,9 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
 
     for (int i = 0; i < 13; i++) {
         builder->get_widget("handCardImage" + to_string(i+1), handCardImages[i]);
+        builder->get_widget("handCard" + to_string(i+1), handCardButtons[i]);
 
-        Gtk::Button *btn;
-        builder->get_widget("handCard" + to_string(i+1), btn);
-        btn->signal_clicked().connect([this, i]() {
+        handCardButtons[i]->signal_clicked().connect([this, i]() {
             cardSelected(i);
         });
     }
@@ -97,5 +96,15 @@ void GameView::printTurnContext(TurnContext tc) {
         CardPtr card = hand[i];
         GtkImage *cardImage = handCardImages[i]->gobj();
         gtk_image_set_from_file(cardImage, card->getImageUrl().c_str());
+
+        // Disable the card if it is not valid
+        auto legalPlay = find_if(
+            tc.legalPlays.begin(),
+            tc.legalPlays.end(),
+            [card] (CardPtr c) {
+                return *c == *card;
+            }
+        );
+        handCardButtons[i]->set_sensitive(legalPlay != tc.legalPlays.end());
     }
 }
