@@ -24,6 +24,8 @@ private:
     std::unique_ptr<TextView> textView;
     std::unique_ptr<InitializationView> initializationView;
     std::shared_ptr<GameView> gameView;
+
+    Glib::RefPtr<Gtk::Builder> gladeBuilder;
 };
 
 #endif

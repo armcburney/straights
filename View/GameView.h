@@ -14,8 +14,9 @@ class Controller;
 
 class GameView : public Gtk::Window, public Observer<RoundContext> {
 public:
-    GameView(std::weak_ptr<Controller>);
+    GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder>& builder);
     virtual void update(RoundContext context) final;
+    void setController(std::weak_ptr<Controller>);
 private:
     std::weak_ptr<Controller> controller;
     int selectedCardIndex;

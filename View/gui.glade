@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.16.1 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
-  <object class="GtkWindow" id="GameWindow">
+  <object class="GtkWindow" id="GameView">
     <property name="can_focus">False</property>
     <child>
       <object class="GtkCheckButton" id="checkbutton1">
@@ -17,7 +17,6 @@
   </object>
   <object class="GtkWindow" id="InitializationView">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Bush did 911</property>
     <child>
       <object class="GtkGrid" id="grid1">
         <property name="visible">True</property>

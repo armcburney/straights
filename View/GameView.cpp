@@ -7,17 +7,20 @@
 
 using namespace std;
 
-GameView::GameView(weak_ptr<Controller> controller)
-    : controller(controller),
+GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder>&)
+    : Gtk::Window(cObject),
       selectedCardIndex(-1) {
-    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("View/gui.glade");
 
-    Gtk::Window* w = this;
-    builder->get_widget("GameView", w);
+    // TODO Hook up buttons
+}
+
+void GameView::setController(weak_ptr<Controller> c) {
+    controller = c;
 }
 
 void GameView::update(RoundContext) {
     // TODO Update the view with content from context
+    cout << "Updating the game view" << endl;
 }
 
 void GameView::cardSelected(int index) {
