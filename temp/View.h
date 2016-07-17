@@ -15,6 +15,7 @@ public:
     void rage();
 private:
     Glib::RefPtr<Gtk::Builder> builder;
+    Gtk::Button * button1, *button2;
 };
 
 #endif

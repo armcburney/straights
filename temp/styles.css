@@ -1,0 +1,8 @@
+
+GtkButton {
+  background-color: green;
+}
+GtkButton:hover {
+  color: blue;
+  background-color: red;
+}
