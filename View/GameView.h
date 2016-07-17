@@ -36,7 +36,7 @@ private:
     Gtk::Label *currentPlayerLabel;
     Gtk::Label *currentCardLabel;
 
-    std::array<Gtk::Image*, 13> handCards;
+    std::array<Gtk::Image*, 13> handCardImages;
 };
 
 #endif

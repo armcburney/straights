@@ -23,7 +23,7 @@ string Card::getImageUrl() const {
 	string suits[Card::SUIT_COUNT] = {"C", "D", "H", "S"};
 	string ranks[Card::RANK_COUNT] = {"A", "2", "3", "4", "5", "6",
 		"7", "8", "9", "10", "J", "Q", "K"};
-    return "../View/CardImages/" + ranks[rank_] + suits[suit_] + ".png";
+    return "View/CardImages/" + ranks[rank_] + suits[suit_] + ".png";
 }
 
 bool operator==(const Card &a, const Card &b){
