@@ -393,7 +393,7 @@
                               <object class="GtkImage" id="P1_C1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="pixbuf">CardImages/back.png</property>
+                                <property name="pixbuf">CardImages/none.png</property>
                                 <property name="icon_size">6</property>
                               </object>
                               <packing>
@@ -407,7 +407,7 @@
                               <object class="GtkImage" id="P1_C2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="pixbuf">CardImages/back.png</property>
+                                <property name="pixbuf">CardImages/discard.png</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -420,7 +420,7 @@
                               <object class="GtkImage" id="P1_C3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="pixbuf">CardImages/back.png</property>
+                                <property name="pixbuf">CardImages/discard.png</property>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -433,7 +433,7 @@
                               <object class="GtkImage" id="P1_C4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="pixbuf">CardImages/back.png</property>
+                                <property name="pixbuf">CardImages/none.png</property>
                               </object>
                               <packing>
                                 <property name="left_attach">3</property>
