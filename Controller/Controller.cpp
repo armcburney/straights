@@ -6,10 +6,11 @@
 using namespace std;
 
 Controller::Controller(unique_ptr<TextView> textView)
-    : textView(move(textView)),
-      gladeBuilder(Gtk::Builder::create_from_file("View/gui.glade")) {}
+    : textView(move(textView)) {}
 
 void Controller::initialize() {
+    gladeBuilder = Gtk::Builder::create_from_file("View/gui.glade");
+
     // Show the initialization window
     InitializationView *iv;
     gladeBuilder->get_widget_derived("InitializationView", iv);
@@ -63,17 +64,17 @@ void Controller::continueGame(const Command &input) {
         // We require more input from the user to complete the round
 
         // Print the context for the user to decide
-        textView->printObject<TurnContext>(model->getTurnContext());
+        TurnContext turnContext = model->getTurnContext();
+        textView->printObject<TurnContext>(turnContext);
+        gameView->printTurnContext(turnContext);
 
-        //TODO Make the view show the player's choices
         //TODO Unlock game window controlls
         return;
     }
 
     // Print a summary of the move made
     textView->printObject<TurnResult>(turnResult);
-
-    //TODO print the summary of the move on the game window
+    gameView->printTurnResult(turnResult);
 
     if (turnResult.getStatus() == TurnResult::ROUND_COMPLETE ||
         turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
@@ -104,4 +105,11 @@ void Controller::endGame() {
     gameView.reset();
     model.reset();
     initialize();
+}
+
+void Controller::quit() {
+    initializationView.reset();
+    gameView.reset();
+    model.reset();
+    exit(0);
 }

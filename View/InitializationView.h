@@ -20,6 +20,7 @@ public:
 private:
     std::weak_ptr<Controller> controller;
     void startGameButtonClicked();
+    void windowClosed();
 };
 
 #endif
