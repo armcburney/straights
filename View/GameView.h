@@ -9,6 +9,7 @@
 #include "../Global/Command.h"
 #include "../Global/Observer.h"
 #include "../Global/Context.h"
+#include "../Global/TurnResult.h"
 
 class Controller;
 
@@ -17,6 +18,9 @@ public:
     GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder>& builder);
     virtual void update(RoundContext context) final;
     void setController(std::weak_ptr<Controller>);
+
+    void printTurnResult(TurnResult);
+    void printTurnContext(TurnContext);
 private:
     std::weak_ptr<Controller> controller;
     int selectedCardIndex;
@@ -26,6 +30,9 @@ private:
     void playButtonClicked();
     void discardButtonClicked();
     void rageQuitButtonClicked();
+    void windowClosed();
+
+    Gtk::TextView *statusTextView;
 };
 
 #endif

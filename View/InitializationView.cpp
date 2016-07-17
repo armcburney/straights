@@ -14,6 +14,9 @@ InitializationView::InitializationView(BaseObjectType *cObject, const Glib::RefP
     builder->get_widget("startGameButton", startGameButton);
     startGameButton->signal_clicked().connect(
         sigc::mem_fun(*this, &InitializationView::startGameButtonClicked));
+
+    this->signal_hide().connect(
+        sigc::mem_fun(*this, &InitializationView::windowClosed));
 }
 
 void InitializationView::setController(weak_ptr<Controller> c) {
@@ -29,4 +32,9 @@ void InitializationView::startGameButtonClicked() {
         c->startGame(playerTypes, randomSeed);
     else
         cerr << "Controller no longer exists!" << endl;
+}
+
+void InitializationView::windowClosed() {
+    if (auto c = controller.lock())
+        c->quit();
 }

@@ -1,6 +1,7 @@
 *.o
 *.swp
 *.swo
+*~
 a.out
 .DS_Store
 a.out.dSYM

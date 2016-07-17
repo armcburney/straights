@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
 
 #include "GameView.h"
@@ -7,11 +8,19 @@
 
 using namespace std;
 
-GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder>&)
+GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &builder)
     : Gtk::Window(cObject),
       selectedCardIndex(-1) {
 
-    // TODO Hook up buttons
+    builder->get_widget("statusTextView", statusTextView);
+
+    Gtk::Button *playButton;
+    builder->get_widget("playButton", playButton);
+    playButton->signal_clicked().connect(
+        sigc::mem_fun(*this, &GameView::playButtonClicked));
+
+    this->signal_hide().connect(
+        sigc::mem_fun(*this, &GameView::windowClosed));
 }
 
 void GameView::setController(weak_ptr<Controller> c) {
@@ -46,4 +55,22 @@ void GameView::rageQuitButtonClicked() {
     Command input(Command::RAGEQUIT);
     if (auto c = controller.lock())
         c->continueGame(input);
+}
+
+void GameView::windowClosed() {
+    if (auto c = controller.lock())
+        c->endGame();
+}
+
+void GameView::printTurnResult(TurnResult tr) {
+    stringstream ss;
+    ss << tr;
+
+    // Add this to the text view buffer
+    Glib::RefPtr< Gtk::TextBuffer > textBuffer = statusTextView->get_buffer();
+    textBuffer->insert(textBuffer->end(), ss.str());
+}
+
+void GameView::printTurnContext(TurnContext tc) {
+    // TODO show the player's hand
 }
