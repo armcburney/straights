@@ -7,17 +7,17 @@
 
 using namespace std;
 
-InitializationView::InitializationView(weak_ptr<Controller> controller)
-    : controller(controller) {
-    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("View/gui.glade");
-
-    Gtk::Window *w;
-    builder->get_widget("InitializationView", w);
+InitializationView::InitializationView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder>& builder) 
+    : Gtk::Window(cObject) {
 
     Gtk::Button *startGameButton;
     builder->get_widget("startGameButton", startGameButton);
     startGameButton->signal_clicked().connect(
         sigc::mem_fun(*this, &InitializationView::startGameButtonClicked));
+}
+
+void InitializationView::setController(weak_ptr<Controller> c) {
+    controller = c;
 }
 
 void InitializationView::startGameButtonClicked() {
@@ -27,4 +27,6 @@ void InitializationView::startGameButtonClicked() {
     // TODO Get player types and random seed
     if (auto c = controller.lock())
         c->startGame(playerTypes, randomSeed);
+    else
+        cerr << "Controller no longer exists!" << endl;
 }

@@ -5,25 +5,32 @@
 
 using namespace std;
 
-Controller::Controller(unique_ptr<TextView> textView) : textView(move(textView)) {}
+Controller::Controller(unique_ptr<TextView> textView)
+    : textView(move(textView)),
+      gladeBuilder(Gtk::Builder::create_from_file("View/gui.glade")) {}
 
 void Controller::initialize() {
     // Show the initialization window
-    initializationView = unique_ptr<InitializationView>(
-        new InitializationView(shared_from_this())
-    );
+    InitializationView *iv;
+    gladeBuilder->get_widget_derived("InitializationView", iv);
+    initializationView = unique_ptr<InitializationView>(iv);
+    initializationView->setController(shared_from_this());
     initializationView->show();
 }
 
 void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
-    // Create the game model & view
+    // Create the game model
     model = unique_ptr<Straights>(new Straights(randomSeed));
-    gameView = shared_ptr<GameView>(
-        new GameView(shared_from_this())
-    );
 
-    // TODO Close the initializationView
+    // Close the initializationView
     initializationView.reset();
+
+    // Show the game window
+    GameView *gv;
+    gladeBuilder->get_widget_derived("GameView", gv);
+    gameView = shared_ptr<GameView>(gv);
+    gameView->setController(shared_from_this());
+    gameView->show();
 
     // Make the view subscribe to updates from the model
     model->subscribe(gameView);
@@ -35,8 +42,6 @@ void Controller::startGame(vector<Player::Type> playerTypes, int randomSeed) {
         else
             model->addHumanPlayer(i+1);
     }
-
-    // TODO Show the game window
 
     model->deal();
 
