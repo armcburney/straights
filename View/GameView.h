@@ -31,10 +31,14 @@ private:
     void discardButtonClicked();
     void rageQuitButtonClicked();
     void windowClosed();
+    void playNewGame();
+    void quitGame();
 
     Gtk::Button *playButton;
     Gtk::Button *discardButton;
     Gtk::Button *rageQuitButton;
+    Gtk::Button *play;
+    Gtk::Button *quit;
 
     Gtk::TextView *statusTextView;
     Gtk::Label *currentPlayerLabel;

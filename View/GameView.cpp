@@ -20,6 +20,9 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
     builder->get_widget("currentPlayerLabel", currentPlayerLabel);
     builder->get_widget("currentCardLabel", currentCardLabel);
 
+    builder->get_widget("play", play);
+    builder->get_widget("quit", quit);
+
     // Create mappings for the player's move options
     for (int i = 0; i < 13; i++) {
         builder->get_widget("handCardImage" + to_string(i+1), handCardImages[i]);
@@ -49,6 +52,12 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
         sigc::mem_fun(*this, &GameView::discardButtonClicked));
     rageQuitButton->signal_clicked().connect(
         sigc::mem_fun(*this, &GameView::rageQuitButtonClicked));
+
+    // Game Summary Buttons
+    play->signal_clicked().connect(
+        sigc::mem_fun(*this, &GameView::playNewGame));
+    quit->signal_clicked().connect(
+        sigc::mem_fun(*this, &GameView::quitGame));
 
     this->signal_hide().connect(
         sigc::mem_fun(*this, &GameView::windowClosed));
@@ -129,6 +138,16 @@ void GameView::rageQuitButtonClicked() {
 void GameView::windowClosed() {
     if (auto c = controller.lock())
         c->endGame();
+}
+
+void GameView::playNewGame() {
+    if (auto c = controller.lock())
+        c->endGame();
+}
+
+void GameView::quitGame() {
+    if (auto c = controller.lock())
+        c->quit();
 }
 
 void GameView::printTurnResult(TurnResult tr) {
