@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+#include "../Model/Straights.h"
+
 #include "../Global/Command.h"
 #include "../Global/Observer.h"
 #include "../Global/Context.h"
@@ -19,8 +21,10 @@ public:
     virtual void update(RoundContext context) final;
     void setController(std::weak_ptr<Controller>);
 
-    void printTurnResult(TurnResult);
-    void printTurnContext(TurnContext);
+    void printTurnResult(const TurnResult&);
+    void printTurnContext(const TurnContext&);
+    void printRoundContext(const RoundContext&);
+    void printGameSummary(const Straights&);
 private:
     std::weak_ptr<Controller> controller;
     int selectedCardIndex;
