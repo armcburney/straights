@@ -116,8 +116,21 @@ string Straights::returnWinner(const Straights &s) const {
                 return p1.getScore() < p2.getScore();
             }
         );
-        return to_string(winningPlayer->getID());
 
+        string winningPlayers = "";
+        bool isFirst = true;
+
+        for (auto i : s.players) {
+            if (winningPlayer->getScore() == i.getScore()) {
+                if (isFirst) {
+                    winningPlayers += to_string(i.getID());
+                    isFirst = false;
+                } else {
+                    winningPlayers += " &amp; " + to_string(i.getID());
+                }
+            }
+        }
+        return winningPlayers;
 }
 
 // Changes the player's strategy to the AutomatedPlayerStrategy
