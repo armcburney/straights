@@ -103,6 +103,7 @@ public:
     */
 
 protected:
+    // Notify the view of changes to the model
     void notify();
 
 private:

@@ -9,6 +9,7 @@
 #include "../Model/Card.h"
 #include "../Model/Player/Player.h"
 
+// Used to describe the options available to the current player
 struct TurnContext {
     const std::list<CardPtr> hand;
     const std::set<CardPtr, CardPtrComp> gamePile;
@@ -25,6 +26,7 @@ struct TurnContext {
     */
 };
 
+// Used to describe the state of the round & every player
 struct RoundContext {
     const std::vector<Player> players;
     const int currentPlayerId;

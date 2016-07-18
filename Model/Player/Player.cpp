@@ -61,6 +61,7 @@ list<CardPtr> Player::getHand() const {
     return hand;
 }
 
+// Returns the TurnResult objects for all moves this round
 vector<TurnResult> Player::getRoundMoves() const {
     return roundMoves;
 }

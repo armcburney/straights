@@ -87,7 +87,10 @@ private:
     int id;                               // Player id -> integer 1-4, (ie. Player 1)
     Score score;                          // Current player score
     Score roundScore;
+
+    // Stores the TurnResult objects for all moves this round
     std::vector<TurnResult> roundMoves;
+
     std::shared_ptr<PlayerStrategy> strategy;
     std::list<CardPtr> hand;              // Player hand
     std::vector<CardPtr> discardPile;     // Player discard pile
