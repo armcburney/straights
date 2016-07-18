@@ -258,7 +258,8 @@ ostream &operator<<(ostream &out, const Straights &s) {
         out << "Player " << s.returnWinner(s) << " wins!";
     } else {
         // No winner, we're starting a new round
-        out << "A new round begins. It's player " << s.currentPlayer->getID() << "'s turn to play.";
+        out << "A new round begins." << endl;
+        out << "It's player " << s.currentPlayer->getID() << "'s turn to play.";
     }
     out << endl;
 

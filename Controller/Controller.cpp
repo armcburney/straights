@@ -83,7 +83,10 @@ void Controller::continueGame(const Command &input) {
     if (turnResult.getStatus() == TurnResult::ROUND_COMPLETE ||
         turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
 
-        textView->printObject<RoundContext>(model->getRoundContext());
+        // Print a summary of the round
+        RoundContext roundContext = model->getRoundContext();
+        textView->printObject<RoundContext>(roundContext);
+        gameView->printRoundContext(roundContext);
 
         // Prepare the next round
         model->clearRound();
@@ -91,6 +94,7 @@ void Controller::continueGame(const Command &input) {
 
         // Print a summarry of the game
         textView->printObject<Straights>(*model);
+        gameView->printGameSummary(*model);
     }
 
     if (turnResult.getStatus() == TurnResult::GAME_COMPLETE) {

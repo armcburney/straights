@@ -107,23 +107,38 @@ void GameView::cardSelected(int index) {
 }
 
 void GameView::playButtonClicked() {
+    if (selectedCardIndex == -1)
+        return;
+
     Card card = *(hand[selectedCardIndex]);
     Command input(Command::PLAY, card);
     if (auto c = controller.lock())
         c->continueGame(input);
+
+    // Reset selected card
+    selectedCardIndex = -1;
 }
 
 void GameView::discardButtonClicked() {
+    if (selectedCardIndex == -1)
+        return;
+
     Card card = *(hand[selectedCardIndex]);
     Command input(Command::DISCARD, card);
     if (auto c = controller.lock())
         c->continueGame(input);
+
+    // Reset selected card
+    selectedCardIndex = -1;
 }
 
 void GameView::rageQuitButtonClicked() {
     Command input(Command::RAGEQUIT);
     if (auto c = controller.lock())
         c->continueGame(input);
+
+    // Reset selected card
+    selectedCardIndex = -1;
 }
 
 void GameView::windowClosed() {
@@ -131,16 +146,35 @@ void GameView::windowClosed() {
         c->endGame();
 }
 
-void GameView::printTurnResult(TurnResult tr) {
+void GameView::printTurnResult(const TurnResult &tr) {
     stringstream ss;
     ss << tr;
 
     // Add this to the text view buffer
     Glib::RefPtr< Gtk::TextBuffer > textBuffer = statusTextView->get_buffer();
+    textBuffer->insert(textBuffer->begin(), ss.str());
+}
+
+void GameView::printRoundContext(const RoundContext &rc) {
+    stringstream ss;
+    ss << rc;
+
+    // Replace the text buffer
+    Glib::RefPtr< Gtk::TextBuffer > textBuffer = statusTextView->get_buffer();
+    textBuffer->erase(textBuffer->begin(), textBuffer->end());
     textBuffer->insert(textBuffer->end(), ss.str());
 }
 
-void GameView::printTurnContext(TurnContext tc) {
+void GameView::printGameSummary(const Straights &straights) {
+    stringstream ss;
+    ss << endl << straights << endl;
+
+    // Add this to the text view buffer
+    Glib::RefPtr< Gtk::TextBuffer > textBuffer = statusTextView->get_buffer();
+    textBuffer->insert(textBuffer->begin(), ss.str());
+}
+
+void GameView::printTurnContext(const TurnContext &tc) {
     hand.clear();
     copy(tc.hand.begin(), tc.hand.end(), back_inserter(hand));
 
@@ -155,23 +189,29 @@ void GameView::printTurnContext(TurnContext tc) {
     }
 
     for (int i = 0; i < 13; i++) {
-        CardPtr card = hand[i];
         GtkImage *cardImage = handCardImages[i]->gobj();
-        gtk_image_set_from_file(cardImage, card->getImageUrl().c_str());
+        try {
+            CardPtr card = hand.at(i);
+            gtk_image_set_from_file(cardImage, card->getImageUrl().c_str());
 
-        if (tc.legalPlays.empty()) {
-            // If no legal plays, we can discard any card
-            handCardButtons[i]->set_sensitive(true);
-        } else {
-            // Disable the card if it is not valid
-            auto legalPlay = find_if(
-                tc.legalPlays.begin(),
-                tc.legalPlays.end(),
-                [card] (CardPtr c) {
-                    return *c == *card;
-                }
-            );
-            handCardButtons[i]->set_sensitive(legalPlay != tc.legalPlays.end());
+            if (tc.legalPlays.empty()) {
+                // If no legal plays, we can discard any card
+                handCardButtons[i]->set_sensitive(true);
+            } else {
+                // Disable the card if it is not valid
+                auto legalPlay = find_if(
+                    tc.legalPlays.begin(),
+                    tc.legalPlays.end(),
+                    [card] (CardPtr c) {
+                        return *c == *card;
+                    }
+                );
+                handCardButtons[i]->set_sensitive(legalPlay != tc.legalPlays.end());
+            }
+        } catch (out_of_range&) {
+            // If the hand size < 13, display disabled card backs
+            gtk_image_set_from_file(cardImage, "View/CardImages/none.png");
+            handCardButtons[i]->set_sensitive(false);
         }
     }
 }
