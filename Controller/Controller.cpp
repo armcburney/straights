@@ -94,7 +94,7 @@ void Controller::continueGame(const Command &input) {
     }
 
     if (turnResult.getStatus() == TurnResult::GAME_COMPLETE) {
-        std::string test = "Player " + model->returnWinner(*model) + "  has won the game!";
+        std::string test = "Player " + model->returnWinner(*model) + " has won the game!";
         const char * temp = test.c_str();
 
         // The game is over
