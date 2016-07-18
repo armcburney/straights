@@ -1,4 +1,0 @@
-  - Comment all the code
-  - Precondition and code
-  - Take in shuffle seeding param
-  - Update Makefile
