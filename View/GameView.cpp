@@ -12,14 +12,17 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
     : Gtk::Window(cObject),
       selectedCardIndex(-1) {
 
+    // Player action buttons
     builder->get_widget("playButton", playButton);
     builder->get_widget("discardButton", discardButton);
     builder->get_widget("rageQuitButton", rageQuitButton);
 
+    // General GameView Widgets
     builder->get_widget("summaryTextView", statusTextView);
     builder->get_widget("currentPlayerLabel", currentPlayerLabel);
     builder->get_widget("currentCardLabel", currentCardLabel);
 
+    // GameSummaryView dialog buttons
     builder->get_widget("play", play);
     builder->get_widget("quit", quit);
 
@@ -46,6 +49,7 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
         }
     }
 
+    // Player action signal functions
     playButton->signal_clicked().connect(
         sigc::mem_fun(*this, &GameView::playButtonClicked));
     discardButton->signal_clicked().connect(
@@ -53,7 +57,7 @@ GameView::GameView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder> &bu
     rageQuitButton->signal_clicked().connect(
         sigc::mem_fun(*this, &GameView::rageQuitButtonClicked));
 
-    // Game Summary Buttons
+    // Game summary signal functions
     play->signal_clicked().connect(
         sigc::mem_fun(*this, &GameView::playNewGame));
     quit->signal_clicked().connect(

@@ -40,6 +40,7 @@ void InitializationView::startGameButtonClicked() {
     vector<Player::Type> playerTypes;
     int randomSeed = 0;
 
+    // Start the game with human/computer players selected
     transform(
         playerTypeCheckboxes.begin(),
         playerTypeCheckboxes.end(),
@@ -60,6 +61,7 @@ void InitializationView::playerTypeChanged(int playerIndex, bool humanToggled) {
     Gtk::CheckButton *hb = playerTypeCheckboxes[playerIndex].first;
     Gtk::CheckButton *cb = playerTypeCheckboxes[playerIndex].second;
 
+    // Ensures that one checkbox is selected for pair of checkboxes
     if (humanToggled) {
         bool isHuman = hb->get_active();
         if (cb->get_active() == isHuman)
@@ -72,6 +74,7 @@ void InitializationView::playerTypeChanged(int playerIndex, bool humanToggled) {
 }
 
 void InitializationView::windowClosed() {
+    // Quit the game on window close
     if (auto c = controller.lock())
         c->quit();
 }
