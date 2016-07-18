@@ -2455,6 +2455,7 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="image">handCardImage1</property>
+                        <property name="yalign">0.52999997138977051</property>
                         <property name="always_show_image">True</property>
                       </object>
                       <packing>
@@ -2589,6 +2590,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <property name="border_width">1</property>
                         <property name="image">handCardImage6</property>
                         <property name="always_show_image">True</property>
                       </object>

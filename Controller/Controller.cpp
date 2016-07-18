@@ -110,8 +110,12 @@ void Controller::continueGame(const Command &input) {
         return;
     }
 
+    // Continue if the game hasn't yet been quit
     if (model && gameView) {
-        // Continue if the game hasn't yet been quit
+        // Allow UI to handle events before continuing
+        while (Gtk::Main::events_pending())
+            Gtk::Main::iteration();
+
         continueGame();
     }
 }

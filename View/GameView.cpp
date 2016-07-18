@@ -111,7 +111,16 @@ void GameView::update(RoundContext rc) {
 }
 
 void GameView::cardSelected(int index) {
+    // Unlock the previous index (if any)
+    if (selectedCardIndex != -1) {
+        handCardButtons[selectedCardIndex]->set_sensitive(true);
+    }
+
+    // Update the index
     selectedCardIndex = index;
+
+    // Lock the currently selected card
+    handCardButtons[index]->set_sensitive(false);
 
     // Update the label indicating the current card
     CardPtr currentCard = hand[index];
@@ -221,6 +230,7 @@ void GameView::printTurnContext(const TurnContext &tc) {
             if (tc.legalPlays.empty()) {
                 // If no legal plays, we can discard any card
                 handCardButtons[i]->set_sensitive(true);
+                handCardButtons[i]->set_relief(Gtk::ReliefStyle::RELIEF_NORMAL);
             } else {
                 // Disable the card if it is not valid
                 auto legalPlay = find_if(
@@ -230,12 +240,20 @@ void GameView::printTurnContext(const TurnContext &tc) {
                         return *c == *card;
                     }
                 );
-                handCardButtons[i]->set_sensitive(legalPlay != tc.legalPlays.end());
+                if (legalPlay != tc.legalPlays.end()) {
+                    // Card is legal
+                    handCardButtons[i]->set_sensitive(true);
+                    handCardButtons[i]->set_relief(Gtk::ReliefStyle::RELIEF_NORMAL);
+                } else {
+                    handCardButtons[i]->set_sensitive(false);
+                    handCardButtons[i]->set_relief(Gtk::ReliefStyle::RELIEF_NONE);
+                }
             }
         } catch (out_of_range&) {
             // If the hand size < 13, display disabled card backs
             gtk_image_set_from_file(cardImage, "View/CardImages/none.png");
             handCardButtons[i]->set_sensitive(false);
+            handCardButtons[i]->set_relief(Gtk::ReliefStyle::RELIEF_NONE);
         }
     }
 }
