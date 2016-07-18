@@ -70,6 +70,11 @@ void GameView::update(RoundContext rc) {
         gtk_image_set_from_file(cardImage, card->getImageUrl().c_str());
         i++;
     }
+    // Make all the other cards empty
+    for (; i < 54; i++) {
+        GtkImage *cardImage = tableCards[i]->gobj();
+        gtk_image_set_from_file(cardImage, "View/CardImages/none.png");
+    }
 
     for (int i = 0; i < 4; i++) {
         // Update the player's hands
