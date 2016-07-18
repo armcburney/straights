@@ -102,9 +102,8 @@ void Controller::continueGame(const Command &input) {
         const char * temp = test.c_str();
 
         // The game is over
-        Gtk::MessageDialog *dialog;
-        gladeBuilder->get_widget("GameSummaryView", dialog);
-        GtkMessageDialog *run_dialog = dialog->gobj();
+        gladeBuilder->get_widget("GameSummaryView", gameOverDialog);
+        GtkMessageDialog *run_dialog = gameOverDialog->gobj();
         gtk_message_dialog_set_markup (run_dialog, temp); 
         gtk_dialog_run(GTK_DIALOG(run_dialog));
         return;
@@ -121,6 +120,9 @@ void Controller::continueGame(const Command &input) {
 }
 
 void Controller::endGame() {
+    if (gameOverDialog)
+        delete gameOverDialog;
+
     gameView.reset();
     model.reset();
     initialize();

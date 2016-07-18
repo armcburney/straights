@@ -27,6 +27,7 @@ private:
     std::shared_ptr<GameView> gameView;
 
     Glib::RefPtr<Gtk::Builder> gladeBuilder;
+    Gtk::MessageDialog *gameOverDialog;
 };
 
 #endif
