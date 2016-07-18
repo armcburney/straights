@@ -10,7 +10,10 @@ using namespace std;
 InitializationView::InitializationView(BaseObjectType *cObject, const Glib::RefPtr<Gtk::Builder>& builder) 
     : Gtk::Window(cObject) {
 
+    // Create mapping for seed text entry
     builder->get_widget("randomSeedEntry", randomSeedEntry);
+
+    // Create mappings & click handlers for Human / Computer checkboxes
     for (int i = 0; i < 4; i++) {
         builder->get_widget(
             "p" + to_string(i+1) + "HumanCheckbox", playerTypeCheckboxes[i].first);
@@ -23,11 +26,13 @@ InitializationView::InitializationView(BaseObjectType *cObject, const Glib::RefP
             [this, i]() { playerTypeChanged(i, false); });
     }
 
+    // Create handler for starting the game
     Gtk::Button *startGameButton;
     builder->get_widget("startGameButton", startGameButton);
     startGameButton->signal_clicked().connect(
         sigc::mem_fun(*this, &InitializationView::startGameButtonClicked));
 
+    // Create handler for closing the window
     this->signal_hide().connect(
         sigc::mem_fun(*this, &InitializationView::windowClosed));
 }
