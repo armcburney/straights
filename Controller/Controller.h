@@ -15,19 +15,19 @@
 class Controller : public std::enable_shared_from_this<Controller> {
 public:
     Controller(std::unique_ptr<TextView> textView);
-    void initialize();
+    void initialize();                                      // Show the window to start a game
     void startGame(std::vector<Player::Type>, int seed);
     void continueGame(const Command &input = Command());
     void endGame();
     void quit();
 private:
     std::unique_ptr<Straights> model;
-    std::unique_ptr<TextView> textView;
+    std::unique_ptr<TextView> textView;                     // Used to access cout / cin
     std::unique_ptr<InitializationView> initializationView;
     std::shared_ptr<GameView> gameView;
 
-    Glib::RefPtr<Gtk::Builder> gladeBuilder;
-    Gtk::MessageDialog *gameOverDialog;
+    Glib::RefPtr<Gtk::Builder> gladeBuilder;                // GUI builder
+    Gtk::MessageDialog *gameOverDialog;                     // Dialog to indicate winner
 };
 
 #endif

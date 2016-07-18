@@ -1,0 +1,20 @@
+--------------------------
+Bonus Features Implemented
+--------------------------
+
+1) Textual record of players plays
+   -> Every move is documented in a scrolling textView on the rights side
+      of the window
+   -> At the end of every round & the end of the game, a summary of the 
+      discards & scores is appended to the textView
+   -> Gives great oversight of game progress
+
+2) Providing visual queues for which cards are legal plays
+   -> Only the cards that are legal plays are selectable, and there is a
+      clear indication of the currently selected card by the card's border
+   -> Provides good visual queues to the user and facilitates gameplay
+
+3) All moves made by ComputerPlayers are not instant to give good overview
+   of the moves being made.
+   -> The UI smoothly runs through computer-played moves rather than running
+      them all at once

@@ -15,6 +15,7 @@ void Controller::initialize() {
     gladeBuilder = Gtk::Builder::create_from_file("View/gui.glade");
 
     // Show the initialization window
+    // allowing the user to choose some options for starting a new game
     InitializationView *iv;
     gladeBuilder->get_widget_derived("InitializationView", iv);
     initializationView = unique_ptr<InitializationView>(iv);
@@ -61,7 +62,7 @@ void Controller::continueGame(const Command &input) {
         textView->printRagequit(model->returnCurrentPlayer()->getID());
     }
 
-    //TODO Lock game window controlls
+    // Run one iteration of the game
     TurnResult turnResult = model->next(input);
 
     if (turnResult.getType() == TurnResult::REQUIRE_HUMAN_INPUT) {
@@ -72,7 +73,6 @@ void Controller::continueGame(const Command &input) {
         textView->printObject<TurnContext>(turnContext);
         gameView->printTurnContext(turnContext);
 
-        //TODO Unlock game window controlls
         return;
     }
 
@@ -120,6 +120,8 @@ void Controller::continueGame(const Command &input) {
 }
 
 void Controller::endGame() {
+    // Finish the current game & show the initalization view again
+
     if (gameOverDialog)
         delete gameOverDialog;
 
@@ -129,6 +131,7 @@ void Controller::endGame() {
 }
 
 void Controller::quit() {
+    // Finish the current game & quit the application
     initializationView.reset();
     gameView.reset();
     model.reset();

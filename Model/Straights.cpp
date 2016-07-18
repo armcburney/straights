@@ -108,29 +108,30 @@ PlayerItr Straights::returnCurrentPlayer() const {
 }
 
 string Straights::returnWinner(const Straights &s) const {
-        // We have a winner!
-        const auto &winningPlayer = min_element(
-            s.players.begin(),
-            s.players.end(),
-            [] (const Player &p1, const Player &p2) {
-                return p1.getScore() < p2.getScore();
-            }
-        );
+    // See if we can find the winner
+    const auto &winningPlayer = min_element(
+        s.players.begin(),
+        s.players.end(),
+        [] (const Player &p1, const Player &p2) {
+            return p1.getScore() < p2.getScore();
+        }
+    );
 
-        string winningPlayers = "";
-        bool isFirst = true;
+    string winningPlayers = "";
+    bool isFirst = true;
 
-        for (auto i : s.players) {
-            if (winningPlayer->getScore() == i.getScore()) {
-                if (isFirst) {
-                    winningPlayers += to_string(i.getID());
-                    isFirst = false;
-                } else {
-                    winningPlayers += " &amp; " + to_string(i.getID());
-                }
+    // Create a string naming the winner(s)
+    for (auto i : s.players) {
+        if (winningPlayer->getScore() == i.getScore()) {
+            if (isFirst) {
+                winningPlayers += to_string(i.getID());
+                isFirst = false;
+            } else {
+                winningPlayers += " &amp; " + to_string(i.getID());
             }
         }
-        return winningPlayers;
+    }
+    return winningPlayers;
 }
 
 // Changes the player's strategy to the AutomatedPlayerStrategy
@@ -157,6 +158,8 @@ Deck Straights::getDeck() const {
     return deck;
 }
 
+// Return an object describing the info needed for the
+// current player to make a decision
 TurnContext Straights::getTurnContext() const {
     return TurnContext(
         currentPlayer->getHand(),
@@ -164,6 +167,7 @@ TurnContext Straights::getTurnContext() const {
     );
 }
 
+// Return an object describing the current round
 RoundContext Straights::getRoundContext() const {
     // Custom variables to be returned in the context
     std::vector<std::vector<TurnResult>>    playerRoundMoves;
@@ -171,6 +175,7 @@ RoundContext Straights::getRoundContext() const {
     std::vector<Player::Type>               playerTypes;
 
     // Get the values for these variables
+
     transform(
         players.begin(),
         players.end(),
@@ -241,6 +246,8 @@ vector<CardPtr> Straights::getLegalPlays(list<CardPtr> hand, const set<CardPtr, 
 }
 
 void Straights::notify() {
+    // Notify the view that a change has occured
+    // and pass along the round's information
     notifyWithContext(getRoundContext());
 }
 
