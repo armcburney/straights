@@ -1252,7 +1252,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="p3Score">
+                          <object class="GtkLabel" id="pScore">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">0</property>
@@ -1518,7 +1518,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="p4Score">
+                          <object class="GtkLabel" id="p3Score">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">0</property>
